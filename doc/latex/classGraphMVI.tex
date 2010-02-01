@@ -1,0 +1,188 @@
+\section{GraphMVI Class Reference}
+\label{classGraphMVI}\index{GraphMVI@{GraphMVI}}
+{\tt \#include $<$MVI.h$>$}
+
+Inheritance diagram for GraphMVI::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classGraphMVI}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf LD} {\bf get\_\-p\_\-t} (int i, int j, {\bf INT} xi, {\bf INT} xo)
+\item 
+{\bf LD} {\bf getStatePr} ({\bf VideoNode} $\ast$vn, {\bf StatePtr} sp)
+\item 
+{\bf GraphMVI} ({\bf LD} S, {\bf LD} T, {\bf ModelMVI} $\ast$\_\-M, int \_\-rx=2, int \_\-ry=2, int \_\-cx=1, int \_\-cy=1)
+\item 
+void {\bf update\_\-evidence} (vector$<$ vector$<$ {\bf INT} $>$ $>$ \_\-evidence)
+\item 
+vector$<$ vector$<$ {\bf INT} $>$ $>$ {\bf map\_\-estimate} ()
+\item 
+vector$<$ vector$<$ {\bf INT} $>$ $>$ {\bf mmse\_\-estimate} ()
+\item 
+{\bf LD} {\bf get\_\-p\_\-hat} ({\bf VideoNode} $\ast$vn, {\bf StatePtr} si, {\bf StatePtr} so, {\bf LD} theta, {\bf LD} dt)
+\item 
+void {\bf initCondP} ({\bf VideoNode} $\ast$vn, {\bf LD} theta, {\bf LD} dt)
+\item 
+{\bf LD} {\bf updateTime} ({\bf LD} dt)
+\item 
+void {\bf initAllNodesOrigP} (bool rndm=false)
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+{\bf LD} {\bf theta\_\-r}
+\item 
+{\bf LD} {\bf theta\_\-t}
+\item 
+{\bf LD} {\bf epsilon\_\-r}
+\item 
+{\bf LD} {\bf epsilon\_\-t}
+\item 
+{\bf LD} {\bf epsilon\_\-zero}
+\item 
+vector$<$ vector$<$ {\bf INT} $>$ $>$ {\bf evidence}
+\item 
+int {\bf C}
+\item 
+int {\bf N1}
+\item 
+int {\bf N2}
+\item 
+{\bf StatePtr} {\bf ST} [2]
+\item 
+{\bf StatePtr} {\bf SC}
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{GraphMVI@{GraphMVI}!GraphMVI@{GraphMVI}}
+\index{GraphMVI@{GraphMVI}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphMVI::GraphMVI ({\bf LD} {\em S}, {\bf LD} {\em T}, {\bf ModelMVI} $\ast$ {\em \_\-M}, int {\em \_\-rx} = {\tt 2}, int {\em \_\-ry} = {\tt 2}, int {\em \_\-cx} = {\tt 1}, int {\em \_\-cy} = {\tt 1})\hspace{0.3cm}{\tt  [inline]}}\label{classGraphMVI_d5b8b05a142fecc8ae10b5b2d39f563a}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{GraphMVI@{GraphMVI}!get_p_t@{get\_\-p\_\-t}}
+\index{get_p_t@{get\_\-p\_\-t}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} GraphMVI::get\_\-p\_\-t (int {\em i}, int {\em j}, {\bf INT} {\em xi}, {\bf INT} {\em xo})}\label{classGraphMVI_a767afbe4ff9fe4286790d7f78d63847}
+
+
+\index{GraphMVI@{GraphMVI}!getStatePr@{getStatePr}}
+\index{getStatePr@{getStatePr}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} GraphMVI::getStatePr ({\bf VideoNode} $\ast$ {\em vn}, {\bf StatePtr} {\em sp})\hspace{0.3cm}{\tt  [inline]}}\label{classGraphMVI_8751683935447989fb988382955dbc02}
+
+
+
+
+Reimplemented from {\bf PottsGraphPPM} \doxyref{}{p.}{classPottsGraphPPM_03ceec5a5ddb5b33d1b1acb2926265b9}.\index{GraphMVI@{GraphMVI}!update_evidence@{update\_\-evidence}}
+\index{update_evidence@{update\_\-evidence}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphMVI::update\_\-evidence (vector$<$ vector$<$ {\bf INT} $>$ $>$ {\em \_\-evidence})\hspace{0.3cm}{\tt  [inline]}}\label{classGraphMVI_316b9b81078bd65bb17c9b779bc3bba3}
+
+
+\index{GraphMVI@{GraphMVI}!map_estimate@{map\_\-estimate}}
+\index{map_estimate@{map\_\-estimate}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ vector$<$ {\bf INT} $>$ $>$ GraphMVI::map\_\-estimate ()}\label{classGraphMVI_d3340d9ddcac2170592fa7d5816f48f8}
+
+
+\index{GraphMVI@{GraphMVI}!mmse_estimate@{mmse\_\-estimate}}
+\index{mmse_estimate@{mmse\_\-estimate}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ vector$<$ {\bf INT} $>$ $>$ GraphMVI::mmse\_\-estimate ()}\label{classGraphMVI_dde7afa5bda9d24e70b45fba142a2c68}
+
+
+\index{GraphMVI@{GraphMVI}!get_p_hat@{get\_\-p\_\-hat}}
+\index{get_p_hat@{get\_\-p\_\-hat}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} GraphMVI::get\_\-p\_\-hat ({\bf VideoNode} $\ast$ {\em vn}, {\bf StatePtr} {\em si}, {\bf StatePtr} {\em so}, {\bf LD} {\em theta}, {\bf LD} {\em dt})}\label{classGraphMVI_f2a1f00572448ffe7568d0c927bfcc51}
+
+
+
+
+Reimplemented from {\bf PottsGraphPPM} \doxyref{}{p.}{classPottsGraphPPM_b735fb1d57301afad4cdc14ffd5a6252}.\index{GraphMVI@{GraphMVI}!initCondP@{initCondP}}
+\index{initCondP@{initCondP}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphMVI::initCondP ({\bf VideoNode} $\ast$ {\em vn}, {\bf LD} {\em theta}, {\bf LD} {\em dt})}\label{classGraphMVI_5137366e48b2928a20236e8851ae5e4b}
+
+
+
+
+Reimplemented from {\bf PottsGraphPPM} \doxyref{}{p.}{classPottsGraphPPM_276673597baefb6b317b96efe23815fa}.\index{GraphMVI@{GraphMVI}!updateTime@{updateTime}}
+\index{updateTime@{updateTime}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} GraphMVI::updateTime ({\bf LD} {\em dt})}\label{classGraphMVI_25b13c96f42a85b5ed3d7e6068e1659c}
+
+
+
+
+Reimplemented from {\bf PottsGraphPPM} \doxyref{}{p.}{classPottsGraphPPM_9cac6ffa0063ec4e5a3102f93bd2da92}.\index{GraphMVI@{GraphMVI}!initAllNodesOrigP@{initAllNodesOrigP}}
+\index{initAllNodesOrigP@{initAllNodesOrigP}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphMVI::initAllNodesOrigP (bool {\em rndm} = {\tt false})}\label{classGraphMVI_1033e03be9c66b7ff356c7bb0e8fe083}
+
+
+
+
+Reimplemented from {\bf PottsGraphPPM} \doxyref{}{p.}{classPottsGraphPPM_db429e7e4eac1a4d69f641403735cb20}.
+
+\subsection{Member Data Documentation}
+\index{GraphMVI@{GraphMVI}!theta_r@{theta\_\-r}}
+\index{theta_r@{theta\_\-r}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphMVI::theta\_\-r}\hspace{0.3cm}{\tt  [private]}}\label{classGraphMVI_72546502639b8985a7eed3326efc51ab}
+
+
+\index{GraphMVI@{GraphMVI}!theta_t@{theta\_\-t}}
+\index{theta_t@{theta\_\-t}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphMVI::theta\_\-t}\hspace{0.3cm}{\tt  [private]}}\label{classGraphMVI_503ebff4b068dab18993f4fa0c6c8c74}
+
+
+\index{GraphMVI@{GraphMVI}!epsilon_r@{epsilon\_\-r}}
+\index{epsilon_r@{epsilon\_\-r}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphMVI::epsilon\_\-r}\hspace{0.3cm}{\tt  [private]}}\label{classGraphMVI_540ee4df899efdef389e444720bfbe42}
+
+
+\index{GraphMVI@{GraphMVI}!epsilon_t@{epsilon\_\-t}}
+\index{epsilon_t@{epsilon\_\-t}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphMVI::epsilon\_\-t}\hspace{0.3cm}{\tt  [private]}}\label{classGraphMVI_48a29ed771ce345f053b901869d30b50}
+
+
+\index{GraphMVI@{GraphMVI}!epsilon_zero@{epsilon\_\-zero}}
+\index{epsilon_zero@{epsilon\_\-zero}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphMVI::epsilon\_\-zero}\hspace{0.3cm}{\tt  [private]}}\label{classGraphMVI_fe25b2ab52847613d5337ebc8732f753}
+
+
+\index{GraphMVI@{GraphMVI}!evidence@{evidence}}
+\index{evidence@{evidence}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$vector$<${\bf INT}$>$ $>$ {\bf GraphMVI::evidence}\hspace{0.3cm}{\tt  [private]}}\label{classGraphMVI_20fd7ea85ce95b60c14f6211faec4b89}
+
+
+\index{GraphMVI@{GraphMVI}!C@{C}}
+\index{C@{C}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf GraphMVI::C}\hspace{0.3cm}{\tt  [private]}}\label{classGraphMVI_3e1fab43a7c8648774b4ea32734e32ec}
+
+
+\index{GraphMVI@{GraphMVI}!N1@{N1}}
+\index{N1@{N1}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf GraphMVI::N1}\hspace{0.3cm}{\tt  [private]}}\label{classGraphMVI_5a96b3447f47f5f9fd3468edc63de8e4}
+
+
+\index{GraphMVI@{GraphMVI}!N2@{N2}}
+\index{N2@{N2}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf GraphMVI::N2}\hspace{0.3cm}{\tt  [private]}}\label{classGraphMVI_55cb4e937c09f5da834a8088dfd93720}
+
+
+\index{GraphMVI@{GraphMVI}!ST@{ST}}
+\index{ST@{ST}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf StatePtr} {\bf GraphMVI::ST}[2]\hspace{0.3cm}{\tt  [private]}}\label{classGraphMVI_b0260ff565bfdbd01f8a689a4554605a}
+
+
+\index{GraphMVI@{GraphMVI}!SC@{SC}}
+\index{SC@{SC}!GraphMVI@{GraphMVI}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf StatePtr} {\bf GraphMVI::SC}\hspace{0.3cm}{\tt  [private]}}\label{classGraphMVI_42de04cbb4ccaf383c3deff1a005d1e9}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf MVI.h}\item 
+src/{\bf MVI.cpp}\end{CompactItemize}

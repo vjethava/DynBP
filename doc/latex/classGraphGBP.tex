@@ -1,0 +1,141 @@
+\section{GraphGBP Class Reference}
+\label{classGraphGBP}\index{GraphGBP@{GraphGBP}}
+{\tt \#include $<$GraphGBP.h$>$}
+
+Inheritance diagram for GraphGBP::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classGraphGBP}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+void {\bf construct\_\-graph} (bool isNodeInitProbRandom, {\bf LD} theta, {\bf LD} {\bf delta\_\-t})
+\begin{CompactList}\small\item\em constructs the potts graph and initializes pHat for each node \item\end{CompactList}\item 
+void {\bf step\_\-init} ()
+\begin{CompactList}\small\item\em initializes all the messages to 1.0 \item\end{CompactList}\item 
+void {\bf step\_\-updateJointB} ()
+\begin{CompactList}\small\item\em updates the joint belief vectors and stores in \doxyref{RegionPPM::bJointRev}{p.}{classRegionPPM_ae56fc025e98f6e03a8714c0c1b7d59b} \item\end{CompactList}\item 
+void {\bf step\_\-updateMpc} ()
+\begin{CompactList}\small\item\em updates all child-$>$parent messages \item\end{CompactList}\item 
+{\bf GraphGBP} ({\bf PottsModel} $\ast$\_\-M, int \_\-rx, int \_\-ry, int \_\-cx, int \_\-cy)
+\begin{CompactList}\small\item\em the constructs that allows construction of \doxyref{PottsModel}{p.}{structPottsModel} based graphs using \doxyref{PottsGraphPPM}{p.}{classPottsGraphPPM} code \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf LD} {\bf lambdaAlphaToParent} ({\bf RegionPPM} $\ast$alpha, {\bf StatePtr} currentState, {\bf StatePtr} nextState)
+\begin{CompactList}\small\item\em returns the prod\_\-\{parent\} parent-$>$ region contribution \{DENOMINATOR\} \item\end{CompactList}\item 
+{\bf LD} {\bf lambdaChildToAlpha} ({\bf RegionPPM} $\ast$alpha, {\bf StatePtr} currentState, {\bf StatePtr} nextState)
+\begin{CompactList}\small\item\em returns the prod\_\-\{child\} child -$>$ region contribution \{NUMERATOR\} \item\end{CompactList}\item 
+{\bf LD} {\bf getMalphaUpdate} ({\bf NodePtr} vn)
+\begin{CompactList}\small\item\em updates the $m_\alpha$ for given region $\alpha$ \item\end{CompactList}\item 
+{\bf LD} {\bf getBeliefUpdate} ({\bf NodePtr} vn, {\bf StatePtr} cs, {\bf StatePtr} ns)
+\begin{CompactList}\small\item\em computes the joint belief for given node $\alpha$ \item\end{CompactList}\item 
+{\bf LD} {\bf getMpcUpdate} ({\bf NodePtr} vp, {\bf NodePtr} vc, {\bf StatePtr} jointSt)
+\begin{CompactList}\small\item\em Computes the parent-$>$child message update. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This class re-implements GBP message passing algorithm as applied to time 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{GraphGBP@{GraphGBP}!GraphGBP@{GraphGBP}}
+\index{GraphGBP@{GraphGBP}!GraphGBP@{GraphGBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphGBP::GraphGBP ({\bf PottsModel} $\ast$ {\em \_\-M}, int {\em \_\-rx}, int {\em \_\-ry}, int {\em \_\-cx}, int {\em \_\-cy})\hspace{0.3cm}{\tt  [inline]}}\label{classGraphGBP_d44f8c0bfa981daa70c62f7e5f5ded91}
+
+
+the constructs that allows construction of \doxyref{PottsModel}{p.}{structPottsModel} based graphs using \doxyref{PottsGraphPPM}{p.}{classPottsGraphPPM} code 
+
+
+
+\subsection{Member Function Documentation}
+\index{GraphGBP@{GraphGBP}!lambdaAlphaToParent@{lambdaAlphaToParent}}
+\index{lambdaAlphaToParent@{lambdaAlphaToParent}!GraphGBP@{GraphGBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} GraphGBP::lambdaAlphaToParent ({\bf RegionPPM} $\ast$ {\em vn}, {\bf StatePtr} {\em cs}, {\bf StatePtr} {\em ns})\hspace{0.3cm}{\tt  [protected]}}\label{classGraphGBP_2629b2c90228b37d4e98b58cfbe87609}
+
+
+returns the prod\_\-\{parent\} parent-$>$ region contribution \{DENOMINATOR\} 
+
+Computes the message contributions from node from its parents \begin{itemize}
+\item vn: node ptr $\alpha$ \item cs: node current state $ \vec{x}_\alpha^t$ \item ns: node next state $ \vec{x}_\alpha^{t+\delta t} $ \begin{Desc}
+\item[Returns:]$\prod_{\{\gamma:\alpha\subset\gamma\} } m_{\alpha\to\gamma}(\vec{x}^{t,\delta t}_\alpha)$ \end{Desc}
+\end{itemize}
+\index{GraphGBP@{GraphGBP}!lambdaChildToAlpha@{lambdaChildToAlpha}}
+\index{lambdaChildToAlpha@{lambdaChildToAlpha}!GraphGBP@{GraphGBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} GraphGBP::lambdaChildToAlpha ({\bf RegionPPM} $\ast$ {\em vn}, {\bf StatePtr} {\em cs}, {\bf StatePtr} {\em nextState})\hspace{0.3cm}{\tt  [protected]}}\label{classGraphGBP_6e801af580679c05387a6bbc6aa376bc}
+
+
+returns the prod\_\-\{child\} child -$>$ region contribution \{NUMERATOR\} 
+
+Computes all children contribution for given node \begin{itemize}
+\item vn: node ptr $\alpha$ \item cs: current node state $ \vec{x}_\alpha^t$ \item ns: next node state $ \vec{x}_\alpha^{t+\delta t} $ \begin{Desc}
+\item[Returns:]$\prod_{\{\beta:\beta\subset\alpha\} } m_{\beta\to\alpha}(\vec{x}^{t,\delta t}_\beta)$ \end{Desc}
+\end{itemize}
+\index{GraphGBP@{GraphGBP}!getMalphaUpdate@{getMalphaUpdate}}
+\index{getMalphaUpdate@{getMalphaUpdate}!GraphGBP@{GraphGBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} GraphGBP::getMalphaUpdate ({\bf NodePtr} {\em vn})\hspace{0.3cm}{\tt  [protected]}}\label{classGraphGBP_c40e28b82a06839873e5839466adfc5f}
+
+
+updates the $m_\alpha$ for given region $\alpha$ 
+
+NOTE: uses bJointRev as update scheme $b_\alpha (x^{t+\delta t}, x^{t})$ \begin{itemize}
+\item vn the region $\alpha$ to be updated \end{itemize}
+\index{GraphGBP@{GraphGBP}!getBeliefUpdate@{getBeliefUpdate}}
+\index{getBeliefUpdate@{getBeliefUpdate}!GraphGBP@{GraphGBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} GraphGBP::getBeliefUpdate ({\bf NodePtr} {\em vn}, {\bf StatePtr} {\em cs}, {\bf StatePtr} {\em ns})\hspace{0.3cm}{\tt  [protected]}}\label{classGraphGBP_a0b147e78db8df90768e13e35f501b40}
+
+
+computes the joint belief for given node $\alpha$ 
+
+Computes the belief for region $\alpha$ \begin{itemize}
+\item vn region $\alpha$ \item cs current state $\vec{x}_\alpha^{t}$ \item ns next state $\vec{x}_\alpha^{t}$ \begin{Desc}
+\item[Returns:]$b_\alpha(x_\alpha^t)\times\frac{\lambda^{t+\delta t | t}(x_\alpha^{t,\delta t})}{e\times m_\alpha^{(i)} }\times \Big\{\frac{\lambda_{child\to\alpha}(x_\alpha^{t,\delta t})}{\lambda_{\alpha\to parent}(x_\alpha^{t,\delta t})}\Big\}^{1/c_\alpha}$ \end{Desc}
+\end{itemize}
+\index{GraphGBP@{GraphGBP}!getMpcUpdate@{getMpcUpdate}}
+\index{getMpcUpdate@{getMpcUpdate}!GraphGBP@{GraphGBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} GraphGBP::getMpcUpdate ({\bf NodePtr} {\em vp}, {\bf NodePtr} {\em vc}, {\bf StatePtr} {\em jointSt})\hspace{0.3cm}{\tt  [protected]}}\label{classGraphGBP_11b6c7b6e6b0110642d5c9ef9023867c}
+
+
+Computes the parent-$>$child message update. 
+
+NOTE: Assumes \doxyref{RegionPPM::bJointRev}{p.}{classRegionPPM_ae56fc025e98f6e03a8714c0c1b7d59b} as $b_\alpha (x^{t+\delta t}, x^t)$ \begin{itemize}
+\item vp parent node $\alpha$ \item vc child node $\beta$ \item jointSt child joint state $x_\beta^{t,\delta t}$ \begin{Desc}
+\item[Returns:]\[ m_{\beta\to\alpha}^{(i+1)}(x_\beta^{t,\delta t}) = m_{\beta\to\alpha}^{(i)}(x_\beta^{t,\delta t})\times \Big\{\frac{b_\beta^{(i)}(x_\beta^{t, \delta t})}{\sum_{x_\alpha\backslash\beta^{t,\delta t}} b_\alpha^{(i)}(x_\alpha^{t, \delta t})}\Big\}^{\frac{c_\alpha c_\beta}{c_\alpha + c_\beta}}\] \end{Desc}
+\end{itemize}
+\index{GraphGBP@{GraphGBP}!construct_graph@{construct\_\-graph}}
+\index{construct_graph@{construct\_\-graph}!GraphGBP@{GraphGBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphGBP::construct\_\-graph (bool {\em isNodeInitProbRandom}, {\bf LD} {\em theta}, {\bf LD} {\em delta\_\-t})}\label{classGraphGBP_ca847b7010619629dcebe4123ab2be94}
+
+
+constructs the potts graph and initializes pHat for each node 
+
+initializes the potts graph structure (adds nodes/edges) and updates the pHat vector for each node \index{GraphGBP@{GraphGBP}!step_init@{step\_\-init}}
+\index{step_init@{step\_\-init}!GraphGBP@{GraphGBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphGBP::step\_\-init ()}\label{classGraphGBP_a219d020431022451f3b18ee434892a9}
+
+
+initializes all the messages to 1.0 
+
+\index{GraphGBP@{GraphGBP}!step_updateJointB@{step\_\-updateJointB}}
+\index{step_updateJointB@{step\_\-updateJointB}!GraphGBP@{GraphGBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphGBP::step\_\-updateJointB ()}\label{classGraphGBP_098b976e1c573a65b1e45a8ec19a0306}
+
+
+updates the joint belief vectors and stores in \doxyref{RegionPPM::bJointRev}{p.}{classRegionPPM_ae56fc025e98f6e03a8714c0c1b7d59b} 
+
+\index{GraphGBP@{GraphGBP}!step_updateMpc@{step\_\-updateMpc}}
+\index{step_updateMpc@{step\_\-updateMpc}!GraphGBP@{GraphGBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphGBP::step\_\-updateMpc ()}\label{classGraphGBP_7d56c8d1681e1c718d37101a04ff8a68}
+
+
+updates all child-$>$parent messages 
+
+NOTE: Assumes \doxyref{RegionPPM::bJointRev}{p.}{classRegionPPM_ae56fc025e98f6e03a8714c0c1b7d59b} correctly initialized 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf GraphGBP.h}\item 
+src/{\bf GraphGBP.cpp}\end{CompactItemize}

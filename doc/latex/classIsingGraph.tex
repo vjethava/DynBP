@@ -1,0 +1,171 @@
+\section{IsingGraph Class Reference}
+\label{classIsingGraph}\index{IsingGraph@{IsingGraph}}
+{\tt \#include $<$ising.h$>$}
+
+Inheritance diagram for IsingGraph::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classIsingGraph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf IsingGraph} (int {\bf N1}, int {\bf N2}, int seed=0, {\bf LD} {\bf H\_\-sigma}=1.0, {\bf LD} {\bf J\_\-sigma}=1.0)
+\item 
+bool {\bf isValid} (int r, int c)
+\item 
+void {\bf addSpinNodes} ()
+\item 
+void {\bf addPairs} ()
+\item 
+pair$<$ int, int $>$ {\bf getGraphSize} () const
+\item 
+void {\bf addEdge} ({\bf NodePtr} nps, {\bf NodePtr} npt)
+\item 
+{\bf LD} {\bf getNodeEntropy} ({\bf NodePtr} np)
+\item 
+{\bf LD} {\bf getNodeEnthalpy} ({\bf NodePtr} np)
+\item 
+{\bf LD} {\bf getF} ()
+\item 
+void {\bf bp\_\-synch} (bool ch)
+\item 
+{\bf $\sim$IsingGraph} ()
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf N1}
+\item 
+int {\bf N2}
+\item 
+map$<$ string, {\bf LD} $>$ {\bf hMap}
+\item 
+map$<$ string, {\bf LD} $>$ {\bf jMap}
+\item 
+map$<$ string, {\bf NodePtr} $>$ {\bf npMap}
+\item 
+gsl\_\-rng $\ast$ {\bf myRNG}
+\item 
+{\bf LD} {\bf H\_\-sigma}
+\item 
+{\bf LD} {\bf J\_\-sigma}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Graph having the linear Ising Model Structure ( nearest neighbour interactions only ) 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{IsingGraph@{IsingGraph}!IsingGraph@{IsingGraph}}
+\index{IsingGraph@{IsingGraph}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IsingGraph::IsingGraph (int {\em N1}, int {\em N2}, int {\em seed} = {\tt 0}, {\bf LD} {\em H\_\-sigma} = {\tt 1.0}, {\bf LD} {\em J\_\-sigma} = {\tt 1.0})}\label{classIsingGraph_c244f2e67180a46a5788da77c9f9a286}
+
+
+Factor graph having gaussian i.i.d. weights with nearest neighbour interactions \index{IsingGraph@{IsingGraph}!~IsingGraph@{$\sim$IsingGraph}}
+\index{~IsingGraph@{$\sim$IsingGraph}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IsingGraph::$\sim$IsingGraph ()\hspace{0.3cm}{\tt  [inline]}}\label{classIsingGraph_e7836a9854550f380bd0c5e3a994553f}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{IsingGraph@{IsingGraph}!isValid@{isValid}}
+\index{isValid@{isValid}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool IsingGraph::isValid (int {\em r}, int {\em c})}\label{classIsingGraph_65ba743b999525c4f612166d80eaced3}
+
+
+\index{IsingGraph@{IsingGraph}!addSpinNodes@{addSpinNodes}}
+\index{addSpinNodes@{addSpinNodes}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void IsingGraph::addSpinNodes ()}\label{classIsingGraph_93e844c83bf81a6418ef742569d9f11c}
+
+
+Adds the spin nodes to the required graph \index{IsingGraph@{IsingGraph}!addPairs@{addPairs}}
+\index{addPairs@{addPairs}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void IsingGraph::addPairs ()}\label{classIsingGraph_46547bdf2f5234778468ac88a7443580}
+
+
+Adds the nearest neighbour interactions \index{IsingGraph@{IsingGraph}!getGraphSize@{getGraphSize}}
+\index{getGraphSize@{getGraphSize}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pair$<$int, int$>$ IsingGraph::getGraphSize () const\hspace{0.3cm}{\tt  [inline]}}\label{classIsingGraph_40b3174a69e0b1172cd9850e9f8093a6}
+
+
+\index{IsingGraph@{IsingGraph}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void IsingGraph::addEdge ({\bf NodePtr} {\em nps}, {\bf NodePtr} {\em npt})\hspace{0.3cm}{\tt  [inline]}}\label{classIsingGraph_fc4326bf52c5a53374659f85ba7d6f91}
+
+
+\index{IsingGraph@{IsingGraph}!getNodeEntropy@{getNodeEntropy}}
+\index{getNodeEntropy@{getNodeEntropy}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} IsingGraph::getNodeEntropy ({\bf NodePtr} {\em np})}\label{classIsingGraph_b85002a49e47589c9ac0d2a73efbee47}
+
+
+\index{IsingGraph@{IsingGraph}!getNodeEnthalpy@{getNodeEnthalpy}}
+\index{getNodeEnthalpy@{getNodeEnthalpy}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} IsingGraph::getNodeEnthalpy ({\bf NodePtr} {\em np})}\label{classIsingGraph_dc7e94d530a53e05a8ca653ee0bfde0d}
+
+
+\index{IsingGraph@{IsingGraph}!getF@{getF}}
+\index{getF@{getF}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} IsingGraph::getF ()}\label{classIsingGraph_435ad8bc1e11c8973b714bd3f958c54d}
+
+
+\index{IsingGraph@{IsingGraph}!bp_synch@{bp\_\-synch}}
+\index{bp_synch@{bp\_\-synch}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void IsingGraph::bp\_\-synch (bool {\em ch})}\label{classIsingGraph_599d326ae60126c24a92476b4c0affe4}
+
+
+
+
+Reimplemented from {\bf FactorGraph} \doxyref{}{p.}{classFactorGraph_9cfafa8bd3ae2047576d26fb0e29c082}.
+
+\subsection{Member Data Documentation}
+\index{IsingGraph@{IsingGraph}!N1@{N1}}
+\index{N1@{N1}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf IsingGraph::N1}\hspace{0.3cm}{\tt  [private]}}\label{classIsingGraph_609061217401524bf61e717e0ea0eebf}
+
+
+\index{IsingGraph@{IsingGraph}!N2@{N2}}
+\index{N2@{N2}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf IsingGraph::N2}\hspace{0.3cm}{\tt  [private]}}\label{classIsingGraph_7cca5baaa9d679d9406295d2f4f80cf2}
+
+
+\index{IsingGraph@{IsingGraph}!hMap@{hMap}}
+\index{hMap@{hMap}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<$string, {\bf LD}$>$ {\bf IsingGraph::hMap}\hspace{0.3cm}{\tt  [private]}}\label{classIsingGraph_fb247b0726431543ce64481469f4bfab}
+
+
+\index{IsingGraph@{IsingGraph}!jMap@{jMap}}
+\index{jMap@{jMap}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<$string, {\bf LD}$>$ {\bf IsingGraph::jMap}\hspace{0.3cm}{\tt  [private]}}\label{classIsingGraph_dd1ed6617104038eda33077ff80d0303}
+
+
+\index{IsingGraph@{IsingGraph}!npMap@{npMap}}
+\index{npMap@{npMap}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<$string, {\bf NodePtr}$>$ {\bf IsingGraph::npMap}\hspace{0.3cm}{\tt  [private]}}\label{classIsingGraph_86dbd5914541de872bdf2a3330b3a7b9}
+
+
+\index{IsingGraph@{IsingGraph}!myRNG@{myRNG}}
+\index{myRNG@{myRNG}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}gsl\_\-rng$\ast$ {\bf IsingGraph::myRNG}\hspace{0.3cm}{\tt  [private]}}\label{classIsingGraph_235f82cd078f80ce3238bccf9b4cec75}
+
+
+\index{IsingGraph@{IsingGraph}!H_sigma@{H\_\-sigma}}
+\index{H_sigma@{H\_\-sigma}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf IsingGraph::H\_\-sigma}\hspace{0.3cm}{\tt  [private]}}\label{classIsingGraph_c925dc4b7f200714708c0efd5d45c874}
+
+
+\index{IsingGraph@{IsingGraph}!J_sigma@{J\_\-sigma}}
+\index{J_sigma@{J\_\-sigma}!IsingGraph@{IsingGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf IsingGraph::J\_\-sigma}\hspace{0.3cm}{\tt  [private]}}\label{classIsingGraph_a679ca3a5702d36970ae0f18785697e3}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf ising.h}\item 
+src/{\bf ising.cpp}\end{CompactItemize}

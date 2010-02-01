@@ -1,0 +1,27 @@
+\form#0:$b_\alpha^{t, t+\delta t}$
+\form#1:$t+\delta , t$
+\form#2:$t+\delta t, t$
+\form#3:$\prod_{\{\gamma:\alpha\subset\gamma\}} m_{\alpha\to\gamma}(\vec{x}^{t,\delta t}_\alpha)$
+\form#4:$\prod_\{gamma:\alpha\subset\gamma\} m_{\alpha\to\gamma}(\vec{x}^{t,\delta t}_\alpha)$
+\form#5:$\prod_{\{gamma:\alpha\subset\gamma\} } m_{\alpha\to\gamma}(\vec{x}^{t,\delta t}_\alpha)$
+\form#6:$\prod_{\{\gamma:\alpha\subset\gamma\} } m_{\alpha\to\gamma}(\vec{x}^{t,\delta t}_\alpha)$
+\form#7:$\alpha$
+\form#8:$ \vec{x}_\alpha^t$
+\form#9:$ \vec{x}_\alpha^{t+\delta t} $
+\form#10:$\prod_{\{\beta:\beta\subset\alpha\} } m_{\beta\to\alpha}(\vec{x}^{t,\delta t}_\beta)$
+\form#11:$m_\alpha$
+\form#12:$\vec{x}_\alpha^{t}$
+\form#13:$m_alpha$
+\form#14:$b_\alpha(x_\alpha^t)\frac{\lambda_{child\to\alpha}}{\lambda_{\alpha\to parent}}$
+\form#15:$b_\alpha(x_\alpha^t)\times\frac{\lambda^{t+\delta t | t}}{e\times m_\alpha^{(i)} }\frac{\lambda_{child\to\alpha}}{\lambda_{\alpha\to parent}}$
+\form#16:$b_\alpha(x_\alpha^t)\times\frac{\lambda^{t+\delta t | t}}{e\times m_\alpha^{(i)} }\Big\{\frac{\lambda_{child\to\alpha}}{\lambda_{\alpha\to parent}}\Big\}$
+\form#17:$b_\alpha(x_\alpha^t)\times\frac{\lambda^{t+\delta t | t}}{e\times m_\alpha^{(i)} }\Big\{\frac{\lambda_{child\to\alpha}}{\lambda_{\alpha\to parent}}\Big\}^{1/c_\alpha}$
+\form#18:$b_\alpha(x_\alpha^t)\times\frac{\lambda^{t+\delta t | t}(x_\alpha^{t,\delta t})}{e\times m_\alpha^{(i)} }\times \Big\{\frac{\lambda_{child\to\alpha}(x_\alpha^{t,\delta t})}{\lambda_{\alpha\to parent}(x_\alpha^{t,\delta t})}\Big\}^{1/c_\alpha}$
+\form#19:$\beta$
+\form#20:$x_\beta^{t,\delta t}$
+\form#21:\[ m_{\beta\to\alpha}^{(i+1)}(x_\beta^{t,\delta t}) = m_{\beta\to\alpha}^{(i)}(x_\beta^{t,\delta t})\times \frac{b_\beta^(i)(x_\beta^{t, delta t})}{\sum_{x_\alpha\backslash\beta^{t,\delta t}} b_\alpha^(i)(x_\alpha^{t, delta t})}\]
+\form#22:$b_\alpha (x^{t+\delta t}, x^{t})$
+\form#23:\[ m_{\beta\to\alpha}^{(i+1)}(x_\beta^{t,\delta t}) = m_{\beta\to\alpha}^{(i)}(x_\beta^{t,\delta t})\times \frac{b_\beta^(i)(x_\beta^{t, \delta t})}{\sum_{x_\alpha\backslash\beta^{t,\delta t}} b_\alpha^(i)(x_\alpha^{t, \delta t})}\]
+\form#24:\[ m_{\beta\to\alpha}^{(i+1)}(x_\beta^{t,\delta t}) = m_{\beta\to\alpha}^{(i)}(x_\beta^{t,\delta t})\times \frac{b_\beta^{(i)}(x_\beta^{t, \delta t})}{\sum_{x_\alpha\backslash\beta^{t,\delta t}} b_\alpha^{(i)}(x_\alpha^{t, \delta t})}\]
+\form#25:\[ m_{\beta\to\alpha}^{(i+1)}(x_\beta^{t,\delta t}) = m_{\beta\to\alpha}^{(i)}(x_\beta^{t,\delta t})\times \Big\{\frac{b_\beta^{(i)}(x_\beta^{t, \delta t})}{\sum_{x_\alpha\backslash\beta^{t,\delta t}} b_\alpha^{(i)}(x_\alpha^{t, \delta t})}\Big\}^{\frac{c_\alpha c_\beta}{c_\alpha + c_\beta}}\]
+\form#26:$b_\alpha (x^{t+\delta t}, x^t)$

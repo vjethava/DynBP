@@ -1,0 +1,73 @@
+\section{RegionGraph Class Reference}
+\label{classRegionGraph}\index{RegionGraph@{RegionGraph}}
+{\tt \#include $<$mygraph.h$>$}
+
+Inheritance diagram for RegionGraph::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRegionGraph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf RegionGraph} ({\bf FactorGraphPtr} \_\-fg)
+\item 
+{\bf FactorGraphPtr} {\bf getFactorGraphPtr} () const
+\item 
+{\bf StatePtr} {\bf getMargState} ({\bf StatePtr} sptr, {\bf RegionPtr} rgn, {\bf RegionPtr} chld)
+\item 
+{\bf $\sim$RegionGraph} ()
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+{\bf FactorGraphPtr} {\bf graphPtr}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Graph structure for region graph implements the parent-child algorithm 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RegionGraph@{RegionGraph}!RegionGraph@{RegionGraph}}
+\index{RegionGraph@{RegionGraph}!RegionGraph@{RegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}RegionGraph::RegionGraph ({\bf FactorGraphPtr} {\em \_\-fg})\hspace{0.3cm}{\tt  [inline]}}\label{classRegionGraph_82a3769df7050155b325787659d41336}
+
+
+\index{RegionGraph@{RegionGraph}!~RegionGraph@{$\sim$RegionGraph}}
+\index{~RegionGraph@{$\sim$RegionGraph}!RegionGraph@{RegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}RegionGraph::$\sim$RegionGraph ()\hspace{0.3cm}{\tt  [inline]}}\label{classRegionGraph_11bbe0c593aed3636f0a0aa57fdbc15e}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{RegionGraph@{RegionGraph}!getFactorGraphPtr@{getFactorGraphPtr}}
+\index{getFactorGraphPtr@{getFactorGraphPtr}!RegionGraph@{RegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf FactorGraphPtr} RegionGraph::getFactorGraphPtr () const\hspace{0.3cm}{\tt  [inline]}}\label{classRegionGraph_e432e4c0e4c2372560d913fd6257cd2a}
+
+
+\index{RegionGraph@{RegionGraph}!getMargState@{getMargState}}
+\index{getMargState@{getMargState}!RegionGraph@{RegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf StatePtr} RegionGraph::getMargState ({\bf StatePtr} {\em sptr}, {\bf RegionPtr} {\em rgn}, {\bf RegionPtr} {\em chld})}\label{classRegionGraph_6675c0c8ed06130a2b192466edfa271e}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{RegionGraph@{RegionGraph}!graphPtr@{graphPtr}}
+\index{graphPtr@{graphPtr}!RegionGraph@{RegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf FactorGraphPtr} {\bf RegionGraph::graphPtr}\hspace{0.3cm}{\tt  [private]}}\label{classRegionGraph_7dad8406a69860b74ab83e3153cf57ac}
+
+
+
+
+Reimplemented in {\bf IsingRegionGraph} \doxyref{}{p.}{classIsingRegionGraph_66bffb3f21f7597e2dfa5027eae7d7e8}.
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf mygraph.h}\item 
+src/{\bf mygraph.cpp}\end{CompactItemize}

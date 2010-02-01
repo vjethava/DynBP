@@ -1,0 +1,278 @@
+\section{IsingRegionGraph Class Reference}
+\label{classIsingRegionGraph}\index{IsingRegionGraph@{IsingRegionGraph}}
+{\tt \#include $<$ising.h$>$}
+
+Inheritance diagram for IsingRegionGraph::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classIsingRegionGraph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf IsingRegionGraph} ({\bf IsingGraphPtr} graph, int \_\-rx, int \_\-ry, int \_\-cx, int \_\-cy, {\bf LD} {\bf theta}={\bf SPIN\_\-FLIP\_\-RATE}, {\bf LD} {\bf delta\_\-t}={\bf DELTA\_\-T})
+\item 
+bool {\bf isValid} (int r, int c)
+\item 
+{\bf Cluster} {\bf genMaximalRegion} (int x, int y)
+\item 
+void {\bf genSubRegions} ()
+\item 
+void {\bf initEdgeMsgs} (pair$<$ {\bf EdgePtr}, {\bf EdgePtr} $>$ ep)
+\begin{CompactList}\small\item\em initialize the messages as given \item\end{CompactList}\item 
+{\bf LD} {\bf getPrntM} (const {\bf RegionPtr} \&rp, const {\bf StatePtr} \&sp)
+\item 
+{\bf LD} {\bf getChldM} (const {\bf RegionPtr} \&rp, const {\bf StatePtr} \&sp0, const {\bf StatePtr} \&spT)
+\item 
+{\bf LD} {\bf getPrntM} (const {\bf RegionPtr} \&rp, const {\bf StatePtr} \&sp0, const {\bf StatePtr} \&spT)
+\item 
+{\bf ConditionalBeliefPtr} {\bf getCondBlfForRegn} ({\bf Region} $\ast$np)
+\begin{CompactList}\small\item\em this gives the conditional P(x\_\-0 $|$ x\_\-dt) for the region \item\end{CompactList}\item 
+void {\bf initBeliefs} ({\bf RegionPtr} \&rp)
+\item 
+void {\bf updateZ} ({\bf RegionPtr} \&rp)
+\item 
+{\bf LD} {\bf updateB\_\-t\_\-0} ({\bf RegionPtr} \&rp)
+\begin{CompactList}\small\item\em returns the maximum change relative \item\end{CompactList}\item 
+{\bf LD} {\bf updateB\_\-t} ({\bf RegionPtr} \&rp)
+\item 
+{\bf LD} {\bf getMsgCtoP} ({\bf EdgePtr} e, {\bf StatePtr} s0, {\bf StatePtr} sT)
+\item 
+bool {\bf bp\_\-ppm} ({\bf LD} \_\-th={\bf SPIN\_\-FLIP\_\-RATE}, {\bf LD} \_\-delta\_\-t={\bf DELTA\_\-T})
+\item 
+pair$<$ {\bf LD}, {\bf LD} $>$ {\bf update\_\-edges} ({\bf LD} cFactor=1.0)
+\item 
+{\bf LD} {\bf getMargPr} (const {\bf RegionPtr} \&rp, string var)
+\item 
+{\bf LD} {\bf getF} ()
+\item 
+bool {\bf renormalizeMessages} (pair$<$ {\bf LD}, {\bf LD} $>$ maxMinMsgPair, {\bf LD} lmt=1.0)
+\item 
+bool {\bf ppm\_\-iter} ({\bf LD} \_\-th, {\bf LD} \_\-delta\_\-t, {\bf LD} $\ast$minMsg, {\bf LD} $\ast$maxMsg, {\bf LD} $\ast$maxDev, {\bf LD} $\ast$avgDev, map$<$ string, vector$<$ {\bf LD} $>$ $>$ $\ast$nextBlfMpPtr=0, {\bf LD} lmt=1.0)
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+{\bf IsingGraphPtr} {\bf graphPtr}
+\begin{CompactList}\small\item\em original ising graph \item\end{CompactList}\item 
+int {\bf rx}
+\begin{CompactList}\small\item\em biggest region width \item\end{CompactList}\item 
+int {\bf ry}
+\begin{CompactList}\small\item\em biggest region size \item\end{CompactList}\item 
+int {\bf cx}
+\begin{CompactList}\small\item\em how much x-overlap between current and next region \item\end{CompactList}\item 
+int {\bf cy}
+\begin{CompactList}\small\item\em how much y-overlap between current and next region \item\end{CompactList}\item 
+int {\bf N1}
+\begin{CompactList}\small\item\em how many rows \item\end{CompactList}\item 
+int {\bf N2}
+\begin{CompactList}\small\item\em how many columns \item\end{CompactList}\item 
+map$<$ {\bf Cluster}, int, {\bf ClusterCmp} $>$ {\bf clusters}
+\begin{CompactList}\small\item\em the clustering given by genMaximalRegions along with counting numbers \item\end{CompactList}\item 
+{\bf LD} {\bf theta}
+\begin{CompactList}\small\item\em spin flip rate \item\end{CompactList}\item 
+{\bf LD} {\bf delta\_\-t}
+\begin{CompactList}\small\item\em the time of simulation \item\end{CompactList}\item 
+int {\bf iterNum}
+\begin{CompactList}\small\item\em iteration count \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{IsingRegionGraph@{IsingRegionGraph}!IsingRegionGraph@{IsingRegionGraph}}
+\index{IsingRegionGraph@{IsingRegionGraph}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IsingRegionGraph::IsingRegionGraph ({\bf IsingGraphPtr} {\em graph}, int {\em \_\-rx}, int {\em \_\-ry}, int {\em \_\-cx}, int {\em \_\-cy}, {\bf LD} {\em \_\-theta} = {\tt {\bf SPIN\_\-FLIP\_\-RATE}}, {\bf LD} {\em \_\-delta\_\-t} = {\tt {\bf DELTA\_\-T}})}\label{classIsingRegionGraph_c76abee7ef1427e1cfb4c0180087a9eb}
+
+
+\doxyref{Region}{p.}{classRegion} graph based on the underlying ising graph 
+
+\subsection{Member Function Documentation}
+\index{IsingRegionGraph@{IsingRegionGraph}!isValid@{isValid}}
+\index{isValid@{isValid}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool IsingRegionGraph::isValid (int {\em r}, int {\em c})\hspace{0.3cm}{\tt  [inline]}}\label{classIsingRegionGraph_171908138a5f81b830d576721dc6b03a}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!genMaximalRegion@{genMaximalRegion}}
+\index{genMaximalRegion@{genMaximalRegion}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Cluster} IsingRegionGraph::genMaximalRegion (int {\em x}, int {\em y})}\label{classIsingRegionGraph_6f60c52fa606b8b36236c91c2b66e36a}
+
+
+Generate the maximal regions \index{IsingRegionGraph@{IsingRegionGraph}!genSubRegions@{genSubRegions}}
+\index{genSubRegions@{genSubRegions}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void IsingRegionGraph::genSubRegions ()}\label{classIsingRegionGraph_233891cd079d1535ca9635f04f52b62b}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!initEdgeMsgs@{initEdgeMsgs}}
+\index{initEdgeMsgs@{initEdgeMsgs}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void IsingRegionGraph::initEdgeMsgs (pair$<$ {\bf EdgePtr}, {\bf EdgePtr} $>$ {\em ep})}\label{classIsingRegionGraph_e4996023cc225d3ae71afbff4ef4da6b}
+
+
+initialize the messages as given 
+
+\index{IsingRegionGraph@{IsingRegionGraph}!getPrntM@{getPrntM}}
+\index{getPrntM@{getPrntM}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} IsingRegionGraph::getPrntM (const {\bf RegionPtr} \& {\em rp}, const {\bf StatePtr} \& {\em sp})}\label{classIsingRegionGraph_fa42d579cb9caad880c225187c1e2ab8}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!getChldM@{getChldM}}
+\index{getChldM@{getChldM}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} IsingRegionGraph::getChldM (const {\bf RegionPtr} \& {\em rp}, const {\bf StatePtr} \& {\em sp0}, const {\bf StatePtr} \& {\em spT})}\label{classIsingRegionGraph_92d4116cbbe3dedd600d0913dd46c646}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!getPrntM@{getPrntM}}
+\index{getPrntM@{getPrntM}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} IsingRegionGraph::getPrntM (const {\bf RegionPtr} \& {\em rp}, const {\bf StatePtr} \& {\em sp0}, const {\bf StatePtr} \& {\em spT})}\label{classIsingRegionGraph_1ba8e199f9eaaf291a5ec5e3972ec2fb}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!getCondBlfForRegn@{getCondBlfForRegn}}
+\index{getCondBlfForRegn@{getCondBlfForRegn}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ConditionalBeliefPtr} IsingRegionGraph::getCondBlfForRegn ({\bf Region} $\ast$ {\em np})}\label{classIsingRegionGraph_bcd3adcf36b489e20cba3c52806bd84b}
+
+
+this gives the conditional P(x\_\-0 $|$ x\_\-dt) for the region 
+
+\index{IsingRegionGraph@{IsingRegionGraph}!initBeliefs@{initBeliefs}}
+\index{initBeliefs@{initBeliefs}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void IsingRegionGraph::initBeliefs ({\bf RegionPtr} \& {\em rp})}\label{classIsingRegionGraph_04dc9a6b8f484c0c66a085b3bcc482c0}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!updateZ@{updateZ}}
+\index{updateZ@{updateZ}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void IsingRegionGraph::updateZ ({\bf RegionPtr} \& {\em rp})}\label{classIsingRegionGraph_367a0175852f4ba650080455a2a8decd}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!updateB_t_0@{updateB\_\-t\_\-0}}
+\index{updateB_t_0@{updateB\_\-t\_\-0}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} IsingRegionGraph::updateB\_\-t\_\-0 ({\bf RegionPtr} \& {\em rp})}\label{classIsingRegionGraph_81248762014c897d84f8664d40324a07}
+
+
+returns the maximum change relative 
+
+\index{IsingRegionGraph@{IsingRegionGraph}!updateB_t@{updateB\_\-t}}
+\index{updateB_t@{updateB\_\-t}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} IsingRegionGraph::updateB\_\-t ({\bf RegionPtr} \& {\em rp})\hspace{0.3cm}{\tt  [inline]}}\label{classIsingRegionGraph_8587913d2830f3a3bf07f4577fd06be0}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!getMsgCtoP@{getMsgCtoP}}
+\index{getMsgCtoP@{getMsgCtoP}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} IsingRegionGraph::getMsgCtoP ({\bf EdgePtr} {\em e}, {\bf StatePtr} {\em s0}, {\bf StatePtr} {\em sT})}\label{classIsingRegionGraph_28d286abd1085a1c815e9f6e43277a0b}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!bp_ppm@{bp\_\-ppm}}
+\index{bp_ppm@{bp\_\-ppm}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool IsingRegionGraph::bp\_\-ppm ({\bf LD} {\em \_\-th} = {\tt {\bf SPIN\_\-FLIP\_\-RATE}}, {\bf LD} {\em \_\-delta\_\-t} = {\tt {\bf DELTA\_\-T}})}\label{classIsingRegionGraph_0d6c04b81a9026af9aa8aba9ba38e43b}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!update_edges@{update\_\-edges}}
+\index{update_edges@{update\_\-edges}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pair$<$ {\bf LD}, {\bf LD} $>$ IsingRegionGraph::update\_\-edges ({\bf LD} {\em cFactor} = {\tt 1.0})}\label{classIsingRegionGraph_d085863bdad4c66f8abb20ba0e52be58}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!getMargPr@{getMargPr}}
+\index{getMargPr@{getMargPr}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} IsingRegionGraph::getMargPr (const {\bf RegionPtr} \& {\em rp}, string {\em var})}\label{classIsingRegionGraph_e6846f3dd2551218ad41149be6672e43}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!getF@{getF}}
+\index{getF@{getF}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} IsingRegionGraph::getF ()}\label{classIsingRegionGraph_7dc186f4bd321af087fb6b99b3e80b59}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!renormalizeMessages@{renormalizeMessages}}
+\index{renormalizeMessages@{renormalizeMessages}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool IsingRegionGraph::renormalizeMessages (pair$<$ {\bf LD}, {\bf LD} $>$ {\em maxMinMsgPair}, {\bf LD} {\em lmt} = {\tt 1.0})}\label{classIsingRegionGraph_95e68069fee6452b609dd2797853e0df}
+
+
+\index{IsingRegionGraph@{IsingRegionGraph}!ppm_iter@{ppm\_\-iter}}
+\index{ppm_iter@{ppm\_\-iter}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool IsingRegionGraph::ppm\_\-iter ({\bf LD} {\em \_\-th}, {\bf LD} {\em \_\-delta\_\-t}, {\bf LD} $\ast$ {\em minMsg}, {\bf LD} $\ast$ {\em maxMsg}, {\bf LD} $\ast$ {\em maxDev}, {\bf LD} $\ast$ {\em avgDev}, map$<$ string, vector$<$ {\bf LD} $>$ $>$ $\ast$ {\em nextBlfMpPtr} = {\tt 0}, {\bf LD} {\em lmt} = {\tt 1.0})}\label{classIsingRegionGraph_cb517e32f07bbf17ff637df24eaab54b}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{IsingRegionGraph@{IsingRegionGraph}!graphPtr@{graphPtr}}
+\index{graphPtr@{graphPtr}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf IsingGraphPtr} {\bf IsingRegionGraph::graphPtr}\hspace{0.3cm}{\tt  [private]}}\label{classIsingRegionGraph_66bffb3f21f7597e2dfa5027eae7d7e8}
+
+
+original ising graph 
+
+
+
+Reimplemented from {\bf RegionGraph} \doxyref{}{p.}{classRegionGraph_7dad8406a69860b74ab83e3153cf57ac}.\index{IsingRegionGraph@{IsingRegionGraph}!rx@{rx}}
+\index{rx@{rx}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf IsingRegionGraph::rx}\hspace{0.3cm}{\tt  [private]}}\label{classIsingRegionGraph_966c1b2fa298435ffb293650e899f6d7}
+
+
+biggest region width 
+
+\index{IsingRegionGraph@{IsingRegionGraph}!ry@{ry}}
+\index{ry@{ry}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf IsingRegionGraph::ry}\hspace{0.3cm}{\tt  [private]}}\label{classIsingRegionGraph_350ad0f15dbbbb4246fdfb0f43f3b397}
+
+
+biggest region size 
+
+\index{IsingRegionGraph@{IsingRegionGraph}!cx@{cx}}
+\index{cx@{cx}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf IsingRegionGraph::cx}\hspace{0.3cm}{\tt  [private]}}\label{classIsingRegionGraph_8ca48f88be4e6654875574fd08d1fb26}
+
+
+how much x-overlap between current and next region 
+
+\index{IsingRegionGraph@{IsingRegionGraph}!cy@{cy}}
+\index{cy@{cy}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf IsingRegionGraph::cy}\hspace{0.3cm}{\tt  [private]}}\label{classIsingRegionGraph_34b3917e86813a7677ed3d20fd99bd24}
+
+
+how much y-overlap between current and next region 
+
+\index{IsingRegionGraph@{IsingRegionGraph}!N1@{N1}}
+\index{N1@{N1}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf IsingRegionGraph::N1}\hspace{0.3cm}{\tt  [private]}}\label{classIsingRegionGraph_1a0d0c44550a4ec10c4b6b6a343ee96c}
+
+
+how many rows 
+
+\index{IsingRegionGraph@{IsingRegionGraph}!N2@{N2}}
+\index{N2@{N2}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf IsingRegionGraph::N2}\hspace{0.3cm}{\tt  [private]}}\label{classIsingRegionGraph_3c584fb5f3686133a777a864bdfcbf5c}
+
+
+how many columns 
+
+\index{IsingRegionGraph@{IsingRegionGraph}!clusters@{clusters}}
+\index{clusters@{clusters}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<${\bf Cluster}, int, {\bf ClusterCmp}$>$ {\bf IsingRegionGraph::clusters}\hspace{0.3cm}{\tt  [private]}}\label{classIsingRegionGraph_50a06c5da423fe62fe9f492f2f3e4c06}
+
+
+the clustering given by genMaximalRegions along with counting numbers 
+
+\index{IsingRegionGraph@{IsingRegionGraph}!theta@{theta}}
+\index{theta@{theta}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf IsingRegionGraph::theta}\hspace{0.3cm}{\tt  [private]}}\label{classIsingRegionGraph_6365d9f865232ccdb18c1cb6e604943e}
+
+
+spin flip rate 
+
+\index{IsingRegionGraph@{IsingRegionGraph}!delta_t@{delta\_\-t}}
+\index{delta_t@{delta\_\-t}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf IsingRegionGraph::delta\_\-t}\hspace{0.3cm}{\tt  [private]}}\label{classIsingRegionGraph_751c6177f82d866e4b617e99e2fdff9b}
+
+
+the time of simulation 
+
+\index{IsingRegionGraph@{IsingRegionGraph}!iterNum@{iterNum}}
+\index{iterNum@{iterNum}!IsingRegionGraph@{IsingRegionGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf IsingRegionGraph::iterNum}\hspace{0.3cm}{\tt  [private]}}\label{classIsingRegionGraph_119748dee2fe786616d77cb4ab2e1535}
+
+
+iteration count 
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf ising.h}\item 
+src/{\bf ising.cpp}\end{CompactItemize}

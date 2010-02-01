@@ -1,0 +1,295 @@
+\section{PottsGraphPPM Class Reference}
+\label{classPottsGraphPPM}\index{PottsGraphPPM@{PottsGraphPPM}}
+{\tt \#include $<$PottsGraph.h$>$}
+
+Inheritance diagram for PottsGraphPPM::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classPottsGraphPPM}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf PottsGraphPPM} ({\bf PottsModel} $\ast$\_\-M, int \_\-rx, int \_\-ry, int \_\-cx, int \_\-cy)
+\item 
+void {\bf genSubRegions} ()
+\item 
+{\bf VideoNode} $\ast$ {\bf addNode} ({\bf VideoNode} $\ast$)
+\item 
+vector$<$ {\bf INT} $>$ {\bf getIthStVec} (int idx, int N)
+\item 
+void {\bf initOrigP} ({\bf VideoNode} $\ast$vn, bool rndm=true)
+\item 
+void {\bf PPM\_\-step2} ({\bf LD} theta, {\bf LD} {\bf delta\_\-t})
+\begin{CompactList}\small\item\em Initializes the single belief and conditional belief values;. \item\end{CompactList}\item 
+{\bf LD} {\bf getStatePr} ({\bf VideoNode} $\ast$vn, {\bf StatePtr} sp)
+\item 
+{\bf LD} {\bf get\_\-p\_\-hat} ({\bf VideoNode} $\ast$vn, {\bf StatePtr} si, {\bf StatePtr} so, {\bf LD} theta, {\bf LD} dt)
+\item 
+void {\bf initCondP} ({\bf VideoNode} $\ast$vn, {\bf LD} theta, {\bf LD} dt)
+\item 
+{\bf StatePtr} {\bf getChildStatePtr} ({\bf NodePtr} vp, {\bf NodePtr} vc, {\bf StatePtr} parState)
+\item 
+void {\bf PPM\_\-algo} ({\bf LD} theta, {\bf LD} dt)
+\item 
+void {\bf PPM\_\-algo2} ({\bf LD} theta, {\bf LD} dt)
+\item 
+{\bf LD} {\bf getHR} ()
+\item 
+void {\bf initFG} ()
+\item 
+{\bf LD} {\bf getVarMargPr} ({\bf VideoNode} $\ast$, int x, int y, int val)
+\item 
+{\bf LD} {\bf updateTime} ({\bf LD} dt)
+\item 
+bool {\bf stoppingCriterion} (int iter, {\bf LD} PD\_\-thres=0.05, {\bf LD} blf\_\-thres=0.05, int iter\_\-thres=4)
+\item 
+vector$<$ vector$<$ {\bf INT} $>$ $>$ {\bf greedyDecision} ()
+\item 
+void {\bf singleIter} ({\bf LD} theta\_\-ppm, {\bf LD} dt\_\-ppm)
+\item 
+void {\bf initAllNodesOrigP} (bool rndm)
+\item 
+bool {\bf isValid} (int x, int y)
+\item 
+void {\bf genBETHE} ()
+\item 
+vector$<$ {\bf LD} $>$ {\bf getNormGraphBlfs} ()
+\item 
+{\bf LD} {\bf getGraphStBlf} (int i)
+\item 
+void {\bf writeModelFile} (FILE $\ast$modelFile)
+\begin{CompactList}\small\item\em generates the ampl model file \item\end{CompactList}\item 
+void {\bf getAMPL} (string modelFileName, string dataFileName, string amplFileName)
+\begin{CompactList}\small\item\em generates the ampl files for simulating a single ppm iteration \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+{\bf PottsModel} $\ast$ {\bf model}
+\item 
+int {\bf rx}
+\item 
+int {\bf ry}
+\item 
+int {\bf cx}
+\item 
+int {\bf cy}
+\item 
+{\bf FactorGraph} $\ast$ {\bf fg}
+\item 
+{\bf LD} {\bf currTime}
+\item 
+{\bf LD} {\bf currDt}
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{PottsGraphPPM@{PottsGraphPPM}!PottsGraphPPM@{PottsGraphPPM}}
+\index{PottsGraphPPM@{PottsGraphPPM}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}PottsGraphPPM::PottsGraphPPM ({\bf PottsModel} $\ast$ {\em \_\-M}, int {\em \_\-rx}, int {\em \_\-ry}, int {\em \_\-cx}, int {\em \_\-cy})\hspace{0.3cm}{\tt  [inline]}}\label{classPottsGraphPPM_f8be4c8855c9ead438b42f9712c26918}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{PottsGraphPPM@{PottsGraphPPM}!genSubRegions@{genSubRegions}}
+\index{genSubRegions@{genSubRegions}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsGraphPPM::genSubRegions ()}\label{classPottsGraphPPM_dda218702c5f95f527a1f0a723a2fcc8}
+
+
+Modified genSubRegions - uses cluster counting approach \index{PottsGraphPPM@{PottsGraphPPM}!addNode@{addNode}}
+\index{addNode@{addNode}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf VideoNode} $\ast$ PottsGraphPPM::addNode ({\bf VideoNode} $\ast$)}\label{classPottsGraphPPM_46e22df9510aabf6dfd41c41d051569f}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!getIthStVec@{getIthStVec}}
+\index{getIthStVec@{getIthStVec}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf INT} $>$ PottsGraphPPM::getIthStVec (int {\em idx}, int {\em N})}\label{classPottsGraphPPM_fe5c2e29ab0e74699bb76c357bc8322b}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!initOrigP@{initOrigP}}
+\index{initOrigP@{initOrigP}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsGraphPPM::initOrigP ({\bf VideoNode} $\ast$ {\em vn}, bool {\em rndm} = {\tt true})}\label{classPottsGraphPPM_5479d7486144080079066f3e234c43ef}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!PPM_step2@{PPM\_\-step2}}
+\index{PPM_step2@{PPM\_\-step2}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsGraphPPM::PPM\_\-step2 ({\bf LD} {\em theta}, {\bf LD} {\em delta\_\-t})}\label{classPottsGraphPPM_f1f826adcd1466bf659b9dc34f08b7cf}
+
+
+Initializes the single belief and conditional belief values;. 
+
+\index{PottsGraphPPM@{PottsGraphPPM}!getStatePr@{getStatePr}}
+\index{getStatePr@{getStatePr}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} PottsGraphPPM::getStatePr ({\bf VideoNode} $\ast$ {\em vn}, {\bf StatePtr} {\em sp})}\label{classPottsGraphPPM_03ceec5a5ddb5b33d1b1acb2926265b9}
+
+
+
+
+Reimplemented in {\bf GraphMVI} \doxyref{}{p.}{classGraphMVI_8751683935447989fb988382955dbc02}.\index{PottsGraphPPM@{PottsGraphPPM}!get_p_hat@{get\_\-p\_\-hat}}
+\index{get_p_hat@{get\_\-p\_\-hat}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} PottsGraphPPM::get\_\-p\_\-hat ({\bf VideoNode} $\ast$ {\em vn}, {\bf StatePtr} {\em si}, {\bf StatePtr} {\em so}, {\bf LD} {\em theta}, {\bf LD} {\em dt})}\label{classPottsGraphPPM_b735fb1d57301afad4cdc14ffd5a6252}
+
+
+
+
+Reimplemented in {\bf GraphMVI} \doxyref{}{p.}{classGraphMVI_f2a1f00572448ffe7568d0c927bfcc51}.\index{PottsGraphPPM@{PottsGraphPPM}!initCondP@{initCondP}}
+\index{initCondP@{initCondP}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsGraphPPM::initCondP ({\bf VideoNode} $\ast$ {\em vn}, {\bf LD} {\em theta}, {\bf LD} {\em dt})}\label{classPottsGraphPPM_276673597baefb6b317b96efe23815fa}
+
+
+
+
+Reimplemented in {\bf GraphMVI} \doxyref{}{p.}{classGraphMVI_5137366e48b2928a20236e8851ae5e4b}.\index{PottsGraphPPM@{PottsGraphPPM}!getChildStatePtr@{getChildStatePtr}}
+\index{getChildStatePtr@{getChildStatePtr}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf StatePtr} PottsGraphPPM::getChildStatePtr ({\bf NodePtr} {\em vp}, {\bf NodePtr} {\em vc}, {\bf StatePtr} {\em parState})\hspace{0.3cm}{\tt  [virtual]}}\label{classPottsGraphPPM_7422e923b897b8799ab7de73e3f10088}
+
+
+
+
+Implements {\bf GraphPPM} \doxyref{}{p.}{classGraphPPM_b245aae058d0b252df985651c8fcc2eb}.\index{PottsGraphPPM@{PottsGraphPPM}!PPM_algo@{PPM\_\-algo}}
+\index{PPM_algo@{PPM\_\-algo}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsGraphPPM::PPM\_\-algo ({\bf LD} {\em theta}, {\bf LD} {\em dt})}\label{classPottsGraphPPM_e644a21cf2bd710deec76248b4edfec0}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!PPM_algo2@{PPM\_\-algo2}}
+\index{PPM_algo2@{PPM\_\-algo2}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsGraphPPM::PPM\_\-algo2 ({\bf LD} {\em theta}, {\bf LD} {\em dt})}\label{classPottsGraphPPM_4fb4b1ae6c5b1eeb493b16d7ed50de54}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!getHR@{getHR}}
+\index{getHR@{getHR}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} PottsGraphPPM::getHR ()}\label{classPottsGraphPPM_82288c12c224d84cf5e4fb52a0397662}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!initFG@{initFG}}
+\index{initFG@{initFG}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsGraphPPM::initFG ()}\label{classPottsGraphPPM_ee7a610393b59ce394d296f4e7a60e90}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!getVarMargPr@{getVarMargPr}}
+\index{getVarMargPr@{getVarMargPr}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} PottsGraphPPM::getVarMargPr ({\bf VideoNode} $\ast$, int {\em x}, int {\em y}, int {\em val})}\label{classPottsGraphPPM_ed04ade9cfbdc8284fad3fa93e402572}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!updateTime@{updateTime}}
+\index{updateTime@{updateTime}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} PottsGraphPPM::updateTime ({\bf LD} {\em dt})}\label{classPottsGraphPPM_9cac6ffa0063ec4e5a3102f93bd2da92}
+
+
+
+
+Reimplemented in {\bf GraphMVI} \doxyref{}{p.}{classGraphMVI_25b13c96f42a85b5ed3d7e6068e1659c}.\index{PottsGraphPPM@{PottsGraphPPM}!stoppingCriterion@{stoppingCriterion}}
+\index{stoppingCriterion@{stoppingCriterion}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool PottsGraphPPM::stoppingCriterion (int {\em iter}, {\bf LD} {\em PD\_\-thres} = {\tt 0.05}, {\bf LD} {\em blf\_\-thres} = {\tt 0.05}, int {\em iter\_\-thres} = {\tt 4})}\label{classPottsGraphPPM_f9ea81fe41e9aec45ba35af11070cd9a}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!greedyDecision@{greedyDecision}}
+\index{greedyDecision@{greedyDecision}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ vector$<$ {\bf INT} $>$ $>$ PottsGraphPPM::greedyDecision ()}\label{classPottsGraphPPM_ca61fb275a93940417ad98020d6f9114}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!singleIter@{singleIter}}
+\index{singleIter@{singleIter}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsGraphPPM::singleIter ({\bf LD} {\em theta\_\-ppm}, {\bf LD} {\em dt\_\-ppm})}\label{classPottsGraphPPM_3da7d2a78fc1d560131719162406b6e0}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!initAllNodesOrigP@{initAllNodesOrigP}}
+\index{initAllNodesOrigP@{initAllNodesOrigP}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsGraphPPM::initAllNodesOrigP (bool {\em rndm})}\label{classPottsGraphPPM_db429e7e4eac1a4d69f641403735cb20}
+
+
+
+
+Reimplemented in {\bf GraphMVI} \doxyref{}{p.}{classGraphMVI_1033e03be9c66b7ff356c7bb0e8fe083}.\index{PottsGraphPPM@{PottsGraphPPM}!isValid@{isValid}}
+\index{isValid@{isValid}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool PottsGraphPPM::isValid (int {\em x}, int {\em y})}\label{classPottsGraphPPM_9c953796371a26e9284b33b607ddaa3a}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!genBETHE@{genBETHE}}
+\index{genBETHE@{genBETHE}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsGraphPPM::genBETHE ()}\label{classPottsGraphPPM_237da04ddb08a9bd6e6eba6ce8ad37f4}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!getNormGraphBlfs@{getNormGraphBlfs}}
+\index{getNormGraphBlfs@{getNormGraphBlfs}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf LD} $>$ PottsGraphPPM::getNormGraphBlfs ()}\label{classPottsGraphPPM_45b72b847bc40680ee02394242ef129b}
+
+
+Returns the normalized beliefs as a product of region beliefs with appropriate normalization \index{PottsGraphPPM@{PottsGraphPPM}!getGraphStBlf@{getGraphStBlf}}
+\index{getGraphStBlf@{getGraphStBlf}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} PottsGraphPPM::getGraphStBlf (int {\em i})}\label{classPottsGraphPPM_9f806329c39a15d743dbc2081c505090}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!writeModelFile@{writeModelFile}}
+\index{writeModelFile@{writeModelFile}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsGraphPPM::writeModelFile (FILE $\ast$ {\em modeFile})}\label{classPottsGraphPPM_82a6be96d8bcb0efe1b9efa65ff596ae}
+
+
+generates the ampl model file 
+
+\begin{itemize}
+\item modelFile \end{itemize}
+\index{PottsGraphPPM@{PottsGraphPPM}!getAMPL@{getAMPL}}
+\index{getAMPL@{getAMPL}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsGraphPPM::getAMPL (string {\em modelFileName}, string {\em dataFileName}, string {\em commandFileName})}\label{classPottsGraphPPM_788ca1208dd0acc57fffb10861af5c89}
+
+
+generates the ampl files for simulating a single ppm iteration 
+
+\begin{itemize}
+\item modelFileName the AMPL model file generated \item dataFileName the AMPL data file generated \item commandFileName the file containing AMPL execution code \begin{Desc}
+\item[Note:]The AMPL code has the following parameters: \par
+ params: q, c\_\-alpha(rgn), numVar(rgn), b1\_\-rgn(1..q$^\wedge$n) , p2\_\-rgn(1..q$^\wedge$n) \par
+ vars: b2\_\-rgn(1..q$^\wedge$n, 1..q$^\wedge$n) \end{Desc}
+\end{itemize}
+
+
+\subsection{Member Data Documentation}
+\index{PottsGraphPPM@{PottsGraphPPM}!model@{model}}
+\index{model@{model}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf PottsModel}$\ast$ {\bf PottsGraphPPM::model}}\label{classPottsGraphPPM_e2575319241eacadb69eb75e18803f22}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!rx@{rx}}
+\index{rx@{rx}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf PottsGraphPPM::rx}}\label{classPottsGraphPPM_d79c302008f13e7c759e739d578afba2}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!ry@{ry}}
+\index{ry@{ry}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf PottsGraphPPM::ry}}\label{classPottsGraphPPM_f1e687e6ee33ef5bf2b3e8056b723404}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!cx@{cx}}
+\index{cx@{cx}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf PottsGraphPPM::cx}}\label{classPottsGraphPPM_4087f2bf0129f3bb68a9eb6469b66560}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!cy@{cy}}
+\index{cy@{cy}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf PottsGraphPPM::cy}}\label{classPottsGraphPPM_b88eb62241b96af01c31792360fc709b}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!fg@{fg}}
+\index{fg@{fg}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf FactorGraph}$\ast$ {\bf PottsGraphPPM::fg}}\label{classPottsGraphPPM_381af46e5706ce7d18afce26c5fa8e9e}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!currTime@{currTime}}
+\index{currTime@{currTime}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf PottsGraphPPM::currTime}}\label{classPottsGraphPPM_0b8f10e6fc78d6358eddff02be9ff97a}
+
+
+\index{PottsGraphPPM@{PottsGraphPPM}!currDt@{currDt}}
+\index{currDt@{currDt}!PottsGraphPPM@{PottsGraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf PottsGraphPPM::currDt}}\label{classPottsGraphPPM_29f24f2a7b11476bb017905403c169ce}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf PottsGraph.h}\item 
+src/{\bf PottsGraph.cpp}\end{CompactItemize}

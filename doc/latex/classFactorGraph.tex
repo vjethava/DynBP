@@ -1,0 +1,208 @@
+\section{FactorGraph Class Reference}
+\label{classFactorGraph}\index{FactorGraph@{FactorGraph}}
+{\tt \#include $<$mygraph.h$>$}
+
+Inheritance diagram for FactorGraph::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classFactorGraph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+bool {\bf bp\_\-iter} (bool ch)
+\item 
+int {\bf getStPtrIdx} ({\bf StatePtr} sp)
+\item 
+{\bf FactorGraph} ()
+\item 
+{\bf LD} {\bf getTrueZ} ()
+\item 
+{\bf LD} {\bf getTrueP} ({\bf StatePtr} s)
+\item 
+{\bf StatePtr} {\bf getFactorStatePtr} ({\bf StatePtr} sComplete, string fctrNodeId)
+\item 
+bool {\bf isFactor} (const {\bf NodePtr} np)
+\item 
+vector$<$ {\bf INT} $>$ {\bf getIthStVec} (int i, int N, vector$<$ {\bf INT} $>$ vals)
+\item 
+{\bf LD} {\bf updateN} ({\bf NodePtr} np, {\bf NodePtr} nc)
+\begin{CompactList}\small\item\em updates the child to parent message \item\end{CompactList}\item 
+{\bf LD} {\bf updateM} ({\bf NodePtr} np, {\bf NodePtr} nc)
+\begin{CompactList}\small\item\em updates the parent to child message \item\end{CompactList}\item 
+void {\bf updateMN} ({\bf NodePtr} np, {\bf NodePtr} nc)
+\begin{CompactList}\small\item\em updates the belief at variable \item\end{CompactList}\item 
+bool {\bf updateB} ({\bf NodePtr} nv)
+\begin{CompactList}\small\item\em updates the belief at variable \item\end{CompactList}\item 
+pair$<$ {\bf EdgePtr}, {\bf EdgePtr} $>$ {\bf addEdge} ({\bf NodePtr} ns, {\bf NodePtr} nt, bool checkExisting=false)
+\begin{CompactList}\small\item\em additionally initializes the msgMp for each edge \item\end{CompactList}\item 
+void {\bf bp\_\-synch} (bool ch)
+\item 
+{\bf LD} {\bf getMarginalProb} (vector$<$ pair$<$ string, int $>$ $>$ VVP)
+\begin{CompactList}\small\item\em computes the marginal probability for given state \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+bool {\bf dirtyF}
+\item 
+{\bf LD} {\bf Fapprox}
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+bool {\bf dirtyZ}
+\item 
+{\bf LD} {\bf trueZ}
+\item 
+{\bf LD} {\bf theta}
+\item 
+map$<$ long long, {\bf LD} $>$ {\bf trueProbMp}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Graph structure corresponding to factor graphs\begin{itemize}
+\item supports BP algorithm\item constrains factor node id to F\_\-(list of var\_\-ids separated by \_\-) eg, F\_\-X0.0\_\-X0.1\item constrains variable node id to X(nodeInt) eg, X0.0 \end{itemize}
+
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{FactorGraph@{FactorGraph}!FactorGraph@{FactorGraph}}
+\index{FactorGraph@{FactorGraph}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FactorGraph::FactorGraph ()\hspace{0.3cm}{\tt  [inline]}}\label{classFactorGraph_c4072e735fd541d0c47a4783eaf5d212}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{FactorGraph@{FactorGraph}!bp_iter@{bp\_\-iter}}
+\index{bp_iter@{bp\_\-iter}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool FactorGraph::bp\_\-iter (bool {\em ch})}\label{classFactorGraph_9f696a79697b96d09816a082939917a0}
+
+
+\index{FactorGraph@{FactorGraph}!getStPtrIdx@{getStPtrIdx}}
+\index{getStPtrIdx@{getStPtrIdx}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int FactorGraph::getStPtrIdx ({\bf StatePtr} {\em sp})\hspace{0.3cm}{\tt  [inline]}}\label{classFactorGraph_8664914707345bca9df900859b927e20}
+
+
+\index{FactorGraph@{FactorGraph}!getTrueZ@{getTrueZ}}
+\index{getTrueZ@{getTrueZ}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} FactorGraph::getTrueZ ()}\label{classFactorGraph_86259c82f067fb5a3bbce8af85da7829}
+
+
+\index{FactorGraph@{FactorGraph}!getTrueP@{getTrueP}}
+\index{getTrueP@{getTrueP}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} FactorGraph::getTrueP ({\bf StatePtr} {\em s})}\label{classFactorGraph_9bedbc5284f2eda9cf52debb34f8e551}
+
+
+\index{FactorGraph@{FactorGraph}!getFactorStatePtr@{getFactorStatePtr}}
+\index{getFactorStatePtr@{getFactorStatePtr}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf StatePtr} FactorGraph::getFactorStatePtr ({\bf StatePtr} {\em sComplete}, string {\em fctrNodeId})}\label{classFactorGraph_9b030982969b64af589358a6b9fa6519}
+
+
+\index{FactorGraph@{FactorGraph}!isFactor@{isFactor}}
+\index{isFactor@{isFactor}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool FactorGraph::isFactor (const {\bf NodePtr} {\em np})\hspace{0.3cm}{\tt  [inline]}}\label{classFactorGraph_b31b7ea37fd273a4ba48697de63aa506}
+
+
+\index{FactorGraph@{FactorGraph}!getIthStVec@{getIthStVec}}
+\index{getIthStVec@{getIthStVec}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf INT} $>$ FactorGraph::getIthStVec (int {\em i}, int {\em N}, vector$<$ {\bf INT} $>$ {\em vals})}\label{classFactorGraph_88b4c31e3f3a41df1ab100d645c288f5}
+
+
+\index{FactorGraph@{FactorGraph}!updateN@{updateN}}
+\index{updateN@{updateN}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} FactorGraph::updateN ({\bf NodePtr} {\em np}, {\bf NodePtr} {\em nc})}\label{classFactorGraph_50fe3b70c2cf57b3ff7c885def2d0119}
+
+
+updates the child to parent message 
+
+
+
+Reimplemented in {\bf GraphBP} \doxyref{}{p.}{classGraphBP_9748b687eb66ce93a4c875457a3816ce}.\index{FactorGraph@{FactorGraph}!updateM@{updateM}}
+\index{updateM@{updateM}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} FactorGraph::updateM ({\bf NodePtr} {\em np}, {\bf NodePtr} {\em nc})}\label{classFactorGraph_78f6edbe28e6a2006ca2eaeea55f6966}
+
+
+updates the parent to child message 
+
+
+
+Reimplemented in {\bf GraphBP} \doxyref{}{p.}{classGraphBP_fad15c72784d57fb7aa87454ad5874d6}.\index{FactorGraph@{FactorGraph}!updateMN@{updateMN}}
+\index{updateMN@{updateMN}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void FactorGraph::updateMN ({\bf NodePtr} {\em np}, {\bf NodePtr} {\em nc})\hspace{0.3cm}{\tt  [inline]}}\label{classFactorGraph_86cae9cf7324ac52ec3f684d165d6205}
+
+
+updates the belief at variable 
+
+\index{FactorGraph@{FactorGraph}!updateB@{updateB}}
+\index{updateB@{updateB}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool FactorGraph::updateB ({\bf NodePtr} {\em nv})}\label{classFactorGraph_3b96cd13133160cb7d578a77e9267873}
+
+
+updates the belief at variable 
+
+\index{FactorGraph@{FactorGraph}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pair$<$ {\bf EdgePtr}, {\bf EdgePtr} $>$ FactorGraph::addEdge ({\bf NodePtr} {\em ns}, {\bf NodePtr} {\em nt}, bool {\em checkExisting} = {\tt false})}\label{classFactorGraph_11f894856e571bc9f93f07346a6d2c16}
+
+
+additionally initializes the msgMp for each edge 
+
+Adds an edge to the graph does not check for edge already present condition\begin{itemize}
+\item Additionally initializes the msgMp of each edge with value 1 \end{itemize}
+\index{FactorGraph@{FactorGraph}!bp_synch@{bp\_\-synch}}
+\index{bp_synch@{bp\_\-synch}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void FactorGraph::bp\_\-synch (bool {\em ch})}\label{classFactorGraph_9cfafa8bd3ae2047576d26fb0e29c082}
+
+
+
+
+Reimplemented in {\bf IsingGraph} \doxyref{}{p.}{classIsingGraph_599d326ae60126c24a92476b4c0affe4}.\index{FactorGraph@{FactorGraph}!getMarginalProb@{getMarginalProb}}
+\index{getMarginalProb@{getMarginalProb}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} FactorGraph::getMarginalProb (vector$<$ pair$<$ string, int $>$ $>$ {\em VVP})}\label{classFactorGraph_7299bae2f29cc833bf481a81a85db126}
+
+
+computes the marginal probability for given state 
+
+
+
+\subsection{Member Data Documentation}
+\index{FactorGraph@{FactorGraph}!dirtyZ@{dirtyZ}}
+\index{dirtyZ@{dirtyZ}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool {\bf FactorGraph::dirtyZ}\hspace{0.3cm}{\tt  [private]}}\label{classFactorGraph_c4f8ad5793c4e67bd83efe263288902e}
+
+
+\index{FactorGraph@{FactorGraph}!trueZ@{trueZ}}
+\index{trueZ@{trueZ}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf FactorGraph::trueZ}\hspace{0.3cm}{\tt  [private]}}\label{classFactorGraph_d2181ac812abb9175e2d9b3ac4e8a258}
+
+
+\index{FactorGraph@{FactorGraph}!theta@{theta}}
+\index{theta@{theta}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf FactorGraph::theta}\hspace{0.3cm}{\tt  [private]}}\label{classFactorGraph_123b5fa5417769f3bb9b5f9ccae3fb4d}
+
+
+\index{FactorGraph@{FactorGraph}!trueProbMp@{trueProbMp}}
+\index{trueProbMp@{trueProbMp}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<$long long, {\bf LD}$>$ {\bf FactorGraph::trueProbMp}\hspace{0.3cm}{\tt  [private]}}\label{classFactorGraph_2f5d5f43a60c9cfe2bf69333f27c0bcc}
+
+
+\index{FactorGraph@{FactorGraph}!dirtyF@{dirtyF}}
+\index{dirtyF@{dirtyF}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool {\bf FactorGraph::dirtyF}}\label{classFactorGraph_62eea8f836e0d395335cde963106569e}
+
+
+\index{FactorGraph@{FactorGraph}!Fapprox@{Fapprox}}
+\index{Fapprox@{Fapprox}!FactorGraph@{FactorGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf FactorGraph::Fapprox}}\label{classFactorGraph_779f33abc5cbaf14eb040404c2cc10ab}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf mygraph.h}\item 
+src/{\bf mygraph.cpp}\end{CompactItemize}

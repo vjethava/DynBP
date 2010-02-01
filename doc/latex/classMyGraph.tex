@@ -1,0 +1,237 @@
+\section{MyGraph Class Reference}
+\label{classMyGraph}\index{MyGraph@{MyGraph}}
+{\tt \#include $<$mygraph.h$>$}
+
+Inheritance diagram for MyGraph::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.73333cm]{classMyGraph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+pair$<$ {\bf StatePtr}, {\bf StatePtr} $>$ {\bf getChildFromMsgState} ({\bf StatePtr} sptr)
+\begin{CompactList}\small\item\em returns the pair $<$currentState, nextState$>$ based on the jointState \item\end{CompactList}\item 
+{\bf StatePtr} {\bf getStatePtr} (vector$<$ {\bf INT} $>$ vals)
+\item 
+{\bf StatePtr} {\bf getStatePtr} ({\bf INT} v)
+\item 
+{\bf MyGraph} ()
+\item 
+int {\bf getDegree} ({\bf NodePtr} np)
+\item 
+pair$<$ {\bf EdgePtr}, {\bf EdgePtr} $>$ {\bf addEdge} (const {\bf NodePtr} \&nps, const {\bf NodePtr} \&npt, bool checkExisting=false)
+\item 
+pair$<$ {\bf EdgePtr}, {\bf EdgePtr} $>$ {\bf findEdge} ({\bf NodePtr} nps, {\bf NodePtr} npt)
+\item 
+{\bf NodePtr} {\bf addNode} ({\bf NodePtr} np)
+\item 
+void {\bf setVarVals} (vector$<$ {\bf INT} $>$ v)
+\item 
+vector$<$ {\bf INT} $>$ {\bf getVarVals} () const
+\item 
+void {\bf setVarIds} (vector$<$ string $>$ v)
+\item 
+vector$<$ string $>$ {\bf getVarIds} () const
+\item 
+void {\bf updateMsg} ({\bf NodePtr} parent, {\bf NodePtr} child, {\bf StatePtr} num, {\bf LD} value, bool forwardMsg=true)
+\item 
+vector$<$ {\bf NodePtr} $>$ {\bf getParents} ({\bf NodePtr} node)
+\begin{CompactList}\small\item\em returns the list of parents of a node \item\end{CompactList}\item 
+vector$<$ {\bf NodePtr} $>$ {\bf getChildren} ({\bf NodePtr} node)
+\begin{CompactList}\small\item\em returns the list of children of a node \item\end{CompactList}\item 
+{\bf LD} {\bf getMsg} ({\bf NodePtr} parent, {\bf NodePtr} child, {\bf StatePtr} jointState, bool forwardMsg=true)
+\item 
+{\bf NodePtr} {\bf getNode} (string nid)
+\item 
+{\bf NodePtr} {\bf getNode} ({\bf NodePtr} np)
+\item 
+{\bf $\sim$MyGraph} ()
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+map$<$ {\bf StatePtr}, int, {\bf StatePtrCmp} $>$ {\bf sMp}
+\item 
+int {\bf numEdges}
+\item 
+map$<$ {\bf NodePtr}, {\bf BidirEdgeList}, {\bf NodeCmp} $>$ {\bf adj\_\-map}
+\begin{CompactList}\small\item\em list of associated edges which begin at the current node \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf numNodes}
+\item 
+vector$<$ {\bf INT} $>$ {\bf values}
+\item 
+vector$<$ string $>$ {\bf vars}
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&os, {\bf MyGraph} \&g)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Generic graph data structure allowing both factor and region graphs 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MyGraph@{MyGraph}!MyGraph@{MyGraph}}
+\index{MyGraph@{MyGraph}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MyGraph::MyGraph ()\hspace{0.3cm}{\tt  [inline]}}\label{classMyGraph_378078b7bfaae9fa6c075ea45f96db39}
+
+
+\index{MyGraph@{MyGraph}!~MyGraph@{$\sim$MyGraph}}
+\index{~MyGraph@{$\sim$MyGraph}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MyGraph::$\sim$MyGraph ()\hspace{0.3cm}{\tt  [inline]}}\label{classMyGraph_9e1b27e5bbac175f9b176496cf43077e}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{MyGraph@{MyGraph}!getChildFromMsgState@{getChildFromMsgState}}
+\index{getChildFromMsgState@{getChildFromMsgState}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pair$<$ {\bf StatePtr}, {\bf StatePtr} $>$ MyGraph::getChildFromMsgState ({\bf StatePtr} {\em sptr})}\label{classMyGraph_853609f476db378c05ec2e01ecdce67c}
+
+
+returns the pair $<$currentState, nextState$>$ based on the jointState 
+
+\index{MyGraph@{MyGraph}!getStatePtr@{getStatePtr}}
+\index{getStatePtr@{getStatePtr}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf StatePtr} MyGraph::getStatePtr (vector$<$ {\bf INT} $>$ {\em vals})}\label{classMyGraph_52cac4e3af1470d96bf40a866696f55a}
+
+
+\index{MyGraph@{MyGraph}!getStatePtr@{getStatePtr}}
+\index{getStatePtr@{getStatePtr}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf StatePtr} MyGraph::getStatePtr ({\bf INT} {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{classMyGraph_d8449ba4cae5feb716d30a6c636d820d}
+
+
+\index{MyGraph@{MyGraph}!getDegree@{getDegree}}
+\index{getDegree@{getDegree}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MyGraph::getDegree ({\bf NodePtr} {\em np})\hspace{0.3cm}{\tt  [inline]}}\label{classMyGraph_c371980c2e555a6a12b2cd173fa2e574}
+
+
+\index{MyGraph@{MyGraph}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pair$<$ {\bf EdgePtr}, {\bf EdgePtr} $>$ MyGraph::addEdge (const {\bf NodePtr} \& {\em ns}, const {\bf NodePtr} \& {\em nt}, bool {\em checkExisting} = {\tt false})}\label{classMyGraph_5c79ff22917fea92062dfcc54e1903c7}
+
+
+Adds an edge to the graph does not check for edge already present condition \index{MyGraph@{MyGraph}!findEdge@{findEdge}}
+\index{findEdge@{findEdge}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pair$<$ {\bf EdgePtr}, {\bf EdgePtr} $>$ MyGraph::findEdge ({\bf NodePtr} {\em nps}, {\bf NodePtr} {\em npt})}\label{classMyGraph_32d78b2a4559ac47fdbbf6da9cb52e60}
+
+
+
+
+Reimplemented in {\bf GraphBP} \doxyref{}{p.}{classGraphBP_3bd3c5f1258fd15987ad585941afeac7}.\index{MyGraph@{MyGraph}!addNode@{addNode}}
+\index{addNode@{addNode}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf NodePtr} MyGraph::addNode ({\bf NodePtr} {\em n})}\label{classMyGraph_bcfadf75892dbfbbcd7cd2e477284b9d}
+
+
+Adds node ( checks against duplicate node insertion ) \index{MyGraph@{MyGraph}!setVarVals@{setVarVals}}
+\index{setVarVals@{setVarVals}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MyGraph::setVarVals (vector$<$ {\bf INT} $>$ {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{classMyGraph_e4365fc5f59489d2208ab386ea652c4e}
+
+
+\index{MyGraph@{MyGraph}!getVarVals@{getVarVals}}
+\index{getVarVals@{getVarVals}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf INT}$>$ MyGraph::getVarVals () const\hspace{0.3cm}{\tt  [inline]}}\label{classMyGraph_c907a62a31b174904a347c3f20e678bf}
+
+
+\index{MyGraph@{MyGraph}!setVarIds@{setVarIds}}
+\index{setVarIds@{setVarIds}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MyGraph::setVarIds (vector$<$ string $>$ {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{classMyGraph_a4ce2589ba84e2390680e5e2c5fc229c}
+
+
+\index{MyGraph@{MyGraph}!getVarIds@{getVarIds}}
+\index{getVarIds@{getVarIds}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ MyGraph::getVarIds () const\hspace{0.3cm}{\tt  [inline]}}\label{classMyGraph_039e8e8593529903999a3db562c7752e}
+
+
+\index{MyGraph@{MyGraph}!updateMsg@{updateMsg}}
+\index{updateMsg@{updateMsg}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MyGraph::updateMsg ({\bf NodePtr} {\em parent}, {\bf NodePtr} {\em child}, {\bf StatePtr} {\em num}, {\bf LD} {\em value}, bool {\em mode} = {\tt true})}\label{classMyGraph_4e320ddae08efcc84a90cc2528cd4854}
+
+
+Update the message between parent to child mode = true : parent-$>$child mode = false : child -$>$ parent \index{MyGraph@{MyGraph}!getParents@{getParents}}
+\index{getParents@{getParents}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf NodePtr} $>$ MyGraph::getParents ({\bf NodePtr} {\em node})}\label{classMyGraph_181529c83512a1508d7d9101099558eb}
+
+
+returns the list of parents of a node 
+
+\index{MyGraph@{MyGraph}!getChildren@{getChildren}}
+\index{getChildren@{getChildren}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf NodePtr} $>$ MyGraph::getChildren ({\bf NodePtr} {\em node})}\label{classMyGraph_d39d642a0a13e17f23e1664431eb2a53}
+
+
+returns the list of children of a node 
+
+\index{MyGraph@{MyGraph}!getMsg@{getMsg}}
+\index{getMsg@{getMsg}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} MyGraph::getMsg ({\bf NodePtr} {\em parent}, {\bf NodePtr} {\em child}, {\bf StatePtr} {\em jointState}, bool {\em forwardMsg} = {\tt true})}\label{classMyGraph_fdd1d5ae3f48824b81f99caa2a3bab24}
+
+
+function that returns the message from child-$>$parent when childToParentMsg is true else returns parent-$>$child reverse edge message. jointState gives the child joint state \index{MyGraph@{MyGraph}!getNode@{getNode}}
+\index{getNode@{getNode}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf NodePtr} MyGraph::getNode (string {\em nid})}\label{classMyGraph_a33f1cea4db8654338c2b80c6070300c}
+
+
+Wrapper to provide node search using node id \index{MyGraph@{MyGraph}!getNode@{getNode}}
+\index{getNode@{getNode}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf NodePtr} MyGraph::getNode ({\bf NodePtr} {\em np})}\label{classMyGraph_d4b642a13f3059935f9062ccc4c4ea47}
+
+
+Returns ptr to the node having same id ( or 0, if not found) 
+
+\subsection{Friends And Related Function Documentation}
+\index{MyGraph@{MyGraph}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, {\bf MyGraph} \& {\em g})\hspace{0.3cm}{\tt  [friend]}}\label{classMyGraph_3af94f0cb62fa6cc8ee09ab5128e1c6d}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{MyGraph@{MyGraph}!numNodes@{numNodes}}
+\index{numNodes@{numNodes}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf MyGraph::numNodes}\hspace{0.3cm}{\tt  [private]}}\label{classMyGraph_27ddf096131b14509c8a029dd00dce1c}
+
+
+\index{MyGraph@{MyGraph}!values@{values}}
+\index{values@{values}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf INT}$>$ {\bf MyGraph::values}\hspace{0.3cm}{\tt  [private]}}\label{classMyGraph_a312bad85545b5c3de5c7797b9319f5f}
+
+
+\index{MyGraph@{MyGraph}!vars@{vars}}
+\index{vars@{vars}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ {\bf MyGraph::vars}\hspace{0.3cm}{\tt  [private]}}\label{classMyGraph_1fae46fe6edc27f0f8ebb3293adeb3a6}
+
+
+\index{MyGraph@{MyGraph}!sMp@{sMp}}
+\index{sMp@{sMp}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<${\bf StatePtr}, int, {\bf StatePtrCmp}$>$ {\bf MyGraph::sMp}}\label{classMyGraph_8dd02c6d0b301f8c9d154379bcb00205}
+
+
+\index{MyGraph@{MyGraph}!numEdges@{numEdges}}
+\index{numEdges@{numEdges}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf MyGraph::numEdges}}\label{classMyGraph_fd3de6d9c1a8f0ff3711fc2851e17a42}
+
+
+\index{MyGraph@{MyGraph}!adj_map@{adj\_\-map}}
+\index{adj_map@{adj\_\-map}!MyGraph@{MyGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<${\bf NodePtr}, {\bf BidirEdgeList}, {\bf NodeCmp}$>$ {\bf MyGraph::adj\_\-map}}\label{classMyGraph_6232deabfa3077997a0943ff90bf837b}
+
+
+list of associated edges which begin at the current node 
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf mygraph.h}\item 
+src/{\bf mygraph.cpp}\end{CompactItemize}

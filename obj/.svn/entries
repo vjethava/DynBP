@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   revision="0"
+   repos="svn://127.0.0.1/mnt/svn/DynBP"
+   schedule="add"
+   url="svn://127.0.0.1/mnt/svn/DynBP/obj"
+   kind="dir"
+   name=""/>
+<entry
+   schedule="add"
+   kind="dir"
+   name="src"/>
+<entry
+   schedule="add"
+   kind="dir"
+   name="test"/>
+</wc-entries>

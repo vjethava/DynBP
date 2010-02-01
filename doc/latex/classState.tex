@@ -1,0 +1,118 @@
+\section{State Class Reference}
+\label{classState}\index{State@{State}}
+{\tt \#include $<$state.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf State} (int \_\-n, {\bf INT} $\ast$\_\-d)
+\item 
+{\bf State} (vector$<$ {\bf INT} $>$ v)
+\item 
+{\bf State} (const {\bf State} \&st2)
+\item 
+bool {\bf operator==} (const {\bf State} \&s2) const 
+\item 
+{\bf INT} {\bf getData} (int idx) const
+\item 
+{\bf State} {\bf operator+} (const {\bf State} \&s2) const 
+\item 
+{\bf $\sim$State} ()
+\item 
+{\bf VI} {\bf getVec} ()
+\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+static {\bf LD} {\bf SSD} ({\bf State} \&s1, {\bf State} \&s2)
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf num}
+\item 
+{\bf INT} $\ast$ {\bf data}
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&os, {\bf State} \&s)
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}State::State (int {\em \_\-n}, {\bf INT} $\ast$ {\em \_\-d})\hspace{0.3cm}{\tt  [inline]}}\label{classState_0ef5c563f639f788f24afbc7f0f37288}
+
+
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}State::State (vector$<$ {\bf INT} $>$ {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{classState_c4fc0df913015a99774456669f2bdaa1}
+
+
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}State::State (const {\bf State} \& {\em st2})\hspace{0.3cm}{\tt  [inline]}}\label{classState_0261bbf902290f544599c70e2951a80c}
+
+
+\index{State@{State}!~State@{$\sim$State}}
+\index{~State@{$\sim$State}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}State::$\sim$State ()\hspace{0.3cm}{\tt  [inline]}}\label{classState_4996784dd93206fc1cb99ca51c4725dd}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{State@{State}!SSD@{SSD}}
+\index{SSD@{SSD}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} State::SSD ({\bf State} \& {\em s1}, {\bf State} \& {\em s2})\hspace{0.3cm}{\tt  [static]}}\label{classState_ee08b1dc453489f8482702edb8300a75}
+
+
+\index{State@{State}!operator==@{operator==}}
+\index{operator==@{operator==}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool State::operator== (const {\bf State} \& {\em s2}) const\hspace{0.3cm}{\tt  [inline]}}\label{classState_022d012312dbd1c3cb170e752a4cc726}
+
+
+\index{State@{State}!getData@{getData}}
+\index{getData@{getData}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf INT} State::getData (int {\em idx}) const\hspace{0.3cm}{\tt  [inline]}}\label{classState_2b022e8fcebaec720672e42fde918337}
+
+
+\index{State@{State}!operator+@{operator+}}
+\index{operator+@{operator+}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf State} State::operator+ (const {\bf State} \& {\em s2}) const\hspace{0.3cm}{\tt  [inline]}}\label{classState_41cf21cb4c380e045a360b7061f8da73}
+
+
+\index{State@{State}!getVec@{getVec}}
+\index{getVec@{getVec}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf VI} State::getVec ()\hspace{0.3cm}{\tt  [inline]}}\label{classState_a37002bfd280361ce414b6c7ee97ef47}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{State@{State}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, {\bf State} \& {\em s})\hspace{0.3cm}{\tt  [friend]}}\label{classState_29d139259ad178fd96a89e26b2901cbe}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{State@{State}!num@{num}}
+\index{num@{num}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf State::num}}\label{classState_2091da71db2bcf6df658fd16c905c716}
+
+
+\index{State@{State}!data@{data}}
+\index{data@{data}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf INT}$\ast$ {\bf State::data}}\label{classState_0f5a8a0a362d302a11e5ee1396e876b3}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf state.h}\item 
+src/{\bf state.cpp}\end{CompactItemize}

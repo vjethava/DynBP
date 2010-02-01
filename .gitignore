@@ -1,0 +1,6 @@
+*~
+*/*.log
+*/*.mat
+bin/*
+obj/src/*
+obj/test/*

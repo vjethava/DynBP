@@ -1,0 +1,106 @@
+\section{Cluster Struct Reference}
+\label{structCluster}\index{Cluster@{Cluster}}
+{\tt \#include $<$main.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Cluster} (vector$<$ string $>$ vars, vector$<$ string $>$ fctrs)
+\item 
+{\bf Cluster} ()
+\item 
+bool {\bf operator==} (const {\bf Cluster} \&c) const 
+\item 
+string {\bf getRegionId} () const
+\item 
+bool {\bf operator!=} (const {\bf Cluster} \&c) const 
+\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+static bool {\bf subset} (const {\bf Cluster} \&c1, const {\bf Cluster} \&c2)
+\begin{CompactList}\small\item\em returns c1 subset c2 \item\end{CompactList}\item 
+static bool {\bf intersection} ({\bf Cluster} $\ast$cc, const {\bf Cluster} \&c1, const {\bf Cluster} \&c2)
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+vector$<$ string $>$ {\bf first}
+\item 
+vector$<$ string $>$ {\bf second}
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&os, const {\bf Cluster} \&c)
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Cluster::Cluster (vector$<$ string $>$ {\em vars}, vector$<$ string $>$ {\em fctrs})\hspace{0.3cm}{\tt  [inline]}}\label{structCluster_2a24a407dd0ed35b92ba5a152bc908a0}
+
+
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Cluster::Cluster ()\hspace{0.3cm}{\tt  [inline]}}\label{structCluster_bf2af19044d4b84b9c9eb4f723453139}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Cluster@{Cluster}!subset@{subset}}
+\index{subset@{subset}!Cluster@{Cluster}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Cluster::subset (const {\bf Cluster} \& {\em c1}, const {\bf Cluster} \& {\em c2})\hspace{0.3cm}{\tt  [static]}}\label{structCluster_7b0d5c799fcd34dfeda18800f73b340e}
+
+
+returns c1 subset c2 
+
+\index{Cluster@{Cluster}!operator==@{operator==}}
+\index{operator==@{operator==}!Cluster@{Cluster}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Cluster::operator== (const {\bf Cluster} \& {\em c}) const\hspace{0.3cm}{\tt  [inline]}}\label{structCluster_2daa42739b49a758a8f0a7865e4d213e}
+
+
+\index{Cluster@{Cluster}!getRegionId@{getRegionId}}
+\index{getRegionId@{getRegionId}!Cluster@{Cluster}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}string Cluster::getRegionId () const\hspace{0.3cm}{\tt  [inline]}}\label{structCluster_bbaa46277d1fa6e3c7e1a3b240d723ce}
+
+
+\index{Cluster@{Cluster}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Cluster@{Cluster}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Cluster::operator!= (const {\bf Cluster} \& {\em c}) const\hspace{0.3cm}{\tt  [inline]}}\label{structCluster_fa0ee61e750a324e1541eb8748b5b21b}
+
+
+\index{Cluster@{Cluster}!intersection@{intersection}}
+\index{intersection@{intersection}!Cluster@{Cluster}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Cluster::intersection ({\bf Cluster} $\ast$ {\em cc}, const {\bf Cluster} \& {\em c1}, const {\bf Cluster} \& {\em c2})\hspace{0.3cm}{\tt  [static]}}\label{structCluster_9a4d09cf7d1a6ebd437b42ad6983f00b}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Cluster@{Cluster}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!Cluster@{Cluster}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, const {\bf Cluster} \& {\em c})\hspace{0.3cm}{\tt  [friend]}}\label{structCluster_66e4ab0733f65907e1cb0a41f9c11360}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Cluster@{Cluster}!first@{first}}
+\index{first@{first}!Cluster@{Cluster}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ {\bf Cluster::first}}\label{structCluster_6faa4a8072fabb9df52bc5882ad83d28}
+
+
+\index{Cluster@{Cluster}!second@{second}}
+\index{second@{second}!Cluster@{Cluster}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ {\bf Cluster::second}}\label{structCluster_defe091a0a3e6834c3b858f9eb23d2c2}
+
+
+
+
+The documentation for this struct was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf main.h}\item 
+src/{\bf main.cpp}\end{CompactItemize}

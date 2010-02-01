@@ -1,0 +1,118 @@
+\section{PottsCB Class Reference}
+\label{classPottsCB}\index{PottsCB@{PottsCB}}
+{\tt \#include $<$PottsCB.h$>$}
+
+Inheritance diagram for PottsCB::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classPottsCB}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf PottsCB} ({\bf PottsGraphPPM} $\ast$\_\-graph, {\bf VideoNode} $\ast$\_\-node)
+\item 
+{\bf LD} {\bf getPr} ({\bf StatePtr} s1, {\bf StatePtr} s2)
+\begin{CompactList}\small\item\em returns the probability p(sN $|$ sC) or BELIEF\_\-NOT\_\-FOUND \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+static void {\bf setTheta} ({\bf LD} \_\-theta)
+\item 
+static void {\bf setDt} ({\bf LD} \_\-dt)
+\item 
+static {\bf LD} {\bf getTheta} ()
+\item 
+static {\bf LD} {\bf getDt} ()
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+{\bf ConditionalBelief} $\ast$ {\bf cglobal}
+\item 
+{\bf VideoNode} $\ast$ {\bf node}
+\item 
+{\bf PottsGraphPPM} $\ast$ {\bf graph}
+\end{CompactItemize}
+\subsection*{Static Private Attributes}
+\begin{CompactItemize}
+\item 
+static {\bf LD} {\bf theta} = 0.5
+\item 
+static {\bf LD} {\bf dt} = 1.0
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{PottsCB@{PottsCB}!PottsCB@{PottsCB}}
+\index{PottsCB@{PottsCB}!PottsCB@{PottsCB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}PottsCB::PottsCB ({\bf PottsGraphPPM} $\ast$ {\em \_\-graph}, {\bf VideoNode} $\ast$ {\em \_\-node})\hspace{0.3cm}{\tt  [inline]}}\label{classPottsCB_0fff4e248302331be0b38564235d83b1}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{PottsCB@{PottsCB}!setTheta@{setTheta}}
+\index{setTheta@{setTheta}!PottsCB@{PottsCB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void PottsCB::setTheta ({\bf LD} {\em \_\-theta})\hspace{0.3cm}{\tt  [inline, static]}}\label{classPottsCB_b482436f068a16eb7f7d0de838b28815}
+
+
+\index{PottsCB@{PottsCB}!setDt@{setDt}}
+\index{setDt@{setDt}!PottsCB@{PottsCB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void PottsCB::setDt ({\bf LD} {\em \_\-dt})\hspace{0.3cm}{\tt  [inline, static]}}\label{classPottsCB_8bec85a1bf2c7f1ba4de6dc944bae647}
+
+
+\index{PottsCB@{PottsCB}!getTheta@{getTheta}}
+\index{getTheta@{getTheta}!PottsCB@{PottsCB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static {\bf LD} PottsCB::getTheta ()\hspace{0.3cm}{\tt  [inline, static]}}\label{classPottsCB_2d41992ff2e6516c344e501550501cd6}
+
+
+\index{PottsCB@{PottsCB}!getDt@{getDt}}
+\index{getDt@{getDt}!PottsCB@{PottsCB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static {\bf LD} PottsCB::getDt ()\hspace{0.3cm}{\tt  [inline, static]}}\label{classPottsCB_2d3de42946f700c9ea430a8c37cec9a1}
+
+
+\index{PottsCB@{PottsCB}!getPr@{getPr}}
+\index{getPr@{getPr}!PottsCB@{PottsCB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} PottsCB::getPr ({\bf StatePtr} {\em sC}, {\bf StatePtr} {\em sN})}\label{classPottsCB_cac254c4f74d94caa1ba23343e01b96b}
+
+
+returns the probability p(sN $|$ sC) or BELIEF\_\-NOT\_\-FOUND 
+
+
+
+Reimplemented from {\bf ConditionalBelief} \doxyref{}{p.}{classConditionalBelief_66ced9bc695d3503e06a02ca95207a21}.
+
+\subsection{Member Data Documentation}
+\index{PottsCB@{PottsCB}!cglobal@{cglobal}}
+\index{cglobal@{cglobal}!PottsCB@{PottsCB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ConditionalBelief}$\ast$ {\bf PottsCB::cglobal}\hspace{0.3cm}{\tt  [private]}}\label{classPottsCB_8a715f9dcc4f2e3272bfb0ec39723a26}
+
+
+\index{PottsCB@{PottsCB}!node@{node}}
+\index{node@{node}!PottsCB@{PottsCB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf VideoNode}$\ast$ {\bf PottsCB::node}\hspace{0.3cm}{\tt  [private]}}\label{classPottsCB_8bda4193bb8a73ce8426f47b26e6cc3b}
+
+
+\index{PottsCB@{PottsCB}!graph@{graph}}
+\index{graph@{graph}!PottsCB@{PottsCB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf PottsGraphPPM}$\ast$ {\bf PottsCB::graph}\hspace{0.3cm}{\tt  [private]}}\label{classPottsCB_24db84e3bc0272263622910fef0b5187}
+
+
+\index{PottsCB@{PottsCB}!theta@{theta}}
+\index{theta@{theta}!PottsCB@{PottsCB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf PottsCB::theta} = 0.5\hspace{0.3cm}{\tt  [static, private]}}\label{classPottsCB_79d24daa20329a81ab26e16a3ae99a0e}
+
+
+\index{PottsCB@{PottsCB}!dt@{dt}}
+\index{dt@{dt}!PottsCB@{PottsCB}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf PottsCB::dt} = 1.0\hspace{0.3cm}{\tt  [static, private]}}\label{classPottsCB_4c46b6eae4fe985f7e8f8d0ad0716582}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf PottsCB.h}\item 
+src/{\bf PottsCB.cpp}\end{CompactItemize}

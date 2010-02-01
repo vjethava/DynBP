@@ -1,0 +1,263 @@
+\section{VideoNode Class Reference}
+\label{classVideoNode}\index{VideoNode@{VideoNode}}
+{\tt \#include $<$VideoNode.h$>$}
+
+Inheritance diagram for VideoNode::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classVideoNode}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf BeliefPtr} {\bf getGlobalBlfPtr} ()
+\item 
+void {\bf setGlobalBlfPtr} ({\bf BeliefPtr} bptr)
+\item 
+void {\bf setOldState} ({\bf StatePtr} s)
+\item 
+{\bf StatePtr} {\bf getOldState} ()
+\item 
+bool {\bf addAugmentCand} ({\bf StatePtr} sptr, {\bf LD} {\bf l})
+\item 
+void {\bf finalizeCands} ({\bf StatePtr} sO)
+\item 
+void {\bf setNextStateCandMp} (NEXT\_\-CAND\_\-MP mp)
+\item 
+NEXT\_\-CAND\_\-MP {\bf getNextStateCandMp} ()
+\item 
+void {\bf setCPTR} ({\bf ConditionalBeliefPtr} \_\-cptr)
+\item 
+{\bf ConditionalBeliefPtr} {\bf getCPTR} ()
+\item 
+{\bf VideoNode} (string {\bf id})
+\item 
+virtual {\bf $\sim$VideoNode} ()
+\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+static vector$<$ int $>$ {\bf getIntFromId} (string s)
+\item 
+static bool {\bf isInterior} (int {\bf x}, int {\bf y}, string sBig)
+\begin{CompactList}\small\item\em checks whether block is interior \item\end{CompactList}\item 
+static bool {\bf isSubset} (string sSmall, string sBig)
+\item 
+static string {\bf intersection} (string s1, string s2)
+\item 
+static string {\bf getIdFromInt} (int {\bf x}, int {\bf y}, int {\bf l}, int {\bf w})
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+{\bf BeliefPtr} {\bf localBlfPtr}
+\item 
+{\bf ConditionalBeliefPtr} {\bf localCondBlfPtr}
+\item 
+bool {\bf isMasked}
+\begin{CompactList}\small\item\em is masked \item\end{CompactList}\item 
+map$<$ {\bf StatePtr}, {\bf LD}, {\bf StatePtrCmp} $>$ {\bf nextStateMp}
+\item 
+map$<$ {\bf StatePtr}, {\bf LD}, {\bf StatePtrCmp} $>$ {\bf augmentsMp}
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+{\bf ConditionalBeliefPtr} {\bf globalCondPtr}
+\begin{CompactList}\small\item\em the global conditional belief pointer of appropriate size \item\end{CompactList}\item 
+int {\bf cr}
+\begin{CompactList}\small\item\em the block counting number \item\end{CompactList}\item 
+int {\bf x}
+\begin{CompactList}\small\item\em dimensions of the block \item\end{CompactList}\item 
+int {\bf y}
+\item 
+int {\bf l}
+\item 
+int {\bf w}
+\item 
+{\bf BeliefPtr} {\bf globalBlfPtr}
+\begin{CompactList}\small\item\em the global belief pointer of appropriate size; \item\end{CompactList}\item 
+{\bf StatePtr} {\bf sOld}
+\begin{CompactList}\small\item\em the original state \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{VideoNode@{VideoNode}!VideoNode@{VideoNode}}
+\index{VideoNode@{VideoNode}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}VideoNode::VideoNode (string {\em id})}\label{classVideoNode_72b54fe609deac90c40acb51b2e68c76}
+
+
+\index{VideoNode@{VideoNode}!~VideoNode@{$\sim$VideoNode}}
+\index{~VideoNode@{$\sim$VideoNode}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}VideoNode::$\sim$VideoNode ()\hspace{0.3cm}{\tt  [virtual]}}\label{classVideoNode_5ff98f195450b74e879fbc393a8a3cb2}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{VideoNode@{VideoNode}!getGlobalBlfPtr@{getGlobalBlfPtr}}
+\index{getGlobalBlfPtr@{getGlobalBlfPtr}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf BeliefPtr} VideoNode::getGlobalBlfPtr ()\hspace{0.3cm}{\tt  [inline]}}\label{classVideoNode_ded48b3d52c23969ef2a32354fd766e6}
+
+
+\index{VideoNode@{VideoNode}!setGlobalBlfPtr@{setGlobalBlfPtr}}
+\index{setGlobalBlfPtr@{setGlobalBlfPtr}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoNode::setGlobalBlfPtr ({\bf BeliefPtr} {\em bptr})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoNode_c704a589284f793f9a3943a515a45dff}
+
+
+\index{VideoNode@{VideoNode}!setOldState@{setOldState}}
+\index{setOldState@{setOldState}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoNode::setOldState ({\bf StatePtr} {\em s})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoNode_91e4381a8e730638ede819fa02df95c1}
+
+
+\index{VideoNode@{VideoNode}!getOldState@{getOldState}}
+\index{getOldState@{getOldState}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf StatePtr} VideoNode::getOldState ()\hspace{0.3cm}{\tt  [inline]}}\label{classVideoNode_ce263c192348ad89b3cfab4860542742}
+
+
+\index{VideoNode@{VideoNode}!addAugmentCand@{addAugmentCand}}
+\index{addAugmentCand@{addAugmentCand}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool VideoNode::addAugmentCand ({\bf StatePtr} {\em sptr}, {\bf LD} {\em l})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoNode_e3701f6a13fe06322a97c876d95d7688}
+
+
+\index{VideoNode@{VideoNode}!finalizeCands@{finalizeCands}}
+\index{finalizeCands@{finalizeCands}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoNode::finalizeCands ({\bf StatePtr} {\em sO})}\label{classVideoNode_11bd4362c71da7fc4846a4e9a4db2b63}
+
+
+\index{VideoNode@{VideoNode}!setNextStateCandMp@{setNextStateCandMp}}
+\index{setNextStateCandMp@{setNextStateCandMp}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoNode::setNextStateCandMp (NEXT\_\-CAND\_\-MP {\em mp})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoNode_d2889936b0b6aadb8309d770918e5d2c}
+
+
+\index{VideoNode@{VideoNode}!getNextStateCandMp@{getNextStateCandMp}}
+\index{getNextStateCandMp@{getNextStateCandMp}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}NEXT\_\-CAND\_\-MP VideoNode::getNextStateCandMp ()\hspace{0.3cm}{\tt  [inline]}}\label{classVideoNode_6914915d89723d02f7d98f2d10fc35a5}
+
+
+\index{VideoNode@{VideoNode}!setCPTR@{setCPTR}}
+\index{setCPTR@{setCPTR}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoNode::setCPTR ({\bf ConditionalBeliefPtr} {\em \_\-cptr})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoNode_f10f47881643c17c12dc928a099c7bd7}
+
+
+\index{VideoNode@{VideoNode}!getCPTR@{getCPTR}}
+\index{getCPTR@{getCPTR}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ConditionalBeliefPtr} VideoNode::getCPTR ()\hspace{0.3cm}{\tt  [inline]}}\label{classVideoNode_ed4e0fa3b5b1f969019bc415db657ca6}
+
+
+\index{VideoNode@{VideoNode}!getIntFromId@{getIntFromId}}
+\index{getIntFromId@{getIntFromId}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ VideoNode::getIntFromId (string {\em s})\hspace{0.3cm}{\tt  [static]}}\label{classVideoNode_e02f9db961acbb056812d63f1ac67428}
+
+
+\index{VideoNode@{VideoNode}!isInterior@{isInterior}}
+\index{isInterior@{isInterior}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool VideoNode::isInterior (int {\em x}, int {\em y}, string {\em sBig})\hspace{0.3cm}{\tt  [static]}}\label{classVideoNode_4ff21a96c68156ec5b18afdbd98ea0bc}
+
+
+checks whether block is interior 
+
+\index{VideoNode@{VideoNode}!isSubset@{isSubset}}
+\index{isSubset@{isSubset}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool VideoNode::isSubset (string {\em sSmall}, string {\em sBig})\hspace{0.3cm}{\tt  [static]}}\label{classVideoNode_caa3921526d3d5c4ad4c171ac72241b6}
+
+
+\index{VideoNode@{VideoNode}!intersection@{intersection}}
+\index{intersection@{intersection}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}string VideoNode::intersection (string {\em s1}, string {\em s2})\hspace{0.3cm}{\tt  [static]}}\label{classVideoNode_2995399e235f91ace15a87dab03adb55}
+
+
+returns the block that is common between s1 and s2 \index{VideoNode@{VideoNode}!getIdFromInt@{getIdFromInt}}
+\index{getIdFromInt@{getIdFromInt}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static string VideoNode::getIdFromInt (int {\em x}, int {\em y}, int {\em l}, int {\em w})\hspace{0.3cm}{\tt  [inline, static]}}\label{classVideoNode_9bac8077cc6f931679e524f70870de76}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{VideoNode@{VideoNode}!globalCondPtr@{globalCondPtr}}
+\index{globalCondPtr@{globalCondPtr}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ConditionalBeliefPtr} {\bf VideoNode::globalCondPtr}\hspace{0.3cm}{\tt  [private]}}\label{classVideoNode_c35636979ade93f63cde7ea655e318e0}
+
+
+the global conditional belief pointer of appropriate size 
+
+\index{VideoNode@{VideoNode}!cr@{cr}}
+\index{cr@{cr}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoNode::cr}\hspace{0.3cm}{\tt  [private]}}\label{classVideoNode_07fc09cceeaf0bfef6690aecdb2a5574}
+
+
+the block counting number 
+
+
+
+Reimplemented from {\bf RegionPPM} \doxyref{}{p.}{classRegionPPM_c21f25cb3cd95ae5717909badbb7014a}.\index{VideoNode@{VideoNode}!x@{x}}
+\index{x@{x}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoNode::x}\hspace{0.3cm}{\tt  [private]}}\label{classVideoNode_0bae4457bb6ef95b25ef3007b67eebbf}
+
+
+dimensions of the block 
+
+\index{VideoNode@{VideoNode}!y@{y}}
+\index{y@{y}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoNode::y}\hspace{0.3cm}{\tt  [private]}}\label{classVideoNode_4f91639167db6a1fe2e375a1166fa339}
+
+
+\index{VideoNode@{VideoNode}!l@{l}}
+\index{l@{l}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoNode::l}\hspace{0.3cm}{\tt  [private]}}\label{classVideoNode_897fda12dcd859f64d901bb310aefbaa}
+
+
+\index{VideoNode@{VideoNode}!w@{w}}
+\index{w@{w}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoNode::w}\hspace{0.3cm}{\tt  [private]}}\label{classVideoNode_5653685b4e36e5d617e5b28758844c04}
+
+
+\index{VideoNode@{VideoNode}!globalBlfPtr@{globalBlfPtr}}
+\index{globalBlfPtr@{globalBlfPtr}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf BeliefPtr} {\bf VideoNode::globalBlfPtr}\hspace{0.3cm}{\tt  [private]}}\label{classVideoNode_7dea28e600c60808ec170c03a0d9eb7a}
+
+
+the global belief pointer of appropriate size; 
+
+\index{VideoNode@{VideoNode}!sOld@{sOld}}
+\index{sOld@{sOld}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf StatePtr} {\bf VideoNode::sOld}\hspace{0.3cm}{\tt  [private]}}\label{classVideoNode_db740a1b91e1ebe70dc1e4a26da0eac2}
+
+
+the original state 
+
+\index{VideoNode@{VideoNode}!localBlfPtr@{localBlfPtr}}
+\index{localBlfPtr@{localBlfPtr}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf BeliefPtr} {\bf VideoNode::localBlfPtr}}\label{classVideoNode_cb639d57227bafac088ea375431179fd}
+
+
+\index{VideoNode@{VideoNode}!localCondBlfPtr@{localCondBlfPtr}}
+\index{localCondBlfPtr@{localCondBlfPtr}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ConditionalBeliefPtr} {\bf VideoNode::localCondBlfPtr}}\label{classVideoNode_458fe9e71bd5c36c6b2f04e6213f4d54}
+
+
+\index{VideoNode@{VideoNode}!isMasked@{isMasked}}
+\index{isMasked@{isMasked}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool {\bf VideoNode::isMasked}}\label{classVideoNode_88700ff0b59eef55130a2cff5a87fc76}
+
+
+is masked 
+
+\index{VideoNode@{VideoNode}!nextStateMp@{nextStateMp}}
+\index{nextStateMp@{nextStateMp}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<${\bf StatePtr}, {\bf LD}, {\bf StatePtrCmp}$>$ {\bf VideoNode::nextStateMp}}\label{classVideoNode_8e74703e49899c0fe083eb1b021a995c}
+
+
+\index{VideoNode@{VideoNode}!augmentsMp@{augmentsMp}}
+\index{augmentsMp@{augmentsMp}!VideoNode@{VideoNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<${\bf StatePtr}, {\bf LD}, {\bf StatePtrCmp}$>$ {\bf VideoNode::augmentsMp}}\label{classVideoNode_705607f18e7be40337312ced2202c429}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf VideoNode.h}\item 
+src/{\bf VideoNode.cpp}\end{CompactItemize}

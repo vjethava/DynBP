@@ -1,0 +1,540 @@
+\section{VideoGraph Class Reference}
+\label{classVideoGraph}\index{VideoGraph@{VideoGraph}}
+{\tt \#include $<$VideoGraph.h$>$}
+
+Inheritance diagram for VideoGraph::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classVideoGraph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf BeliefPtr} {\bf getOrigBlfFromMp} (int key)
+\item 
+{\bf VideoNode} $\ast$ {\bf addNode} ({\bf VideoNode} $\ast$np)
+\item 
+map$<$ {\bf VI}, {\bf LD}, {\bf VCMP}$<$ {\bf INT} $>$ $>$ {\bf getGaussianNeighbours} ({\bf VI} v, {\bf LD} NH, {\bf LD} T)
+\item 
+{\bf VideoGraph} ({\bf VideoReader} $\ast$\_\-reader, bool \_\-isGray=true, int numL=4, int \_\-rx=4, int \_\-ry=4, int \_\-cx=2, int \_\-cy=2)
+\item 
+virtual {\bf $\sim$VideoGraph} ()
+\item 
+void {\bf updateCondBlfMp} (IplImage $\ast$last\_\-frame, IplImage $\ast$curr\_\-frame, IplImage $\ast$mask\_\-frame)
+\item 
+int {\bf addCondBlf} (vector$<$ {\bf INT} $>$ pastVals, vector$<$ {\bf INT} $>$ nextVals)
+\item 
+void {\bf setNodeCondBlf} ({\bf VideoNode} $\ast$vn)
+\item 
+void {\bf genSubRegions} ()
+\begin{CompactList}\small\item\em this function adds the requisite graph structure to the \doxyref{VideoGraph}{p.}{classVideoGraph} \item\end{CompactList}\item 
+vector$<$ {\bf VideoNode} $\ast$ $>$ {\bf getMaximalUnfilledRegions} ()
+\item 
+{\bf StatePtr} {\bf readNodeFromFrame} ({\bf VideoNode} $\ast$vn, IplImage $\ast$frame)
+\begin{CompactList}\small\item\em read up the node and get equivalent state pointer \item\end{CompactList}\item 
+vector$<$ pair$<$ {\bf StatePtr}, {\bf LD} $>$ $>$ {\bf getNextStateCands} ({\bf VideoNode} $\ast$vn, IplImage $\ast$frame, {\bf LD} T=0.1)
+\begin{CompactList}\small\item\em ultimately has to look at gaussian mixture model of the K-NN states \item\end{CompactList}\item 
+int {\bf updateNodeBlf} ({\bf VideoNode} $\ast$vn, IplImage $\ast$frame)
+\item 
+int {\bf updateAllNodes} (IplImage $\ast$frame, IplImage $\ast$mask\_\-frame)
+\item 
+void {\bf getNextFramePPM} (IplImage $\ast$frame, IplImage $\ast$holes)
+\begin{CompactList}\small\item\em holes(grayscale) convention = 255 (hole) ... 0 (no hole) \item\end{CompactList}\item 
+{\bf LD} {\bf getNodeMaskPct} ({\bf VideoNode} $\ast$vn, IplImage $\ast$mask\_\-frame)
+\item 
+void {\bf initMessages} ({\bf VideoNode} $\ast$vnp, {\bf VideoNode} $\ast$vnc, map$<$ {\bf VI}, {\bf LD}, {\bf VCMP}$<$ {\bf INT} $>$ $>$ choices)
+\item 
+void {\bf updateMessages} ({\bf VideoNode} $\ast$vnp, {\bf VideoNode} $\ast$vnc, map$<$ {\bf VI}, {\bf LD}, {\bf VCMP}$<$ {\bf INT} $>$ $>$ choices)
+\item 
+void {\bf PPM\_\-step2} (IplImage $\ast$frame, {\bf LD} candT)
+\item 
+bool {\bf isValid} (int x, int y, int xi=0, int yi=0, int xl=-1, int yl=-1)
+\item 
+bool {\bf getAbsolutePixel} (string nid, int i, int j, {\bf StatePtr} sptr, vector$<$ {\bf INT} $>$ $\ast$result)
+\item 
+{\bf StatePtr} {\bf getChildStatePtr} (string parId, string childId, {\bf StatePtr} parState)
+\item 
+void {\bf updateChildAugments} ({\bf VideoNode} $\ast$vn, {\bf StatePtr} sOld)
+\item 
+void {\bf updateParentAugments} ({\bf VideoNode} $\ast$vn, {\bf StatePtr} oldState)
+\item 
+IplImage $\ast$ {\bf inPaint} (IplImage $\ast$input\_\-frame, IplImage $\ast$mask\_\-frame)
+\item 
+vector$<$ pair$<$ int, int $>$ $>$ {\bf getNodeUnfilledPixels} ({\bf VideoNode} $\ast$vn, IplImage $\ast$mask\_\-frame)
+\item 
+bool {\bf isMaskedPixel} (int i, int j, IplImage $\ast$mask\_\-frame)
+\item 
+vector$<$ pair$<$ {\bf StatePtr}, {\bf LD} $>$ $>$ {\bf getMatchingStates} ({\bf VideoNode} $\ast$vn, IplImage $\ast$frame, IplImage $\ast$mask\_\-frame, bool approx=false)
+\item 
+void {\bf updateMaskStatus} (IplImage $\ast$mask\_\-frame)
+\item 
+void {\bf fillFrame0} ()
+\item 
+void {\bf fillFrame1} (bool lookMax=false)
+\item 
+bool {\bf isPartialMatch} ({\bf StatePtr} s1, {\bf StatePtr} s2, {\bf StatePtr} mask)
+\item 
+{\bf BeliefPtr} {\bf getApproxBlf} ({\bf VideoNode} $\ast$vn, {\bf StatePtr} sOld)
+\item 
+vector$<$ pair$<$ {\bf VideoNode} $\ast$, {\bf LD} $>$ $>$ {\bf getIncompleteList} (IplImage $\ast$mask\_\-frame)
+\item 
+bool {\bf isClose} ({\bf StatePtr} s1, {\bf StatePtr} s2, int NL, {\bf LD} distS)
+\item 
+vector$<$ pair$<$ {\bf StatePtr}, {\bf LD} $>$ $>$ {\bf getMaximalPixelPr} ({\bf VideoNode} $\ast$vn, int i, int j)
+\item 
+void {\bf clearAllNodes} ()
+\item 
+void {\bf clearCondBlfMp} ()
+\item 
+void {\bf initLocals} ()
+\item 
+void {\bf getCandidates} (IplImage $\ast$last\_\-frame, IplImage $\ast$input\_\-frame, IplImage $\ast$mask\_\-frame)
+\item 
+{\bf StatePtr} {\bf getChildStatePtr} ({\bf NodePtr} vp, {\bf NodePtr} vc, {\bf StatePtr} parState)
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+IplImage $\ast$ {\bf inpainted\_\-frame}
+\begin{CompactList}\small\item\em the inpainting frame \item\end{CompactList}\item 
+IplImage $\ast$ {\bf local\_\-mask}
+\item 
+IplImage $\ast$ {\bf output\_\-frame}
+\begin{CompactList}\small\item\em pointer to reader output frame \item\end{CompactList}\item 
+IplImage $\ast$ {\bf true\_\-frame}
+\begin{CompactList}\small\item\em pointer to the reader true frame \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+pair$<$ {\bf StatePtr}, {\bf LD} $>$ {\bf getBestState0} ({\bf VideoNode} $\ast$vn)
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+map$<$ int, {\bf ConditionalBelief} $\ast$ $>$ {\bf blfMp}
+\begin{CompactList}\small\item\em the belief maps for number of variables under question \item\end{CompactList}\item 
+map$<$ int, {\bf BeliefPtr} $>$ {\bf pOrigMp}
+\begin{CompactList}\small\item\em the belief maps for bOrig \item\end{CompactList}\item 
+int {\bf numLvls}
+\begin{CompactList}\small\item\em the levels \item\end{CompactList}\item 
+bool {\bf isGray}
+\begin{CompactList}\small\item\em whether is gray or not \item\end{CompactList}\item 
+vector$<$ int $>$ {\bf levels}
+\begin{CompactList}\small\item\em the levels that will be present in the video (0..255) \item\end{CompactList}\item 
+{\bf VideoReader} $\ast$ {\bf reader}
+\begin{CompactList}\small\item\em the reader \item\end{CompactList}\item 
+int {\bf rx}
+\begin{CompactList}\small\item\em biggest region width \item\end{CompactList}\item 
+int {\bf ry}
+\begin{CompactList}\small\item\em biggest region size \item\end{CompactList}\item 
+int {\bf cx}
+\begin{CompactList}\small\item\em how much x-overlap between current and next region \item\end{CompactList}\item 
+int {\bf cy}
+\begin{CompactList}\small\item\em how much y-overlap between current and next region \item\end{CompactList}\item 
+int {\bf N1}
+\begin{CompactList}\small\item\em how many rows \item\end{CompactList}\item 
+int {\bf N2}
+\begin{CompactList}\small\item\em how many columns \item\end{CompactList}\item 
+int {\bf hits}
+\begin{CompactList}\small\item\em the number of cond beliefs that have been duplicated \item\end{CompactList}\item 
+int {\bf misses}
+\begin{CompactList}\small\item\em the number of frames that have been missed \item\end{CompactList}\item 
+{\bf LD} {\bf sigma}
+\begin{CompactList}\small\item\em the sigma value for gaussian around the mean value \item\end{CompactList}\item 
+{\bf LD} {\bf nearestT}
+\item 
+{\bf LD} {\bf selectThreshold}
+\begin{CompactList}\small\item\em the threshold for max-probability \item\end{CompactList}\item 
+int {\bf parAugmentNotFound}
+\item 
+int {\bf parAugmentFound}
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{VideoGraph@{VideoGraph}!VideoGraph@{VideoGraph}}
+\index{VideoGraph@{VideoGraph}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}VideoGraph::VideoGraph ({\bf VideoReader} $\ast$ {\em \_\-reader}, bool {\em \_\-isGray} = {\tt true}, int {\em numL} = {\tt 4}, int {\em \_\-rx} = {\tt 4}, int {\em \_\-ry} = {\tt 4}, int {\em \_\-cx} = {\tt 2}, int {\em \_\-cy} = {\tt 2})}\label{classVideoGraph_c71e577507f20c12ea997c947fb172a0}
+
+
+\index{VideoGraph@{VideoGraph}!~VideoGraph@{$\sim$VideoGraph}}
+\index{~VideoGraph@{$\sim$VideoGraph}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}VideoGraph::$\sim$VideoGraph ()\hspace{0.3cm}{\tt  [virtual]}}\label{classVideoGraph_d70ffc6a39c30301c8091bda6cafa293}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{VideoGraph@{VideoGraph}!getBestState0@{getBestState0}}
+\index{getBestState0@{getBestState0}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pair$<$ {\bf StatePtr}, {\bf LD} $>$ VideoGraph::getBestState0 ({\bf VideoNode} $\ast$ {\em vn})\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_9531cdfa7ef234edbe14b61a8cfd09a0}
+
+
+\index{VideoGraph@{VideoGraph}!getOrigBlfFromMp@{getOrigBlfFromMp}}
+\index{getOrigBlfFromMp@{getOrigBlfFromMp}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf BeliefPtr} VideoGraph::getOrigBlfFromMp (int {\em key})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoGraph_1752f6d20f74a0b1d05dc16a9c30c0fa}
+
+
+\index{VideoGraph@{VideoGraph}!addNode@{addNode}}
+\index{addNode@{addNode}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf VideoNode}$\ast$ VideoGraph::addNode ({\bf VideoNode} $\ast$ {\em np})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoGraph_309cbe38154dffdacad5fa8fa24c8369}
+
+
+\index{VideoGraph@{VideoGraph}!getGaussianNeighbours@{getGaussianNeighbours}}
+\index{getGaussianNeighbours@{getGaussianNeighbours}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<${\bf VI}, {\bf LD}, {\bf VCMP}$<${\bf INT}$>$ $>$ VideoGraph::getGaussianNeighbours ({\bf VI} {\em v}, {\bf LD} {\em NH}, {\bf LD} {\em T})}\label{classVideoGraph_d0c335f75e0460809a78fa356a5f45c1}
+
+
+\index{VideoGraph@{VideoGraph}!updateCondBlfMp@{updateCondBlfMp}}
+\index{updateCondBlfMp@{updateCondBlfMp}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::updateCondBlfMp (IplImage $\ast$ {\em last\_\-frame}, IplImage $\ast$ {\em curr\_\-frame}, IplImage $\ast$ {\em mask\_\-frame})}\label{classVideoGraph_b0aa9baed334fae1d815a18b2ed528bb}
+
+
+\index{VideoGraph@{VideoGraph}!addCondBlf@{addCondBlf}}
+\index{addCondBlf@{addCondBlf}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int VideoGraph::addCondBlf (vector$<$ {\bf INT} $>$ {\em pastVals}, vector$<$ {\bf INT} $>$ {\em nextVals})}\label{classVideoGraph_eb9575760cf698e05928b7245f294f9d}
+
+
+\index{VideoGraph@{VideoGraph}!setNodeCondBlf@{setNodeCondBlf}}
+\index{setNodeCondBlf@{setNodeCondBlf}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::setNodeCondBlf ({\bf VideoNode} $\ast$ {\em vn})}\label{classVideoGraph_c6e953524c70a19f8808b0c7d284e165}
+
+
+\index{VideoGraph@{VideoGraph}!genSubRegions@{genSubRegions}}
+\index{genSubRegions@{genSubRegions}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::genSubRegions ()}\label{classVideoGraph_af45bb4776b8c55d5110d40624f3ffce}
+
+
+this function adds the requisite graph structure to the \doxyref{VideoGraph}{p.}{classVideoGraph} 
+
+\index{VideoGraph@{VideoGraph}!getMaximalUnfilledRegions@{getMaximalUnfilledRegions}}
+\index{getMaximalUnfilledRegions@{getMaximalUnfilledRegions}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf VideoNode}$\ast$$>$ VideoGraph::getMaximalUnfilledRegions ()}\label{classVideoGraph_ec510cbdf647928a51397984f899351d}
+
+
+\index{VideoGraph@{VideoGraph}!readNodeFromFrame@{readNodeFromFrame}}
+\index{readNodeFromFrame@{readNodeFromFrame}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf StatePtr} VideoGraph::readNodeFromFrame ({\bf VideoNode} $\ast$ {\em vn}, IplImage $\ast$ {\em frame})}\label{classVideoGraph_8e23915b2b4060749f09bfb0784f4777}
+
+
+read up the node and get equivalent state pointer 
+
+\index{VideoGraph@{VideoGraph}!getNextStateCands@{getNextStateCands}}
+\index{getNextStateCands@{getNextStateCands}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ pair$<$ {\bf StatePtr}, {\bf LD} $>$ $>$ VideoGraph::getNextStateCands ({\bf VideoNode} $\ast$ {\em vn}, IplImage $\ast$ {\em frame}, {\bf LD} {\em T} = {\tt 0.1})}\label{classVideoGraph_d23ce958583f4d6e67caf2af67cbd1ec}
+
+
+ultimately has to look at gaussian mixture model of the K-NN states 
+
+\index{VideoGraph@{VideoGraph}!updateNodeBlf@{updateNodeBlf}}
+\index{updateNodeBlf@{updateNodeBlf}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int VideoGraph::updateNodeBlf ({\bf VideoNode} $\ast$ {\em vn}, IplImage $\ast$ {\em frame})}\label{classVideoGraph_e3600547c757a8855db8d8deccce65ce}
+
+
+\index{VideoGraph@{VideoGraph}!updateAllNodes@{updateAllNodes}}
+\index{updateAllNodes@{updateAllNodes}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int VideoGraph::updateAllNodes (IplImage $\ast$ {\em frame}, IplImage $\ast$ {\em mask\_\-frame})}\label{classVideoGraph_e1e4fce017fd2437d0f9da0b852965ee}
+
+
+\index{VideoGraph@{VideoGraph}!getNextFramePPM@{getNextFramePPM}}
+\index{getNextFramePPM@{getNextFramePPM}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::getNextFramePPM (IplImage $\ast$ {\em frame}, IplImage $\ast$ {\em holes})}\label{classVideoGraph_ae5639a15ce8bdc7cc59f084d8709414}
+
+
+holes(grayscale) convention = 255 (hole) ... 0 (no hole) 
+
+\index{VideoGraph@{VideoGraph}!getNodeMaskPct@{getNodeMaskPct}}
+\index{getNodeMaskPct@{getNodeMaskPct}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} VideoGraph::getNodeMaskPct ({\bf VideoNode} $\ast$ {\em vn}, IplImage $\ast$ {\em mask\_\-frame})}\label{classVideoGraph_88d5e9d8cc881f0095d4b8cbf6b2d661}
+
+
+\index{VideoGraph@{VideoGraph}!initMessages@{initMessages}}
+\index{initMessages@{initMessages}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::initMessages ({\bf VideoNode} $\ast$ {\em vnp}, {\bf VideoNode} $\ast$ {\em vnc}, map$<$ {\bf VI}, {\bf LD}, {\bf VCMP}$<$ {\bf INT} $>$ $>$ {\em choices})}\label{classVideoGraph_dea952dbc2d364b64ebf8a8dc7509eb5}
+
+
+\index{VideoGraph@{VideoGraph}!updateMessages@{updateMessages}}
+\index{updateMessages@{updateMessages}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::updateMessages ({\bf VideoNode} $\ast$ {\em vnp}, {\bf VideoNode} $\ast$ {\em vnc}, map$<$ {\bf VI}, {\bf LD}, {\bf VCMP}$<$ {\bf INT} $>$ $>$ {\em choices})}\label{classVideoGraph_6f0480f5aff68515ba810aa20119aa39}
+
+
+\index{VideoGraph@{VideoGraph}!PPM_step2@{PPM\_\-step2}}
+\index{PPM_step2@{PPM\_\-step2}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::PPM\_\-step2 (IplImage $\ast$ {\em frame}, {\bf LD} {\em candT})}\label{classVideoGraph_3f59d46d63f993de3f8e17a1a7479f0d}
+
+
+\index{VideoGraph@{VideoGraph}!isValid@{isValid}}
+\index{isValid@{isValid}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool VideoGraph::isValid (int {\em x}, int {\em y}, int {\em xi} = {\tt 0}, int {\em yi} = {\tt 0}, int {\em xl} = {\tt -1}, int {\em yl} = {\tt -1})}\label{classVideoGraph_ed75bcece886e9523b75933da823784a}
+
+
+\index{VideoGraph@{VideoGraph}!getAbsolutePixel@{getAbsolutePixel}}
+\index{getAbsolutePixel@{getAbsolutePixel}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool VideoGraph::getAbsolutePixel (string {\em nid}, int {\em i}, int {\em j}, {\bf StatePtr} {\em sptr}, vector$<$ {\bf INT} $>$ $\ast$ {\em result})}\label{classVideoGraph_5a0e5265411b87ae2217972c4db5c0cb}
+
+
+\index{VideoGraph@{VideoGraph}!getChildStatePtr@{getChildStatePtr}}
+\index{getChildStatePtr@{getChildStatePtr}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf StatePtr} VideoGraph::getChildStatePtr (string {\em parId}, string {\em childId}, {\bf StatePtr} {\em parState})}\label{classVideoGraph_ca9ae8e0d5a27cbf4598c60799c04081}
+
+
+\index{VideoGraph@{VideoGraph}!updateChildAugments@{updateChildAugments}}
+\index{updateChildAugments@{updateChildAugments}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::updateChildAugments ({\bf VideoNode} $\ast$ {\em vn}, {\bf StatePtr} {\em sOld})}\label{classVideoGraph_f97ae97bea7bcc80523d5144e62be37b}
+
+
+\index{VideoGraph@{VideoGraph}!updateParentAugments@{updateParentAugments}}
+\index{updateParentAugments@{updateParentAugments}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::updateParentAugments ({\bf VideoNode} $\ast$ {\em vn}, {\bf StatePtr} {\em oldState})}\label{classVideoGraph_2da7bbfb7037dcb4cb77ddbf512be38f}
+
+
+\index{VideoGraph@{VideoGraph}!inPaint@{inPaint}}
+\index{inPaint@{inPaint}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ VideoGraph::inPaint (IplImage $\ast$ {\em input\_\-frame}, IplImage $\ast$ {\em mask\_\-frame})}\label{classVideoGraph_288c0f0e3cc4bd415b4be7805c71b414}
+
+
+\index{VideoGraph@{VideoGraph}!getNodeUnfilledPixels@{getNodeUnfilledPixels}}
+\index{getNodeUnfilledPixels@{getNodeUnfilledPixels}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ pair$<$ int, int $>$ $>$ VideoGraph::getNodeUnfilledPixels ({\bf VideoNode} $\ast$ {\em vn}, IplImage $\ast$ {\em mask\_\-frame})}\label{classVideoGraph_9022e09e81c10e1a5fbb4347a9428470}
+
+
+\index{VideoGraph@{VideoGraph}!isMaskedPixel@{isMaskedPixel}}
+\index{isMaskedPixel@{isMaskedPixel}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool VideoGraph::isMaskedPixel (int {\em i}, int {\em j}, IplImage $\ast$ {\em mask\_\-frame})}\label{classVideoGraph_2dc39de1bc815856e0beed4f2e9d8081}
+
+
+\index{VideoGraph@{VideoGraph}!getMatchingStates@{getMatchingStates}}
+\index{getMatchingStates@{getMatchingStates}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ pair$<$ {\bf StatePtr}, {\bf LD} $>$ $>$ VideoGraph::getMatchingStates ({\bf VideoNode} $\ast$ {\em vn}, IplImage $\ast$ {\em frame}, IplImage $\ast$ {\em mask\_\-frame}, bool {\em approx} = {\tt false})}\label{classVideoGraph_73caa2bebc4e83e3da0011a822ece849}
+
+
+\index{VideoGraph@{VideoGraph}!updateMaskStatus@{updateMaskStatus}}
+\index{updateMaskStatus@{updateMaskStatus}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::updateMaskStatus (IplImage $\ast$ {\em mask\_\-frame})}\label{classVideoGraph_29b757cf3a1454e4348e729778c6735f}
+
+
+\index{VideoGraph@{VideoGraph}!fillFrame0@{fillFrame0}}
+\index{fillFrame0@{fillFrame0}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::fillFrame0 ()}\label{classVideoGraph_f179c4fcc35c635738cfef0082a869a1}
+
+
+\index{VideoGraph@{VideoGraph}!fillFrame1@{fillFrame1}}
+\index{fillFrame1@{fillFrame1}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::fillFrame1 (bool {\em lookMax} = {\tt false})}\label{classVideoGraph_029b777f551318e3f070c519ce814715}
+
+
+\index{VideoGraph@{VideoGraph}!isPartialMatch@{isPartialMatch}}
+\index{isPartialMatch@{isPartialMatch}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool VideoGraph::isPartialMatch ({\bf StatePtr} {\em s1}, {\bf StatePtr} {\em s2}, {\bf StatePtr} {\em mask})}\label{classVideoGraph_6557d18e0d607e426d634f9c5ef5e464}
+
+
+\index{VideoGraph@{VideoGraph}!getApproxBlf@{getApproxBlf}}
+\index{getApproxBlf@{getApproxBlf}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf BeliefPtr} VideoGraph::getApproxBlf ({\bf VideoNode} $\ast$ {\em vn}, {\bf StatePtr} {\em sOld})}\label{classVideoGraph_6925027f23efb0021fe93bbb1a7b3d23}
+
+
+\index{VideoGraph@{VideoGraph}!getIncompleteList@{getIncompleteList}}
+\index{getIncompleteList@{getIncompleteList}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ pair$<$ {\bf VideoNode} $\ast$, {\bf LD} $>$ $>$ VideoGraph::getIncompleteList (IplImage $\ast$ {\em mask\_\-frame})}\label{classVideoGraph_9a0548bc4181b53fa00b48bb3c671445}
+
+
+\index{VideoGraph@{VideoGraph}!isClose@{isClose}}
+\index{isClose@{isClose}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool VideoGraph::isClose ({\bf StatePtr} {\em s1}, {\bf StatePtr} {\em s2}, int {\em NL}, {\bf LD} {\em distS})}\label{classVideoGraph_d09a5dbc367d381dc75a979082852156}
+
+
+\index{VideoGraph@{VideoGraph}!getMaximalPixelPr@{getMaximalPixelPr}}
+\index{getMaximalPixelPr@{getMaximalPixelPr}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ pair$<$ {\bf StatePtr}, {\bf LD} $>$ $>$ VideoGraph::getMaximalPixelPr ({\bf VideoNode} $\ast$ {\em vn}, int {\em i}, int {\em j})}\label{classVideoGraph_da8ec222464e68881ada2e4a62c2a72b}
+
+
+\index{VideoGraph@{VideoGraph}!clearAllNodes@{clearAllNodes}}
+\index{clearAllNodes@{clearAllNodes}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::clearAllNodes ()}\label{classVideoGraph_fbc9fe10a385560c993d81bb7fe9ac33}
+
+
+\index{VideoGraph@{VideoGraph}!clearCondBlfMp@{clearCondBlfMp}}
+\index{clearCondBlfMp@{clearCondBlfMp}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::clearCondBlfMp ()}\label{classVideoGraph_64fe11928c7c207c9d552eae790cf6b9}
+
+
+\index{VideoGraph@{VideoGraph}!initLocals@{initLocals}}
+\index{initLocals@{initLocals}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::initLocals ()}\label{classVideoGraph_cd2142a933ab36b5355a5ba409442e3c}
+
+
+\index{VideoGraph@{VideoGraph}!getCandidates@{getCandidates}}
+\index{getCandidates@{getCandidates}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoGraph::getCandidates (IplImage $\ast$ {\em last\_\-frame}, IplImage $\ast$ {\em input\_\-frame}, IplImage $\ast$ {\em mask\_\-frame})}\label{classVideoGraph_0cc989668c7c1881ab89c63117621657}
+
+
+\index{VideoGraph@{VideoGraph}!getChildStatePtr@{getChildStatePtr}}
+\index{getChildStatePtr@{getChildStatePtr}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf StatePtr} VideoGraph::getChildStatePtr ({\bf NodePtr} {\em vp}, {\bf NodePtr} {\em vc}, {\bf StatePtr} {\em parState})\hspace{0.3cm}{\tt  [inline, virtual]}}\label{classVideoGraph_9e6275280e01ab9b37b52e7cf92ddd2d}
+
+
+
+
+Implements {\bf GraphPPM} \doxyref{}{p.}{classGraphPPM_b245aae058d0b252df985651c8fcc2eb}.
+
+\subsection{Member Data Documentation}
+\index{VideoGraph@{VideoGraph}!blfMp@{blfMp}}
+\index{blfMp@{blfMp}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<$int, {\bf ConditionalBelief}$\ast$ $>$ {\bf VideoGraph::blfMp}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_3a7eb105eb81b07f72042a34df9b6aad}
+
+
+the belief maps for number of variables under question 
+
+\index{VideoGraph@{VideoGraph}!pOrigMp@{pOrigMp}}
+\index{pOrigMp@{pOrigMp}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<$int, {\bf BeliefPtr}$>$ {\bf VideoGraph::pOrigMp}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_392f6c68aa8ea5ceb2349a93241d550b}
+
+
+the belief maps for bOrig 
+
+\index{VideoGraph@{VideoGraph}!numLvls@{numLvls}}
+\index{numLvls@{numLvls}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoGraph::numLvls}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_96f834448fa5cf950840d66c41e9cdec}
+
+
+the levels 
+
+\index{VideoGraph@{VideoGraph}!isGray@{isGray}}
+\index{isGray@{isGray}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool {\bf VideoGraph::isGray}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_92f68a8f0b1177cae199eeb72e54f6b5}
+
+
+whether is gray or not 
+
+\index{VideoGraph@{VideoGraph}!levels@{levels}}
+\index{levels@{levels}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ {\bf VideoGraph::levels}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_9488fbaa66e4a81e7612ebd795efe64f}
+
+
+the levels that will be present in the video (0..255) 
+
+\index{VideoGraph@{VideoGraph}!reader@{reader}}
+\index{reader@{reader}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf VideoReader}$\ast$ {\bf VideoGraph::reader}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_2028023e314c8267759fb62ec448aecc}
+
+
+the reader 
+
+\index{VideoGraph@{VideoGraph}!rx@{rx}}
+\index{rx@{rx}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoGraph::rx}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_0a429d2da38708c8fac0077d76718816}
+
+
+biggest region width 
+
+\index{VideoGraph@{VideoGraph}!ry@{ry}}
+\index{ry@{ry}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoGraph::ry}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_d6f12308b98c416ffca99c98bc872cb0}
+
+
+biggest region size 
+
+\index{VideoGraph@{VideoGraph}!cx@{cx}}
+\index{cx@{cx}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoGraph::cx}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_fb26fafe304c8b01c866dbb2c352a36b}
+
+
+how much x-overlap between current and next region 
+
+\index{VideoGraph@{VideoGraph}!cy@{cy}}
+\index{cy@{cy}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoGraph::cy}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_23bf3294f2f920882fec4674718f1f0c}
+
+
+how much y-overlap between current and next region 
+
+\index{VideoGraph@{VideoGraph}!N1@{N1}}
+\index{N1@{N1}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoGraph::N1}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_05dd3abfee9967043420aaaff3fce547}
+
+
+how many rows 
+
+\index{VideoGraph@{VideoGraph}!N2@{N2}}
+\index{N2@{N2}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoGraph::N2}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_f60f4e2612cc444c8f18030af71dbbc9}
+
+
+how many columns 
+
+\index{VideoGraph@{VideoGraph}!hits@{hits}}
+\index{hits@{hits}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoGraph::hits}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_82583b12938e2ef4db4e5cae7a01d856}
+
+
+the number of cond beliefs that have been duplicated 
+
+\index{VideoGraph@{VideoGraph}!misses@{misses}}
+\index{misses@{misses}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoGraph::misses}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_de1225cdd9a602dd2e6a726e41e3e965}
+
+
+the number of frames that have been missed 
+
+\index{VideoGraph@{VideoGraph}!sigma@{sigma}}
+\index{sigma@{sigma}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf VideoGraph::sigma}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_749c81259aa9c59e85e6e448b1a46dc5}
+
+
+the sigma value for gaussian around the mean value 
+
+\index{VideoGraph@{VideoGraph}!nearestT@{nearestT}}
+\index{nearestT@{nearestT}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf VideoGraph::nearestT}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_9893c4483dde840e840da0f88ca21ff1}
+
+
+\index{VideoGraph@{VideoGraph}!selectThreshold@{selectThreshold}}
+\index{selectThreshold@{selectThreshold}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf VideoGraph::selectThreshold}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_69059a692b67900f619686b4f48a06f2}
+
+
+the threshold for max-probability 
+
+\index{VideoGraph@{VideoGraph}!parAugmentNotFound@{parAugmentNotFound}}
+\index{parAugmentNotFound@{parAugmentNotFound}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoGraph::parAugmentNotFound}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_2f5ae2f9001ec5bbec9c4d997a58cd8a}
+
+
+\index{VideoGraph@{VideoGraph}!parAugmentFound@{parAugmentFound}}
+\index{parAugmentFound@{parAugmentFound}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoGraph::parAugmentFound}\hspace{0.3cm}{\tt  [private]}}\label{classVideoGraph_4879c10a87795020cc9175cd276a0d57}
+
+
+\index{VideoGraph@{VideoGraph}!inpainted_frame@{inpainted\_\-frame}}
+\index{inpainted_frame@{inpainted\_\-frame}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf VideoGraph::inpainted\_\-frame}}\label{classVideoGraph_9338e96b5267f18ce4291a5af5e8f5f1}
+
+
+the inpainting frame 
+
+\index{VideoGraph@{VideoGraph}!local_mask@{local\_\-mask}}
+\index{local_mask@{local\_\-mask}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf VideoGraph::local\_\-mask}}\label{classVideoGraph_abfbba16f9b2f4940abf173ea4ab9f37}
+
+
+\index{VideoGraph@{VideoGraph}!output_frame@{output\_\-frame}}
+\index{output_frame@{output\_\-frame}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf VideoGraph::output\_\-frame}}\label{classVideoGraph_708f6ff2e27c5c7a682a58a3deb6d7ae}
+
+
+pointer to reader output frame 
+
+\index{VideoGraph@{VideoGraph}!true_frame@{true\_\-frame}}
+\index{true_frame@{true\_\-frame}!VideoGraph@{VideoGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf VideoGraph::true\_\-frame}}\label{classVideoGraph_c313b092ed19b2673b48dfb0e5fe5cca}
+
+
+pointer to the reader true frame 
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf VideoGraph.h}\item 
+src/{\bf VideoGraph.cpp}\end{CompactItemize}

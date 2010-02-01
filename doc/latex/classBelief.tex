@@ -1,0 +1,176 @@
+\section{Belief Class Reference}
+\label{classBelief}\index{Belief@{Belief}}
+class that stores all possible the beliefs  
+
+
+{\tt \#include $<$belief.h$>$}
+
+Inheritance diagram for Belief::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classBelief}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+map$<$ {\bf StatePtr}, {\bf LD}, {\bf StatePtrCmp} $>$ {\bf getMp} () const
+\item 
+{\bf Belief} (bool intMode=false)
+\begin{CompactList}\small\item\em the default constructor - note that INT\_\-MODE must be initialized before call to this \item\end{CompactList}\item 
+{\bf LD} {\bf getAllocPr} () const
+\begin{CompactList}\small\item\em returns the total allocated probability ( relevant to LD\_\-MODE ) \item\end{CompactList}\item 
+int {\bf getTotalFreq} () const
+\begin{CompactList}\small\item\em returns the totalFreq (INT\_\-MODE) \item\end{CompactList}\item 
+void {\bf setPr} ({\bf StatePtr} \_\-s, {\bf LD} \_\-v=-1.0)
+\item 
+{\bf LD} {\bf getPr} ({\bf StatePtr} s)
+\begin{CompactList}\small\item\em returns the probability of given state(if found) or BELIEF\_\-NOT\_\-FOUND=-1.0 \item\end{CompactList}\item 
+{\bf $\sim$Belief} ()
+\item 
+void {\bf clear} ()
+\item 
+void {\bf normalize} ()
+\begin{CompactList}\small\item\em normalizes allocPr = 1.0 \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+bool {\bf INT\_\-MODE}
+\begin{CompactList}\small\item\em variable that is true when the map stores the frequency \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+void {\bf incrTot} ()
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+{\bf LD} {\bf allocPr}
+\begin{CompactList}\small\item\em the total probability mass allocated in bMp \item\end{CompactList}\item 
+map$<$ {\bf StatePtr}, {\bf LD}, {\bf StatePtrCmp} $>$ {\bf bMp}
+\begin{CompactList}\small\item\em map having actual belief - probability pairs \item\end{CompactList}\item 
+int {\bf totalFreq}
+\begin{CompactList}\small\item\em variable used in tracking true\_\-pr = act\_\-pr/totalFreq ( to make compatible with int mode ) \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&os, {\bf Belief} \&b)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+class that stores all possible the beliefs 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Belief@{Belief}!Belief@{Belief}}
+\index{Belief@{Belief}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Belief::Belief (bool {\em intMode} = {\tt false})\hspace{0.3cm}{\tt  [inline]}}\label{classBelief_c033cf6a5790319d7ecf3a864e61b209}
+
+
+the default constructor - note that INT\_\-MODE must be initialized before call to this 
+
+\index{Belief@{Belief}!~Belief@{$\sim$Belief}}
+\index{~Belief@{$\sim$Belief}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Belief::$\sim$Belief ()\hspace{0.3cm}{\tt  [inline]}}\label{classBelief_3225e0dd40b0b2a73dd72c75c1a3acec}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Belief@{Belief}!incrTot@{incrTot}}
+\index{incrTot@{incrTot}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Belief::incrTot ()\hspace{0.3cm}{\tt  [inline, private]}}\label{classBelief_4cbd767671325fa2dbc951e03a5a5f5e}
+
+
+\index{Belief@{Belief}!getMp@{getMp}}
+\index{getMp@{getMp}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<${\bf StatePtr}, {\bf LD}, {\bf StatePtrCmp}$>$ Belief::getMp () const\hspace{0.3cm}{\tt  [inline]}}\label{classBelief_8ef06d897864474bf4ec7045db27bde1}
+
+
+\index{Belief@{Belief}!getAllocPr@{getAllocPr}}
+\index{getAllocPr@{getAllocPr}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} Belief::getAllocPr () const\hspace{0.3cm}{\tt  [inline]}}\label{classBelief_bc7840cece7baa070c4c9dc1e65f1951}
+
+
+returns the total allocated probability ( relevant to LD\_\-MODE ) 
+
+\index{Belief@{Belief}!getTotalFreq@{getTotalFreq}}
+\index{getTotalFreq@{getTotalFreq}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int Belief::getTotalFreq () const\hspace{0.3cm}{\tt  [inline]}}\label{classBelief_24f6916c0e74d448ee2176f53c267e95}
+
+
+returns the totalFreq (INT\_\-MODE) 
+
+\index{Belief@{Belief}!setPr@{setPr}}
+\index{setPr@{setPr}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Belief::setPr ({\bf StatePtr} {\em \_\-s}, {\bf LD} {\em \_\-v} = {\tt -1.0})}\label{classBelief_56babf3f9c5c646e99b9285e749122d6}
+
+
+sets the probability of given state ( if INT\_\-MODE = false) increments the frequency of given state and the totalFreqency ( if INT\_\-MODE = true ) \index{Belief@{Belief}!getPr@{getPr}}
+\index{getPr@{getPr}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} Belief::getPr ({\bf StatePtr} {\em s})}\label{classBelief_a08084d7263223dac3192fc82a266f40}
+
+
+returns the probability of given state(if found) or BELIEF\_\-NOT\_\-FOUND=-1.0 
+
+\index{Belief@{Belief}!clear@{clear}}
+\index{clear@{clear}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Belief::clear ()\hspace{0.3cm}{\tt  [inline]}}\label{classBelief_5447bc76328b28b4c0683262fc70911e}
+
+
+
+
+Reimplemented in {\bf ConditionalBelief} \doxyref{}{p.}{classConditionalBelief_c1323d280c05b3b6a245c0871d419abf}.\index{Belief@{Belief}!normalize@{normalize}}
+\index{normalize@{normalize}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Belief::normalize ()\hspace{0.3cm}{\tt  [inline]}}\label{classBelief_1fd13460b138d51f6c9f3f51962e1b41}
+
+
+normalizes allocPr = 1.0 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Belief@{Belief}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, {\bf Belief} \& {\em b})\hspace{0.3cm}{\tt  [friend]}}\label{classBelief_14833d2c0ad7d660d4a5c50902b1f2c3}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Belief@{Belief}!allocPr@{allocPr}}
+\index{allocPr@{allocPr}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf Belief::allocPr}\hspace{0.3cm}{\tt  [private]}}\label{classBelief_13c38fd093ebb4af5bc6b0bc866168b4}
+
+
+the total probability mass allocated in bMp 
+
+\index{Belief@{Belief}!bMp@{bMp}}
+\index{bMp@{bMp}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<${\bf StatePtr}, {\bf LD}, {\bf StatePtrCmp}$>$ {\bf Belief::bMp}\hspace{0.3cm}{\tt  [private]}}\label{classBelief_725e30c32b2cfd41876879af192a953b}
+
+
+map having actual belief - probability pairs 
+
+\index{Belief@{Belief}!totalFreq@{totalFreq}}
+\index{totalFreq@{totalFreq}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf Belief::totalFreq}\hspace{0.3cm}{\tt  [private]}}\label{classBelief_294ec0bdb705e01393c1d4beb9856666}
+
+
+variable used in tracking true\_\-pr = act\_\-pr/totalFreq ( to make compatible with int mode ) 
+
+\index{Belief@{Belief}!INT_MODE@{INT\_\-MODE}}
+\index{INT_MODE@{INT\_\-MODE}!Belief@{Belief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Belief::INT\_\-MODE}}\label{classBelief_e4ec5bb27d2de6952fabb843671d3340}
+
+
+variable that is true when the map stores the frequency 
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf belief.h}\item 
+src/{\bf belief.cpp}\end{CompactItemize}

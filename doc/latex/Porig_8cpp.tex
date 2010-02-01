@@ -1,0 +1,120 @@
+\section{test/Porig.cpp File Reference}
+\label{Porig_8cpp}\index{test/Porig.cpp@{test/Porig.cpp}}
+{\tt \#include $<$cmath$>$}\par
+{\tt \#include $<$iostream$>$}\par
+{\tt \#include $<$string$>$}\par
+{\tt \#include $<$vector$>$}\par
+{\tt \#include $<$fstream$>$}\par
+{\tt \#include $<$sstream$>$}\par
+{\tt \#include $<$cstdio$>$}\par
+{\tt \#include $<$cstdlib$>$}\par
+{\tt \#include $<$pthread.h$>$}\par
+{\tt \#include \char`\"{}main.h\char`\"{}}\par
+{\tt \#include \char`\"{}GraphPPM.h\char`\"{}}\par
+{\tt \#include \char`\"{}PottsModel.h\char`\"{}}\par
+{\tt \#include \char`\"{}PottsGraph.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf readme} (string str=\char`\"{}\char`\"{})
+\begin{CompactList}\small\item\em this results in the readme file \item\end{CompactList}\item 
+string {\bf getFileName} (int {\bf N1}, int {\bf N2}, int seed, {\bf LD} time=0)
+\item 
+vector$<$ {\bf LD} $>$ {\bf getCondP} (const int \&{\bf N1}, const int \&{\bf N2}, const int \&{\bf Q}, const {\bf LD} \&theta, const {\bf LD} \&{\bf delta\_\-t}, const {\bf LD} \&J, const {\bf LD} \&H)
+\item 
+vector$<$ {\bf LD} $>$ {\bf computeTrueP} (const int \&{\bf N1}, const int \&{\bf N2}, const int \&{\bf Q}, const int \&seed, const {\bf LD} \&{\bf maxTime}, const vector$<$ {\bf LD} $>$ \&{\bf pCond})
+\item 
+void $\ast$ {\bf simulate} (void $\ast$i)
+\item 
+int {\bf main} ()
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+int {\bf N1} = 3
+\item 
+int {\bf N2} = 3
+\item 
+int {\bf Q} = 2
+\item 
+{\bf LD} {\bf maxTime} = 40.0
+\item 
+pthread\_\-mutex\_\-t {\bf mutex1} = PTHREAD\_\-MUTEX\_\-INITIALIZER
+\item 
+vector$<$ {\bf LD} $>$ {\bf pCond} = getCondP({\bf N1}, {\bf N2}, {\bf Q}, 0.1, 1.0, 0.1, 0.1)
+\item 
+{\bf LD} {\bf delta\_\-t} = 1.0
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{Porig.cpp@{Porig.cpp}!computeTrueP@{computeTrueP}}
+\index{computeTrueP@{computeTrueP}!Porig.cpp@{Porig.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf LD}$>$ computeTrueP (const int \& {\em N1}, const int \& {\em N2}, const int \& {\em Q}, const int \& {\em seed}, const {\bf LD} \& {\em maxTime}, const vector$<$ {\bf LD} $>$ \& {\em pCond})}\label{Porig_8cpp_21fb5e6aeb14005961d006b4f43d73ca}
+
+
+Computes the true P \index{Porig.cpp@{Porig.cpp}!getCondP@{getCondP}}
+\index{getCondP@{getCondP}!Porig.cpp@{Porig.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf LD}$>$ getCondP (const int \& {\em N1}, const int \& {\em N2}, const int \& {\em Q}, const {\bf LD} \& {\em theta}, const {\bf LD} \& {\em delta\_\-t}, const {\bf LD} \& {\em J}, const {\bf LD} \& {\em H})}\label{Porig_8cpp_5baab3b4d2d6c28621f1bc87e91768c9}
+
+
+\index{Porig.cpp@{Porig.cpp}!getFileName@{getFileName}}
+\index{getFileName@{getFileName}!Porig.cpp@{Porig.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}string getFileName (int {\em N1}, int {\em N2}, int {\em seed}, {\bf LD} {\em time} = {\tt 0})}\label{Porig_8cpp_b6e9e8189ff28be11f3ece9480b3ae58}
+
+
+File Name given the parameters \index{Porig.cpp@{Porig.cpp}!main@{main}}
+\index{main@{main}!Porig.cpp@{Porig.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int main ()}\label{Porig_8cpp_446c6b9a1a4dbab517fbb760870458a3}
+
+
+\index{Porig.cpp@{Porig.cpp}!readme@{readme}}
+\index{readme@{readme}!Porig.cpp@{Porig.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void readme (string {\em str} = {\tt \char`\"{}\char`\"{}})}\label{Porig_8cpp_6ac3748b150cbbcf9e4bc47863f33b74}
+
+
+this results in the readme file 
+
+\index{Porig.cpp@{Porig.cpp}!simulate@{simulate}}
+\index{simulate@{simulate}!Porig.cpp@{Porig.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ simulate (void $\ast$ {\em i})}\label{Porig_8cpp_645f4a1f309a654b8f3d97f840ce1e94}
+
+
+
+
+\subsection{Variable Documentation}
+\index{Porig.cpp@{Porig.cpp}!delta_t@{delta\_\-t}}
+\index{delta_t@{delta\_\-t}!Porig.cpp@{Porig.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf delta\_\-t} = 1.0}\label{Porig_8cpp_a3337f14f2d2483ef46f387724e354af}
+
+
+\index{Porig.cpp@{Porig.cpp}!maxTime@{maxTime}}
+\index{maxTime@{maxTime}!Porig.cpp@{Porig.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf maxTime} = 40.0}\label{Porig_8cpp_157bd22f242ca86950add89a1f3a9e96}
+
+
+\index{Porig.cpp@{Porig.cpp}!mutex1@{mutex1}}
+\index{mutex1@{mutex1}!Porig.cpp@{Porig.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pthread\_\-mutex\_\-t {\bf mutex1} = PTHREAD\_\-MUTEX\_\-INITIALIZER}\label{Porig_8cpp_b923000c9ea1e2fe4231ea2ba1b18533}
+
+
+\index{Porig.cpp@{Porig.cpp}!N1@{N1}}
+\index{N1@{N1}!Porig.cpp@{Porig.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf N1} = 3}\label{Porig_8cpp_2ab3914715aa73894201a73724e23eaf}
+
+
+\index{Porig.cpp@{Porig.cpp}!N2@{N2}}
+\index{N2@{N2}!Porig.cpp@{Porig.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf N2} = 3}\label{Porig_8cpp_eeb0b34c6bb5c0808e6adcb9b24a60f1}
+
+
+\index{Porig.cpp@{Porig.cpp}!pCond@{pCond}}
+\index{pCond@{pCond}!Porig.cpp@{Porig.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf LD}$>$ {\bf pCond} = getCondP({\bf N1}, {\bf N2}, {\bf Q}, 0.1, 1.0, 0.1, 0.1)}\label{Porig_8cpp_291b1c1f446e04240a8efd0eba4078c6}
+
+
+\index{Porig.cpp@{Porig.cpp}!Q@{Q}}
+\index{Q@{Q}!Porig.cpp@{Porig.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf Q} = 2}\label{Porig_8cpp_cc466dc72258615e76456288d8631a00}
+
+

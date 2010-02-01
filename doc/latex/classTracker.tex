@@ -1,0 +1,179 @@
+\section{Tracker Class Reference}
+\label{classTracker}\index{Tracker@{Tracker}}
+{\tt \#include $<$Tracker.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Tracker} ()
+\item 
+void {\bf initMain} (string videoName, int NL, bool isGray, int {\bf C}, {\bf LD} {\bf theta}, int rx, int ry, int cx, int cy)
+\item 
+void {\bf initGraph} (int rx, int ry, int cx, int cy)
+\item 
+void {\bf initVideo} (string videoName, int NL, bool isGray)
+\item 
+void {\bf run} (int priorNum, int maxNum, int frameJump)
+\item 
+IplImage $\ast$ {\bf getFrameDiff} (IplImage $\ast$frame1, IplImage $\ast$frame2)
+\item 
+void {\bf updateModel} (IplImage $\ast$prev\_\-frame, IplImage $\ast$next\_\-frame)
+\item 
+bool {\bf updateFrame} ()
+\item 
+IplImage $\ast$ {\bf greedyFillFrame} ()
+\item 
+void {\bf run\_\-step} ({\bf LD} {\bf theta}, {\bf LD} dt)
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf N2}
+\item 
+int {\bf N1}
+\item 
+int {\bf counter}
+\item 
+{\bf PottsModel} $\ast$ {\bf model}
+\item 
+{\bf PottsGraphPPM} $\ast$ {\bf graph}
+\item 
+{\bf VideoReader} $\ast$ {\bf vreader}
+\item 
+int {\bf C}
+\item 
+{\bf LD} {\bf epsilon}
+\item 
+{\bf LD} {\bf theta}
+\item 
+IplImage $\ast$ {\bf last\_\-frame}
+\item 
+IplImage $\ast$ {\bf curr\_\-frame}
+\item 
+IplImage $\ast$ {\bf track\_\-frame}
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tracker@{Tracker}!Tracker@{Tracker}}
+\index{Tracker@{Tracker}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Tracker::Tracker ()}\label{classTracker_6ac188cc1a7bc78c9c23fa35cfa2742d}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Tracker@{Tracker}!initMain@{initMain}}
+\index{initMain@{initMain}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Tracker::initMain (string {\em videoName}, int {\em NL}, bool {\em isGray}, int {\em C}, {\bf LD} {\em theta}, int {\em rx}, int {\em ry}, int {\em cx}, int {\em cy})}\label{classTracker_91e80d80282f05cfd44b4afbf930d115}
+
+
+\index{Tracker@{Tracker}!initGraph@{initGraph}}
+\index{initGraph@{initGraph}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Tracker::initGraph (int {\em rx}, int {\em ry}, int {\em cx}, int {\em cy})}\label{classTracker_091a2a46637eefac94dc2ce2ce01055a}
+
+
+\index{Tracker@{Tracker}!initVideo@{initVideo}}
+\index{initVideo@{initVideo}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Tracker::initVideo (string {\em videoName}, int {\em NL}, bool {\em isGray})}\label{classTracker_fed96a3c5ef6f91e1a7414044fb32ccd}
+
+
+\index{Tracker@{Tracker}!run@{run}}
+\index{run@{run}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Tracker::run (int {\em priorNum}, int {\em maxNum}, int {\em frameJump})}\label{classTracker_c14d6b9659cf4d843d38ac013a33c6ba}
+
+
+\index{Tracker@{Tracker}!getFrameDiff@{getFrameDiff}}
+\index{getFrameDiff@{getFrameDiff}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ Tracker::getFrameDiff (IplImage $\ast$ {\em frame1}, IplImage $\ast$ {\em frame2})}\label{classTracker_67809409f88f4384220c128e9ddbec15}
+
+
+\index{Tracker@{Tracker}!updateModel@{updateModel}}
+\index{updateModel@{updateModel}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Tracker::updateModel (IplImage $\ast$ {\em prev\_\-frame}, IplImage $\ast$ {\em next\_\-frame})}\label{classTracker_991ce3039007bfc315a8feef77b88ed0}
+
+
+\index{Tracker@{Tracker}!updateFrame@{updateFrame}}
+\index{updateFrame@{updateFrame}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Tracker::updateFrame ()}\label{classTracker_658a9c0a99c9c0c69034be9772b23921}
+
+
+\index{Tracker@{Tracker}!greedyFillFrame@{greedyFillFrame}}
+\index{greedyFillFrame@{greedyFillFrame}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ Tracker::greedyFillFrame ()}\label{classTracker_36a43fe254c2b8ca1654a683b4742c03}
+
+
+\index{Tracker@{Tracker}!run_step@{run\_\-step}}
+\index{run_step@{run\_\-step}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Tracker::run\_\-step ({\bf LD} {\em theta}, {\bf LD} {\em dt})}\label{classTracker_55559aeacda84065f9916520be757d69}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Tracker@{Tracker}!N2@{N2}}
+\index{N2@{N2}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf Tracker::N2}\hspace{0.3cm}{\tt  [private]}}\label{classTracker_bdfc91ac454ad69ebf56db47212b7340}
+
+
+\index{Tracker@{Tracker}!N1@{N1}}
+\index{N1@{N1}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf Tracker::N1}\hspace{0.3cm}{\tt  [private]}}\label{classTracker_9d9803b3f4b2b99c99f1bfd9773f485a}
+
+
+\index{Tracker@{Tracker}!counter@{counter}}
+\index{counter@{counter}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf Tracker::counter}\hspace{0.3cm}{\tt  [private]}}\label{classTracker_16299ccf7e86740e3735fdef22584768}
+
+
+\index{Tracker@{Tracker}!model@{model}}
+\index{model@{model}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf PottsModel}$\ast$ {\bf Tracker::model}\hspace{0.3cm}{\tt  [private]}}\label{classTracker_4fe53ca66dbefeb0191e3e62cd0cb8fd}
+
+
+\index{Tracker@{Tracker}!graph@{graph}}
+\index{graph@{graph}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf PottsGraphPPM}$\ast$ {\bf Tracker::graph}\hspace{0.3cm}{\tt  [private]}}\label{classTracker_39b5a4c1cc1563ebded6e6e518e3695e}
+
+
+\index{Tracker@{Tracker}!vreader@{vreader}}
+\index{vreader@{vreader}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf VideoReader}$\ast$ {\bf Tracker::vreader}\hspace{0.3cm}{\tt  [private]}}\label{classTracker_1a82e9125a335e3e17e35cefa07fd69a}
+
+
+\index{Tracker@{Tracker}!C@{C}}
+\index{C@{C}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf Tracker::C}\hspace{0.3cm}{\tt  [private]}}\label{classTracker_9266d2c86261d7a12f6bdc8a19759d1c}
+
+
+\index{Tracker@{Tracker}!epsilon@{epsilon}}
+\index{epsilon@{epsilon}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf Tracker::epsilon}\hspace{0.3cm}{\tt  [private]}}\label{classTracker_3202d3b2978e3d93fa3e38bcea47bf53}
+
+
+\index{Tracker@{Tracker}!theta@{theta}}
+\index{theta@{theta}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf Tracker::theta}\hspace{0.3cm}{\tt  [private]}}\label{classTracker_322d0abb2ceadcc4c1f12cd34c784c4b}
+
+
+\index{Tracker@{Tracker}!last_frame@{last\_\-frame}}
+\index{last_frame@{last\_\-frame}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf Tracker::last\_\-frame}\hspace{0.3cm}{\tt  [private]}}\label{classTracker_802c67ce47107f3a8f9c922ff73c3a77}
+
+
+\index{Tracker@{Tracker}!curr_frame@{curr\_\-frame}}
+\index{curr_frame@{curr\_\-frame}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ {\bf Tracker::curr\_\-frame}\hspace{0.3cm}{\tt  [private]}}\label{classTracker_8d1930e3f8f798a982568b933b48758b}
+
+
+\index{Tracker@{Tracker}!track_frame@{track\_\-frame}}
+\index{track_frame@{track\_\-frame}!Tracker@{Tracker}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf Tracker::track\_\-frame}\hspace{0.3cm}{\tt  [private]}}\label{classTracker_aa945cb28a2e7077145d6fc8e882294a}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf Tracker.h}\item 
+src/{\bf Tracker.cpp}\end{CompactItemize}

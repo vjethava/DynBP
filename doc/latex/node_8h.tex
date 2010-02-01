@@ -1,0 +1,65 @@
+\section{inc/node.h File Reference}
+\label{node_8h}\index{inc/node.h@{inc/node.h}}
+{\tt \#include \char`\"{}main.h\char`\"{}}\par
+{\tt \#include \char`\"{}belief.h\char`\"{}}\par
+{\tt \#include $<$cmath$>$}\par
+{\tt \#include $<$map$>$}\par
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+class {\bf Node}
+\item 
+class {\bf DynNode}
+\begin{CompactList}\small\item\em node having conditional forward time belief information \item\end{CompactList}\item 
+struct {\bf NodeCmp}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef {\bf Node} $\ast$ {\bf NodePtr}
+\item 
+typedef {\bf DynNode} $\ast$ {\bf DynNodePtr}
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum {\bf NodeType} \{ {\bf VARIABLE}, 
+{\bf FACTOR}, 
+{\bf REGION}
+ \}
+\begin{CompactList}\small\item\em node types \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{node.h@{node.h}!DynNodePtr@{DynNodePtr}}
+\index{DynNodePtr@{DynNodePtr}!node.h@{node.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf DynNode}$\ast$ {\bf DynNodePtr}}\label{node_8h_d13c0b1025cf024eaf8455f8dd6a6870}
+
+
+\index{node.h@{node.h}!NodePtr@{NodePtr}}
+\index{NodePtr@{NodePtr}!node.h@{node.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Node}$\ast$ {\bf NodePtr}}\label{node_8h_b8a1c102575e62c710f41f7384afa8eb}
+
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{node.h@{node.h}!NodeType@{NodeType}}
+\index{NodeType@{NodeType}!node.h@{node.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf NodeType}}\label{node_8h_4c2ae9946037ced99faf5d86f9c2d53d}
+
+
+node types 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{VARIABLE@{VARIABLE}!node.h@{node.h}}\index{node.h@{node.h}!VARIABLE@{VARIABLE}}\item[{\em 
+VARIABLE\label{node_8h_4c2ae9946037ced99faf5d86f9c2d53dcbded3caf3f036b0f915e9593f0c67d2}
+}]\index{FACTOR@{FACTOR}!node.h@{node.h}}\index{node.h@{node.h}!FACTOR@{FACTOR}}\item[{\em 
+FACTOR\label{node_8h_4c2ae9946037ced99faf5d86f9c2d53d500b1145d8ce7b3a008a7ce6e229fe2d}
+}]\index{REGION@{REGION}!node.h@{node.h}}\index{node.h@{node.h}!REGION@{REGION}}\item[{\em 
+REGION\label{node_8h_4c2ae9946037ced99faf5d86f9c2d53d0553a0b8b3da967f4fee598fea816d1f}
+}]\end{description}
+\end{Desc}
+

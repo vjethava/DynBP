@@ -1,0 +1,83 @@
+\section{GraphBP Class Reference}
+\label{classGraphBP}\index{GraphBP@{GraphBP}}
+{\tt \#include $<$GraphBP.h$>$}
+
+Inheritance diagram for GraphBP::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classGraphBP}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf GraphBP} ({\bf PottsModel} $\ast$\_\-model)
+\item 
+pair$<$ {\bf EdgePtr}, {\bf EdgePtr} $>$ {\bf addEdge} (const {\bf NodePtr} \&n1, {\bf NodePtr} const \&n2, bool isParent, bool checkExisting=false)
+\item 
+pair$<$ {\bf EdgePtr}, {\bf EdgePtr} $>$ {\bf findEdge} ({\bf NodePtr} nps, {\bf NodePtr} npt)
+\item 
+{\bf LD} {\bf updateM} ({\bf NodePtr} np, {\bf NodePtr} nc)
+\begin{CompactList}\small\item\em updates the parent to child message \item\end{CompactList}\item 
+{\bf LD} {\bf updateN} ({\bf NodePtr} np, {\bf NodePtr} nc)
+\begin{CompactList}\small\item\em updates the child to parent message \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+{\bf PottsModel} $\ast$ {\bf model}
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{GraphBP@{GraphBP}!GraphBP@{GraphBP}}
+\index{GraphBP@{GraphBP}!GraphBP@{GraphBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphBP::GraphBP ({\bf PottsModel} $\ast$ {\em \_\-model})\hspace{0.3cm}{\tt  [inline]}}\label{classGraphBP_b859f66495455d66ac79681572e0e0cc}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{GraphBP@{GraphBP}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!GraphBP@{GraphBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pair$<$ {\bf EdgePtr}, {\bf EdgePtr} $>$ GraphBP::addEdge (const {\bf NodePtr} \& {\em n1}, {\bf NodePtr} const \& {\em n2}, bool {\em isParent}, bool {\em checkExisting} = {\tt false})}\label{classGraphBP_0c0ad66ea90889ffbd10ab073def4c9c}
+
+
+\index{GraphBP@{GraphBP}!findEdge@{findEdge}}
+\index{findEdge@{findEdge}!GraphBP@{GraphBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pair$<$ {\bf EdgePtr}, {\bf EdgePtr} $>$ GraphBP::findEdge ({\bf NodePtr} {\em nps}, {\bf NodePtr} {\em npt})}\label{classGraphBP_3bd3c5f1258fd15987ad585941afeac7}
+
+
+
+
+Reimplemented from {\bf MyGraph} \doxyref{}{p.}{classMyGraph_32d78b2a4559ac47fdbbf6da9cb52e60}.\index{GraphBP@{GraphBP}!updateM@{updateM}}
+\index{updateM@{updateM}!GraphBP@{GraphBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} GraphBP::updateM ({\bf NodePtr} {\em np}, {\bf NodePtr} {\em nc})}\label{classGraphBP_fad15c72784d57fb7aa87454ad5874d6}
+
+
+updates the parent to child message 
+
+
+
+Reimplemented from {\bf FactorGraph} \doxyref{}{p.}{classFactorGraph_78f6edbe28e6a2006ca2eaeea55f6966}.\index{GraphBP@{GraphBP}!updateN@{updateN}}
+\index{updateN@{updateN}!GraphBP@{GraphBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} GraphBP::updateN ({\bf NodePtr} {\em np}, {\bf NodePtr} {\em nc})}\label{classGraphBP_9748b687eb66ce93a4c875457a3816ce}
+
+
+updates the child to parent message 
+
+
+
+Reimplemented from {\bf FactorGraph} \doxyref{}{p.}{classFactorGraph_50fe3b70c2cf57b3ff7c885def2d0119}.
+
+\subsection{Member Data Documentation}
+\index{GraphBP@{GraphBP}!model@{model}}
+\index{model@{model}!GraphBP@{GraphBP}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf PottsModel}$\ast$ {\bf GraphBP::model}\hspace{0.3cm}{\tt  [private]}}\label{classGraphBP_a6f3666f26602e0df6704cb64b21cccd}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf GraphBP.h}\item 
+src/{\bf GraphBP.cpp}\end{CompactItemize}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   revision="9"
+   repos="svn://127.0.0.1/mnt/svn/DynBP"
+   url="svn://127.0.0.1/mnt/svn/DynBP/branches"
+   incomplete="true"
+   last-author="vjethava"
+   uuid="1a272d7c-ef48-0410-899e-5d84d870ae38"
+   committed-date="2008-07-07T10:33:14.105321Z"
+   kind="dir"
+   name=""
+   committed-rev="9"/>
+<entry
+   schedule="add"
+   kind="dir"
+   name=".settings"/>
+<entry
+   schedule="add"
+   name="obj"
+   kind="dir"/>
+</wc-entries>

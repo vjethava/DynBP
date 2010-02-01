@@ -1,0 +1,263 @@
+\section{VR Struct Reference}
+\label{structVR}\index{VR@{VR}}
+{\tt \#include $<$VR.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+int {\bf getN1} ()
+\item 
+int {\bf getN2} ()
+\item 
+void {\bf open\_\-video} (string)
+\item 
+void {\bf allocate\_\-frame} (IplImage $\ast$$\ast${\bf frame}, bool {\bf is\_\-grayscale}=true)
+\item 
+void {\bf convert\_\-frame} (IplImage $\ast$ip\_\-frame, IplImage $\ast$op\_\-frame, int \_\-Q, bool \_\-grayscale=true)
+\item 
+vector$<$ {\bf INT} $>$ {\bf getDataFromFrame} (IplImage $\ast${\bf frame}, int x, int y, int r, int c)
+\item 
+void {\bf get\_\-frame} (vector$<$ vector$<$ {\bf INT} $>$ $>$ v, IplImage $\ast$op\_\-frame, int {\bf Q})
+\item 
+vector$<$ vector$<$ {\bf INT} $>$ $>$ {\bf frame\_\-diff} (IplImage $\ast$frame\_\-A, IplImage $\ast$frame\_\-B, IplImage $\ast${\bf diff\_\-frame})
+\item 
+void {\bf increment\_\-frame} ()
+\item 
+void {\bf write\_\-op} ()
+\item 
+{\bf VR} (int \_\-Q=256, bool grayscale=true)
+\item 
+{\bf $\sim$VR} ()
+\item 
+bool {\bf isValidPixel} (IplImage $\ast${\bf frame}, int x, int y)
+\item 
+int {\bf display} ()
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+IplImage $\ast$ {\bf frame}
+\begin{CompactList}\small\item\em temporary frames used for conversion \item\end{CompactList}\item 
+IplImage $\ast$ {\bf frame1}
+\item 
+IplImage $\ast$ {\bf frame1\_\-1C}
+\item 
+IplImage $\ast$ {\bf frame2\_\-GS}
+\item 
+IplImage $\ast$ {\bf current\_\-frame}
+\item 
+IplImage $\ast$ {\bf prev\_\-frame}
+\item 
+IplImage $\ast$ {\bf diff\_\-frame}
+\item 
+IplImage $\ast$ {\bf res\_\-frame}
+\item 
+int {\bf number\_\-of\_\-frames}
+\item 
+int {\bf frames\_\-per\_\-second}
+\item 
+int {\bf frame\_\-num}
+\item 
+int {\bf Q}
+\item 
+bool {\bf is\_\-grayscale}
+\item 
+CvSize {\bf frame\_\-size}
+\item 
+CvCapture $\ast$ {\bf input\_\-video}
+\item 
+int {\bf depth}
+\item 
+int {\bf nChannels}
+\item 
+CvVideoWriter $\ast$ {\bf output\_\-video}
+\item 
+CvVideoWriter $\ast$ {\bf difference\_\-video}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Class implementation that handles Video I/O 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{VR@{VR}!VR@{VR}}
+\index{VR@{VR}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}VR::VR (int {\em \_\-Q} = {\tt 256}, bool {\em grayscale} = {\tt true})\hspace{0.3cm}{\tt  [inline]}}\label{structVR_7a9a4bfc591cd088e075fea6994a3621}
+
+
+\index{VR@{VR}!~VR@{$\sim$VR}}
+\index{~VR@{$\sim$VR}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}VR::$\sim$VR ()\hspace{0.3cm}{\tt  [inline]}}\label{structVR_2f66c1e5c17a512da3724ceef8916806}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{VR@{VR}!getN1@{getN1}}
+\index{getN1@{getN1}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int VR::getN1 ()\hspace{0.3cm}{\tt  [inline]}}\label{structVR_c573b73470296e0a30fbe9409a8fa2ba}
+
+
+\index{VR@{VR}!getN2@{getN2}}
+\index{getN2@{getN2}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int VR::getN2 ()\hspace{0.3cm}{\tt  [inline]}}\label{structVR_fb2e7dde8a4b26be7e8f946b87392767}
+
+
+\index{VR@{VR}!open_video@{open\_\-video}}
+\index{open_video@{open\_\-video}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VR::open\_\-video (string)}\label{structVR_e2afbd979496c342490ff474b4db7e2c}
+
+
+\index{VR@{VR}!allocate_frame@{allocate\_\-frame}}
+\index{allocate_frame@{allocate\_\-frame}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VR::allocate\_\-frame (IplImage $\ast$$\ast$ {\em frame}, bool {\em is\_\-grayscale} = {\tt true})}\label{structVR_26f09ed8b0b97b017cefc99e5f12334f}
+
+
+\index{VR@{VR}!convert_frame@{convert\_\-frame}}
+\index{convert_frame@{convert\_\-frame}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VR::convert\_\-frame (IplImage $\ast$ {\em ip\_\-frame}, IplImage $\ast$ {\em op\_\-frame}, int {\em \_\-Q}, bool {\em \_\-grayscale} = {\tt true})}\label{structVR_de9036961ef32e6d09204af5698ea234}
+
+
+\index{VR@{VR}!getDataFromFrame@{getDataFromFrame}}
+\index{getDataFromFrame@{getDataFromFrame}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf INT} $>$ VR::getDataFromFrame (IplImage $\ast$ {\em frame}, int {\em x}, int {\em y}, int {\em r}, int {\em c})}\label{structVR_7d2985f314791bfb591d5f049c56bc4d}
+
+
+\index{VR@{VR}!get_frame@{get\_\-frame}}
+\index{get_frame@{get\_\-frame}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VR::get\_\-frame (vector$<$ vector$<$ {\bf INT} $>$ $>$ {\em v}, IplImage $\ast$ {\em op\_\-frame}, int {\em Q})}\label{structVR_3dee2ea3531054757a5f71c12caf31a1}
+
+
+\index{VR@{VR}!frame_diff@{frame\_\-diff}}
+\index{frame_diff@{frame\_\-diff}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ vector$<$ {\bf INT} $>$ $>$ VR::frame\_\-diff (IplImage $\ast$ {\em frame\_\-A}, IplImage $\ast$ {\em frame\_\-B}, IplImage $\ast$ {\em diff\_\-frame})}\label{structVR_52dc726c38303716bb893fe5f8dd1af5}
+
+
+\index{VR@{VR}!increment_frame@{increment\_\-frame}}
+\index{increment_frame@{increment\_\-frame}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VR::increment\_\-frame ()}\label{structVR_331d9c73bc85576a385f6c448f4b08f6}
+
+
+\index{VR@{VR}!write_op@{write\_\-op}}
+\index{write_op@{write\_\-op}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VR::write\_\-op ()}\label{structVR_deb908503d2d778cc6f36569ebe8e5e8}
+
+
+\index{VR@{VR}!isValidPixel@{isValidPixel}}
+\index{isValidPixel@{isValidPixel}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool VR::isValidPixel (IplImage $\ast$ {\em frame}, int {\em x}, int {\em y})\hspace{0.3cm}{\tt  [inline]}}\label{structVR_65103f2ef320d705f422221a3308be93}
+
+
+\index{VR@{VR}!display@{display}}
+\index{display@{display}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int VR::display ()}\label{structVR_031d562cf0c2918db08c2847f644c1ce}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{VR@{VR}!frame@{frame}}
+\index{frame@{frame}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf VR::frame}}\label{structVR_cccbcf0b1e36faa7decca41269791c8c}
+
+
+temporary frames used for conversion 
+
+\index{VR@{VR}!frame1@{frame1}}
+\index{frame1@{frame1}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ {\bf VR::frame1}}\label{structVR_9b487203a72c655f0d37620f896eda92}
+
+
+\index{VR@{VR}!frame1_1C@{frame1\_\-1C}}
+\index{frame1_1C@{frame1\_\-1C}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ {\bf VR::frame1\_\-1C}}\label{structVR_6618cb5e5a2ac4ba03721d6681099667}
+
+
+\index{VR@{VR}!frame2_GS@{frame2\_\-GS}}
+\index{frame2_GS@{frame2\_\-GS}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ {\bf VR::frame2\_\-GS}}\label{structVR_e12dbd016193d14aec046903a4d57580}
+
+
+\index{VR@{VR}!current_frame@{current\_\-frame}}
+\index{current_frame@{current\_\-frame}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf VR::current\_\-frame}}\label{structVR_68e6720aa6679bf8ac2c9131ec93492a}
+
+
+\index{VR@{VR}!prev_frame@{prev\_\-frame}}
+\index{prev_frame@{prev\_\-frame}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ {\bf VR::prev\_\-frame}}\label{structVR_754257fb79943b4b328136965f62b01d}
+
+
+\index{VR@{VR}!diff_frame@{diff\_\-frame}}
+\index{diff_frame@{diff\_\-frame}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ {\bf VR::diff\_\-frame}}\label{structVR_6c5836e61dddff5ccb590b0f6542a38c}
+
+
+\index{VR@{VR}!res_frame@{res\_\-frame}}
+\index{res_frame@{res\_\-frame}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ {\bf VR::res\_\-frame}}\label{structVR_52f43a67ae3abd6da64a6cbf65e1e78e}
+
+
+\index{VR@{VR}!number_of_frames@{number\_\-of\_\-frames}}
+\index{number_of_frames@{number\_\-of\_\-frames}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VR::number\_\-of\_\-frames}}\label{structVR_0b73d971c8c54ceb13aa41f156183afa}
+
+
+\index{VR@{VR}!frames_per_second@{frames\_\-per\_\-second}}
+\index{frames_per_second@{frames\_\-per\_\-second}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VR::frames\_\-per\_\-second}}\label{structVR_7e691e2154487fb06df7dfd9f9d85a89}
+
+
+\index{VR@{VR}!frame_num@{frame\_\-num}}
+\index{frame_num@{frame\_\-num}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VR::frame\_\-num}}\label{structVR_d677026dd8cb1a5cea994c062aa9eadd}
+
+
+\index{VR@{VR}!Q@{Q}}
+\index{Q@{Q}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VR::Q}}\label{structVR_585a1525aea0f97dc1d95f348286fa3d}
+
+
+\index{VR@{VR}!is_grayscale@{is\_\-grayscale}}
+\index{is_grayscale@{is\_\-grayscale}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool {\bf VR::is\_\-grayscale}}\label{structVR_ea33614a8c5fa0550d13c1becde34d3a}
+
+
+\index{VR@{VR}!frame_size@{frame\_\-size}}
+\index{frame_size@{frame\_\-size}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CvSize {\bf VR::frame\_\-size}}\label{structVR_0c396d6225c22a18a74318c1a91f42e9}
+
+
+\index{VR@{VR}!input_video@{input\_\-video}}
+\index{input_video@{input\_\-video}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CvCapture$\ast$ {\bf VR::input\_\-video}}\label{structVR_727bbcd97175c188c2d3fb31ee617339}
+
+
+\index{VR@{VR}!depth@{depth}}
+\index{depth@{depth}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VR::depth}}\label{structVR_b062362e184543542e1a41874690428a}
+
+
+\index{VR@{VR}!nChannels@{nChannels}}
+\index{nChannels@{nChannels}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VR::nChannels}}\label{structVR_390343e9499b7956504998ff9519908a}
+
+
+\index{VR@{VR}!output_video@{output\_\-video}}
+\index{output_video@{output\_\-video}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CvVideoWriter$\ast$ {\bf VR::output\_\-video}}\label{structVR_c4de68ceaf06a6e4fe94b0adae0c3ca6}
+
+
+\index{VR@{VR}!difference_video@{difference\_\-video}}
+\index{difference_video@{difference\_\-video}!VR@{VR}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CvVideoWriter$\ast$ {\bf VR::difference\_\-video}}\label{structVR_58db704ea1f1450f987947baadfbbff1}
+
+
+
+
+The documentation for this struct was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf VR.h}\item 
+src/{\bf VR.cpp}\end{CompactItemize}

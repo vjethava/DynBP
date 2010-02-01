@@ -1,0 +1,98 @@
+\section{inc/mygraph.h File Reference}
+\label{mygraph_8h}\index{inc/mygraph.h@{inc/mygraph.h}}
+{\tt \#include $<$iostream$>$}\par
+{\tt \#include $<$vector$>$}\par
+{\tt \#include $<$map$>$}\par
+{\tt \#include $<$gsl/gsl\_\-rng.h$>$}\par
+{\tt \#include $<$gsl/gsl\_\-randist.h$>$}\par
+{\tt \#include \char`\"{}node.h\char`\"{}}\par
+{\tt \#include \char`\"{}myedge.h\char`\"{}}\par
+{\tt \#include \char`\"{}main.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+class {\bf MyGraph}
+\item 
+class {\bf FactorGraph}
+\item 
+class {\bf Region}
+\item 
+class {\bf RegionGraph}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef vector$<$ {\bf MyEdge} $>$ {\bf VE}
+\item 
+typedef pair$<$ vector$<$ {\bf MyEdge} $>$, vector$<$ {\bf MyEdge} $>$ $>$ {\bf BidirEdgeList}
+\item 
+typedef map$<$ {\bf NodePtr}, {\bf BidirEdgeList}, {\bf NodeCmp} $>$::iterator {\bf ADJ\_\-MAP\_\-ITER}
+\item 
+typedef {\bf FactorGraph} $\ast$ {\bf FactorGraphPtr}
+\item 
+typedef {\bf RegionGraph} $\ast$ {\bf RegionGraphPtr}
+\item 
+typedef {\bf Region} $\ast$ {\bf RegionPtr}
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+const {\bf LD} {\bf SPIN\_\-FLIP\_\-RATE} = 0.5
+\item 
+const {\bf LD} {\bf DELTA\_\-T} = 1.0
+\item 
+const {\bf LD} {\bf EPSILON\_\-ZERO} = 1e-9
+\begin{CompactList}\small\item\em used to initialize messages in case has value zero \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{mygraph.h@{mygraph.h}!ADJ_MAP_ITER@{ADJ\_\-MAP\_\-ITER}}
+\index{ADJ_MAP_ITER@{ADJ\_\-MAP\_\-ITER}!mygraph.h@{mygraph.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef map$<${\bf NodePtr}, {\bf BidirEdgeList}, {\bf NodeCmp}$>$::iterator {\bf ADJ\_\-MAP\_\-ITER}}\label{mygraph_8h_9bf167a78edb579746f35c9c6cfb64c1}
+
+
+\index{mygraph.h@{mygraph.h}!BidirEdgeList@{BidirEdgeList}}
+\index{BidirEdgeList@{BidirEdgeList}!mygraph.h@{mygraph.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef pair$<$vector$<${\bf MyEdge}$>$, vector$<${\bf MyEdge}$>$ $>$ {\bf BidirEdgeList}}\label{mygraph_8h_f0ed6bd84f246f1c7cfef15d5b96b1e8}
+
+
+\index{mygraph.h@{mygraph.h}!FactorGraphPtr@{FactorGraphPtr}}
+\index{FactorGraphPtr@{FactorGraphPtr}!mygraph.h@{mygraph.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf FactorGraph}$\ast$ {\bf FactorGraphPtr}}\label{mygraph_8h_b3a001dcf74b25787dc91e75ff9eee02}
+
+
+\index{mygraph.h@{mygraph.h}!RegionGraphPtr@{RegionGraphPtr}}
+\index{RegionGraphPtr@{RegionGraphPtr}!mygraph.h@{mygraph.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf RegionGraph}$\ast$ {\bf RegionGraphPtr}}\label{mygraph_8h_68f3b4997d5f9b6d8ef098b6b81d8142}
+
+
+\index{mygraph.h@{mygraph.h}!RegionPtr@{RegionPtr}}
+\index{RegionPtr@{RegionPtr}!mygraph.h@{mygraph.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Region}$\ast$ {\bf RegionPtr}}\label{mygraph_8h_891a33f20c931ff7968f2802060b209b}
+
+
+\index{mygraph.h@{mygraph.h}!VE@{VE}}
+\index{VE@{VE}!mygraph.h@{mygraph.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef vector$<${\bf MyEdge}$>$ {\bf VE}}\label{mygraph_8h_cf639edfac4fe33605e6eb66c5897380}
+
+
+
+
+\subsection{Variable Documentation}
+\index{mygraph.h@{mygraph.h}!DELTA_T@{DELTA\_\-T}}
+\index{DELTA_T@{DELTA\_\-T}!mygraph.h@{mygraph.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf LD} {\bf DELTA\_\-T} = 1.0}\label{mygraph_8h_401bf47513f50ae6ff9312cff50bccd6}
+
+
+\index{mygraph.h@{mygraph.h}!EPSILON_ZERO@{EPSILON\_\-ZERO}}
+\index{EPSILON_ZERO@{EPSILON\_\-ZERO}!mygraph.h@{mygraph.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf LD} {\bf EPSILON\_\-ZERO} = 1e-9}\label{mygraph_8h_6dc7054ecf7c3bc13d5e4676d3cdf2f2}
+
+
+used to initialize messages in case has value zero 
+
+\index{mygraph.h@{mygraph.h}!SPIN_FLIP_RATE@{SPIN\_\-FLIP\_\-RATE}}
+\index{SPIN_FLIP_RATE@{SPIN\_\-FLIP\_\-RATE}!mygraph.h@{mygraph.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf LD} {\bf SPIN\_\-FLIP\_\-RATE} = 0.5}\label{mygraph_8h_71b0a5b43bf9ff2933040fe3e3e0c65c}
+
+

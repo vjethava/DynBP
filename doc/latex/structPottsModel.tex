@@ -1,0 +1,180 @@
+\section{PottsModel Struct Reference}
+\label{structPottsModel}\index{PottsModel@{PottsModel}}
+{\tt \#include $<$PottsModel.h$>$}
+
+Inheritance diagram for PottsModel::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{structPottsModel}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf PottsModel} (int \_\-N1, int \_\-N2, int \_\-Q=2, {\bf LD} \_\-jSigma=0.1, {\bf LD} \_\-hSigma=0.1, int \_\-seed=0)
+\item 
+void {\bf genNodes} ()
+\item 
+void {\bf updateBlfPtr} ({\bf BeliefPtr} bNew, int varNum)
+\item 
+int {\bf GV} (int k)
+\item 
+bool {\bf isValid} (int r, int c)
+\item 
+string {\bf getStats} ()
+\item 
+void {\bf genFactors} ()
+\item 
+{\bf LD} {\bf getP} (string fid, {\bf StatePtr} sC)
+\item 
+{\bf LD} {\bf getGlobalP} (int sVal)
+\item 
+{\bf LD} {\bf getCondP} (int sInit, int sNext, {\bf LD} TD)
+\item 
+vector$<$ {\bf INT} $>$ {\bf getIthStVec} (int i, int N)
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf Q}
+\begin{CompactList}\small\item\em the number of possible values each variable can take 1...Q \item\end{CompactList}\item 
+{\bf LD} {\bf hSigma}
+\begin{CompactList}\small\item\em variance for same node factors \item\end{CompactList}\item 
+{\bf LD} {\bf jSigma}
+\begin{CompactList}\small\item\em variance for nearest node interactions \item\end{CompactList}\item 
+int {\bf N1}
+\begin{CompactList}\small\item\em size of the grid \item\end{CompactList}\item 
+int {\bf N2}
+\item 
+int {\bf seed}
+\begin{CompactList}\small\item\em the see used for factor generation \item\end{CompactList}\item 
+map$<$ string, {\bf BeliefPtr} $>$ {\bf fieldMp}
+\begin{CompactList}\small\item\em map containing singular interactions \item\end{CompactList}\item 
+gsl\_\-rng $\ast$ {\bf myRNG}
+\begin{CompactList}\small\item\em the random number generator \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{PottsModel@{PottsModel}!PottsModel@{PottsModel}}
+\index{PottsModel@{PottsModel}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}PottsModel::PottsModel (int {\em \_\-N1}, int {\em \_\-N2}, int {\em \_\-Q} = {\tt 2}, {\bf LD} {\em \_\-jSigma} = {\tt 0.1}, {\bf LD} {\em \_\-hSigma} = {\tt 0.1}, int {\em \_\-seed} = {\tt 0})\hspace{0.3cm}{\tt  [inline]}}\label{structPottsModel_d500527e03888971fac3845c1ac9a7de}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{PottsModel@{PottsModel}!genNodes@{genNodes}}
+\index{genNodes@{genNodes}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsModel::genNodes ()}\label{structPottsModel_55df917956c272e3ce4a7d9233ecf40b}
+
+
+\index{PottsModel@{PottsModel}!updateBlfPtr@{updateBlfPtr}}
+\index{updateBlfPtr@{updateBlfPtr}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsModel::updateBlfPtr ({\bf BeliefPtr} {\em bNew}, int {\em varNum})}\label{structPottsModel_2b2d57c3923af9c22b473f6e9338e969}
+
+
+\index{PottsModel@{PottsModel}!GV@{GV}}
+\index{GV@{GV}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int PottsModel::GV (int {\em k})\hspace{0.3cm}{\tt  [inline]}}\label{structPottsModel_5477b77a4b9419c8cdb5a20232a54223}
+
+
+\index{PottsModel@{PottsModel}!isValid@{isValid}}
+\index{isValid@{isValid}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool PottsModel::isValid (int {\em r}, int {\em c})\hspace{0.3cm}{\tt  [inline]}}\label{structPottsModel_96ef879e356b5752fa15507fe816c836}
+
+
+\index{PottsModel@{PottsModel}!getStats@{getStats}}
+\index{getStats@{getStats}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}string PottsModel::getStats ()}\label{structPottsModel_b47364dbab4dbce1b17ec98c4cbe4984}
+
+
+\index{PottsModel@{PottsModel}!genFactors@{genFactors}}
+\index{genFactors@{genFactors}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void PottsModel::genFactors ()}\label{structPottsModel_141ba95ee80197e0d3ae0d8a658b8d07}
+
+
+\index{PottsModel@{PottsModel}!getP@{getP}}
+\index{getP@{getP}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} PottsModel::getP (string {\em fid}, {\bf StatePtr} {\em sC})\hspace{0.3cm}{\tt  [inline]}}\label{structPottsModel_ccd5dfd6de009b38b8689be20d04c55f}
+
+
+
+
+Reimplemented in {\bf ModelMVI} \doxyref{}{p.}{classModelMVI_c65577d0b71f762361c063d82e84e478}.\index{PottsModel@{PottsModel}!getGlobalP@{getGlobalP}}
+\index{getGlobalP@{getGlobalP}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} PottsModel::getGlobalP (int {\em sVal})}\label{structPottsModel_22bc78e573e1eb7d92c3e4a6dd926028}
+
+
+Returns the proportionality constant - has to be divided by Z(t) to get true probability \index{PottsModel@{PottsModel}!getCondP@{getCondP}}
+\index{getCondP@{getCondP}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} PottsModel::getCondP (int {\em vInit}, int {\em vNext}, {\bf LD} {\em TD})}\label{structPottsModel_a40d8be472dc2053a045119f3e1a409b}
+
+
+Returns the P\_\-cond using Kikuchi model \index{PottsModel@{PottsModel}!getIthStVec@{getIthStVec}}
+\index{getIthStVec@{getIthStVec}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf INT} $>$ PottsModel::getIthStVec (int {\em idx}, int {\em N})}\label{structPottsModel_242908734de9c84adf32148671ff6c85}
+
+
+Returns the ith state given grid size of N 
+
+\subsection{Member Data Documentation}
+\index{PottsModel@{PottsModel}!Q@{Q}}
+\index{Q@{Q}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf PottsModel::Q}}\label{structPottsModel_1270472e5682be4105fbbbf44e8173ce}
+
+
+the number of possible values each variable can take 1...Q 
+
+\index{PottsModel@{PottsModel}!hSigma@{hSigma}}
+\index{hSigma@{hSigma}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf PottsModel::hSigma}}\label{structPottsModel_160f94731386c02152b17feba23e0194}
+
+
+variance for same node factors 
+
+\index{PottsModel@{PottsModel}!jSigma@{jSigma}}
+\index{jSigma@{jSigma}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf PottsModel::jSigma}}\label{structPottsModel_c5f84781613bbec83f3dc9a1bae660a3}
+
+
+variance for nearest node interactions 
+
+\index{PottsModel@{PottsModel}!N1@{N1}}
+\index{N1@{N1}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf PottsModel::N1}}\label{structPottsModel_088f56c913125b9858374d4d1aaf744f}
+
+
+size of the grid 
+
+\index{PottsModel@{PottsModel}!N2@{N2}}
+\index{N2@{N2}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf PottsModel::N2}}\label{structPottsModel_dee8cfea7c60a9d460611f5ecbed36c8}
+
+
+\index{PottsModel@{PottsModel}!seed@{seed}}
+\index{seed@{seed}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf PottsModel::seed}}\label{structPottsModel_c7ec124d4d1d82c956b97bf5e592f9ed}
+
+
+the see used for factor generation 
+
+\index{PottsModel@{PottsModel}!fieldMp@{fieldMp}}
+\index{fieldMp@{fieldMp}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}map$<$string, {\bf BeliefPtr}$>$ {\bf PottsModel::fieldMp}}\label{structPottsModel_610b83e653da7ae2c2c0939037397019}
+
+
+map containing singular interactions 
+
+\index{PottsModel@{PottsModel}!myRNG@{myRNG}}
+\index{myRNG@{myRNG}!PottsModel@{PottsModel}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}gsl\_\-rng$\ast$ {\bf PottsModel::myRNG}}\label{structPottsModel_01a7abf9f1d03569a0f2dd639f0e989c}
+
+
+the random number generator 
+
+
+
+The documentation for this struct was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf PottsModel.h}\item 
+src/{\bf PottsModel.cpp}\end{CompactItemize}

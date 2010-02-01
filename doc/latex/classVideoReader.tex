@@ -1,0 +1,497 @@
+\section{VideoReader Class Reference}
+\label{classVideoReader}\index{VideoReader@{VideoReader}}
+{\tt \#include $<$VideoReader.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+void {\bf setGraph} ({\bf VideoGraph} $\ast$\_\-g)
+\item 
+int {\bf getN1} ()
+\item 
+int {\bf getN2} ()
+\item 
+void {\bf setGrayScale} (bool \_\-isGray)
+\item 
+void {\bf setNumLvls} (int s)
+\item 
+{\bf VideoReader} (bool \_\-gray=true, int \_\-numLvls=8)
+\item 
+IplImage $\ast$ {\bf getCurrentFrame} (CvCapture $\ast$currVideo)
+\begin{CompactList}\small\item\em returns the current frame \item\end{CompactList}\item 
+void {\bf openVideo} (string videoName)
+\begin{CompactList}\small\item\em opens a video \item\end{CompactList}\item 
+void {\bf runMain} (bool gray=true, int {\bf numLvls}=4, int maxNum=-1, int priorNum=5, int frameJump=1)
+\begin{CompactList}\small\item\em the main engine that updates all the three engines \item\end{CompactList}\item 
+bool {\bf convertInputFrame} (bool gray=true, int {\bf numLvls}=4)
+\begin{CompactList}\small\item\em this function just displays the next frame of the input video until no more to display \item\end{CompactList}\item 
+void {\bf updateOutputVideo} ()
+\begin{CompactList}\small\item\em this function is recursively called until all the video holes have been filled \item\end{CompactList}\item 
+virtual {\bf $\sim$VideoReader} ()
+\item 
+vector$<$ {\bf INT} $>$ {\bf getDataFromFrame} (IplImage $\ast${\bf frame}, int x, int y, int r, int c)
+\begin{CompactList}\small\item\em get the data for block of pixels \item\end{CompactList}\item 
+bool {\bf isValidPixel} (IplImage $\ast${\bf frame}, int x, int y)
+\begin{CompactList}\small\item\em checks for validity of pixel in frame size \item\end{CompactList}\item 
+void {\bf updateLastFrame} (IplImage $\ast${\bf frame}=NULL)
+\begin{CompactList}\small\item\em updates the last frame \item\end{CompactList}\item 
+void {\bf display} ()
+\item 
+double {\bf getFrameDifference} (IplImage $\ast${\bf frame1}, IplImage $\ast$frame2, IplImage $\ast$resFrame=NULL, int $\ast$NP=NULL)
+\item 
+void {\bf initPrevFrames} (int N)
+\item 
+void {\bf updateMaskFrame} (int x, int y, int l, int w)
+\item 
+void {\bf updatePrevFrames} (IplImage $\ast${\bf frame}, int N)
+\item 
+void {\bf overlapFrame} (IplImage $\ast$inpainted, IplImage $\ast$input, IplImage $\ast$res\_\-frame)
+\item 
+void {\bf runFC} (bool gray, int {\bf numLvls}, int maxNum, int priorNum, int frameJump)
+\item 
+void {\bf runInPaint} ()
+\item 
+void {\bf getMissingMask} (IplImage $\ast${\bf mask\_\-frame}, {\bf LD} probMissing)
+\item 
+void {\bf updateBasedOnPrevFrames} (IplImage $\ast${\bf mask\_\-frame})
+\item 
+void {\bf runNoisy} (bool gray, int {\bf numLvls}, int maxNum, int priorNum, int frameJump)
+\item 
+void {\bf updateInputFrame} (IplImage $\ast${\bf input\_\-frame}, IplImage $\ast$curr\_\-mask)
+\item 
+bool {\bf incrementFrame} (IplImage $\ast$pastFrame, IplImage $\ast$nextFrame)
+\item 
+void {\bf writeOp} (int count)
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+IplImage $\ast$ {\bf frame}
+\begin{CompactList}\small\item\em temporary frames used for conversion \item\end{CompactList}\item 
+IplImage $\ast$ {\bf frame1}
+\item 
+IplImage $\ast$ {\bf frame1\_\-1C}
+\item 
+IplImage $\ast$ {\bf frame2\_\-GS}
+\item 
+CvSize {\bf frame\_\-size}
+\begin{CompactList}\small\item\em frame size of the video \item\end{CompactList}\item 
+IplImage $\ast$ {\bf last\_\-frame}
+\begin{CompactList}\small\item\em the last frame \item\end{CompactList}\item 
+IplImage $\ast$ {\bf input\_\-frame}
+\begin{CompactList}\small\item\em the default pointer to the current frame \item\end{CompactList}\item 
+IplImage $\ast$ {\bf output\_\-frame}
+\begin{CompactList}\small\item\em pointer to the output frame \item\end{CompactList}\item 
+IplImage $\ast$ {\bf mask\_\-frame}
+\begin{CompactList}\small\item\em pointer to the mask frame \item\end{CompactList}\item 
+CvCapture $\ast$ {\bf input\_\-video}
+\begin{CompactList}\small\item\em the default pointer to the current video \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf frame\_\-count}
+\begin{CompactList}\small\item\em frame count \item\end{CompactList}\item 
+bool {\bf grayscale}
+\begin{CompactList}\small\item\em whether to do the inference on bw or color \item\end{CompactList}\item 
+int {\bf numLvls}
+\begin{CompactList}\small\item\em the maximum value each pixel can take 0...maxgrayscale (default 255) \item\end{CompactList}\item 
+int {\bf rwidth}
+\begin{CompactList}\small\item\em biggest region width \item\end{CompactList}\item 
+int {\bf rheight}
+\begin{CompactList}\small\item\em biggest region height \item\end{CompactList}\item 
+int {\bf xoverlap}
+\begin{CompactList}\small\item\em horizontal overlap between adjoining biggest regions \item\end{CompactList}\item 
+int {\bf yoverlap}
+\begin{CompactList}\small\item\em vertical overlap between adjoining biggest regions \item\end{CompactList}\item 
+IplImage $\ast$ {\bf diff\_\-frame}
+\begin{CompactList}\small\item\em pointer to the difference frame \item\end{CompactList}\item 
+void $\ast$ {\bf last\_\-frame\_\-window\_\-handle}
+\item 
+void $\ast$ {\bf input\_\-window\_\-handle}
+\begin{CompactList}\small\item\em pointer to the default window \item\end{CompactList}\item 
+void $\ast$ {\bf output\_\-window\_\-handle}
+\begin{CompactList}\small\item\em pointer to the output window \item\end{CompactList}\item 
+void $\ast$ {\bf mask\_\-window\_\-handle}
+\begin{CompactList}\small\item\em pointer to the mask frame \item\end{CompactList}\item 
+long {\bf number\_\-of\_\-frames}
+\begin{CompactList}\small\item\em number of frames in the video sequence \item\end{CompactList}\item 
+int {\bf frames\_\-per\_\-second}
+\begin{CompactList}\small\item\em number of frames per second \item\end{CompactList}\item 
+{\bf VideoGraph} $\ast$ {\bf graph}
+\begin{CompactList}\small\item\em the graph used for inference \item\end{CompactList}\item 
+CvVideoWriter $\ast$ {\bf output\_\-video}
+\item 
+CvVideoWriter $\ast$ {\bf difference\_\-video}
+\item 
+vector$<$ IplImage $\ast$ $>$ {\bf prev\_\-frames}
+\item 
+int {\bf count11}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This class handles all interactions with the video data 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{VideoReader@{VideoReader}!VideoReader@{VideoReader}}
+\index{VideoReader@{VideoReader}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}VideoReader::VideoReader (bool {\em \_\-gray} = {\tt true}, int {\em \_\-numLvls} = {\tt 8})}\label{classVideoReader_1c44fe2505e7190ee4421c0c4553d74d}
+
+
+\index{VideoReader@{VideoReader}!~VideoReader@{$\sim$VideoReader}}
+\index{~VideoReader@{$\sim$VideoReader}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}VideoReader::$\sim$VideoReader ()\hspace{0.3cm}{\tt  [virtual]}}\label{classVideoReader_901bd17be9cb209d23bf9d5b7087b91d}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{VideoReader@{VideoReader}!setGraph@{setGraph}}
+\index{setGraph@{setGraph}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::setGraph ({\bf VideoGraph} $\ast$ {\em \_\-g})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoReader_ebe8e6e685f96dac03656b5ae4ce33eb}
+
+
+\index{VideoReader@{VideoReader}!getN1@{getN1}}
+\index{getN1@{getN1}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int VideoReader::getN1 ()\hspace{0.3cm}{\tt  [inline]}}\label{classVideoReader_e4b10f575c7ebea798adc760e050f0fb}
+
+
+\index{VideoReader@{VideoReader}!getN2@{getN2}}
+\index{getN2@{getN2}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int VideoReader::getN2 ()\hspace{0.3cm}{\tt  [inline]}}\label{classVideoReader_a05ae0af66423566ab965c337403d955}
+
+
+\index{VideoReader@{VideoReader}!setGrayScale@{setGrayScale}}
+\index{setGrayScale@{setGrayScale}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::setGrayScale (bool {\em \_\-isGray})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoReader_797a9ecb59a69145c074b7414af3ef12}
+
+
+\index{VideoReader@{VideoReader}!setNumLvls@{setNumLvls}}
+\index{setNumLvls@{setNumLvls}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::setNumLvls (int {\em s})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoReader_0882334d0d49bb404faf5eedf06ffa5c}
+
+
+\index{VideoReader@{VideoReader}!getCurrentFrame@{getCurrentFrame}}
+\index{getCurrentFrame@{getCurrentFrame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ VideoReader::getCurrentFrame (CvCapture $\ast$ {\em currVideo})}\label{classVideoReader_cd5d16555d3bfde02fc99653ca4419cd}
+
+
+returns the current frame 
+
+\index{VideoReader@{VideoReader}!openVideo@{openVideo}}
+\index{openVideo@{openVideo}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::openVideo (string {\em videoName})}\label{classVideoReader_adc3521b176c93d1530f46c3a1f1cf3a}
+
+
+opens a video 
+
+\index{VideoReader@{VideoReader}!runMain@{runMain}}
+\index{runMain@{runMain}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::runMain (bool {\em gray} = {\tt true}, int {\em numLvls} = {\tt 4}, int {\em maxNum} = {\tt -1}, int {\em priorNum} = {\tt 5}, int {\em frameJump} = {\tt 1})}\label{classVideoReader_7d3f6428ad3227214553385f1b4eb42a}
+
+
+the main engine that updates all the three engines 
+
+\index{VideoReader@{VideoReader}!convertInputFrame@{convertInputFrame}}
+\index{convertInputFrame@{convertInputFrame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool VideoReader::convertInputFrame (bool {\em gray} = {\tt true}, int {\em numLvls} = {\tt 4})}\label{classVideoReader_58b0f6af53127781dcba478ea6f3608c}
+
+
+this function just displays the next frame of the input video until no more to display 
+
+\index{VideoReader@{VideoReader}!updateOutputVideo@{updateOutputVideo}}
+\index{updateOutputVideo@{updateOutputVideo}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::updateOutputVideo ()}\label{classVideoReader_cad516b891d8ad1c792734c76906de3e}
+
+
+this function is recursively called until all the video holes have been filled 
+
+\index{VideoReader@{VideoReader}!getDataFromFrame@{getDataFromFrame}}
+\index{getDataFromFrame@{getDataFromFrame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf INT} $>$ VideoReader::getDataFromFrame (IplImage $\ast$ {\em frame}, int {\em x}, int {\em y}, int {\em r}, int {\em c})}\label{classVideoReader_e458f2b3d47bfc1750092716ce082fb8}
+
+
+get the data for block of pixels 
+
+\index{VideoReader@{VideoReader}!isValidPixel@{isValidPixel}}
+\index{isValidPixel@{isValidPixel}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool VideoReader::isValidPixel (IplImage $\ast$ {\em frame}, int {\em x}, int {\em y})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoReader_c905f0c4bc9325bf319d746ebcdd8ce7}
+
+
+checks for validity of pixel in frame size 
+
+\index{VideoReader@{VideoReader}!updateLastFrame@{updateLastFrame}}
+\index{updateLastFrame@{updateLastFrame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::updateLastFrame (IplImage $\ast$ {\em frame} = {\tt NULL})}\label{classVideoReader_f89a1037188cb805123b56ff56bed90f}
+
+
+updates the last frame 
+
+\index{VideoReader@{VideoReader}!display@{display}}
+\index{display@{display}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::display ()}\label{classVideoReader_fc9f0afccdb05c79391718c7f9cce7a2}
+
+
+\index{VideoReader@{VideoReader}!getFrameDifference@{getFrameDifference}}
+\index{getFrameDifference@{getFrameDifference}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double VideoReader::getFrameDifference (IplImage $\ast$ {\em frame1}, IplImage $\ast$ {\em frame2}, IplImage $\ast$ {\em resFrame} = {\tt NULL}, int $\ast$ {\em NP} = {\tt NULL})}\label{classVideoReader_08d89437b44ac917fa389a7f1b865f81}
+
+
+\index{VideoReader@{VideoReader}!initPrevFrames@{initPrevFrames}}
+\index{initPrevFrames@{initPrevFrames}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::initPrevFrames (int {\em N})}\label{classVideoReader_63c948f1bdafb9aa1440b65f41f43199}
+
+
+\index{VideoReader@{VideoReader}!updateMaskFrame@{updateMaskFrame}}
+\index{updateMaskFrame@{updateMaskFrame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::updateMaskFrame (int {\em x}, int {\em y}, int {\em l}, int {\em w})}\label{classVideoReader_d134c1d615262e4e2c14af19151969e4}
+
+
+\index{VideoReader@{VideoReader}!updatePrevFrames@{updatePrevFrames}}
+\index{updatePrevFrames@{updatePrevFrames}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::updatePrevFrames (IplImage $\ast$ {\em frame}, int {\em N})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoReader_b9828f954dbbbe5d7ff5dfba64dfc3b2}
+
+
+\index{VideoReader@{VideoReader}!overlapFrame@{overlapFrame}}
+\index{overlapFrame@{overlapFrame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::overlapFrame (IplImage $\ast$ {\em inpainted}, IplImage $\ast$ {\em input}, IplImage $\ast$ {\em res\_\-frame})}\label{classVideoReader_f3d0da2e6684bc12baba5adb44e6f0c6}
+
+
+\index{VideoReader@{VideoReader}!runFC@{runFC}}
+\index{runFC@{runFC}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::runFC (bool {\em gray}, int {\em numLvls}, int {\em maxNum}, int {\em priorNum}, int {\em frameJump})}\label{classVideoReader_db9dca85fe941233dd19136090b95b78}
+
+
+\index{VideoReader@{VideoReader}!runInPaint@{runInPaint}}
+\index{runInPaint@{runInPaint}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::runInPaint ()}\label{classVideoReader_29eefb68374172ac39e6f399318cb711}
+
+
+\index{VideoReader@{VideoReader}!getMissingMask@{getMissingMask}}
+\index{getMissingMask@{getMissingMask}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::getMissingMask (IplImage $\ast$ {\em mask\_\-frame}, {\bf LD} {\em probMissing})}\label{classVideoReader_75c6a8631b661dbd55caf2fe357ef8f6}
+
+
+\index{VideoReader@{VideoReader}!updateBasedOnPrevFrames@{updateBasedOnPrevFrames}}
+\index{updateBasedOnPrevFrames@{updateBasedOnPrevFrames}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::updateBasedOnPrevFrames (IplImage $\ast$ {\em mask\_\-frame})}\label{classVideoReader_ddda11180fc2782c117c30e289d93c2a}
+
+
+\index{VideoReader@{VideoReader}!runNoisy@{runNoisy}}
+\index{runNoisy@{runNoisy}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::runNoisy (bool {\em gray}, int {\em numLvls}, int {\em maxNum}, int {\em priorNum}, int {\em frameJump})}\label{classVideoReader_ffbcf0d37d2bb67edd64cb6317bf4e5b}
+
+
+\index{VideoReader@{VideoReader}!updateInputFrame@{updateInputFrame}}
+\index{updateInputFrame@{updateInputFrame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::updateInputFrame (IplImage $\ast$ {\em input\_\-frame}, IplImage $\ast$ {\em curr\_\-mask})}\label{classVideoReader_00913618c64f5057770c195d72f7d45c}
+
+
+\index{VideoReader@{VideoReader}!incrementFrame@{incrementFrame}}
+\index{incrementFrame@{incrementFrame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool VideoReader::incrementFrame (IplImage $\ast$ {\em pastFrame}, IplImage $\ast$ {\em nextFrame})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoReader_aa784ab08706bbaf9fa6bdfee0730c3d}
+
+
+\index{VideoReader@{VideoReader}!writeOp@{writeOp}}
+\index{writeOp@{writeOp}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void VideoReader::writeOp (int {\em count})\hspace{0.3cm}{\tt  [inline]}}\label{classVideoReader_3fc9ed897920438db26fc0763810da2e}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{VideoReader@{VideoReader}!frame_count@{frame\_\-count}}
+\index{frame_count@{frame\_\-count}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoReader::frame\_\-count}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_2c12827293113d4542eaee2e1198a6d8}
+
+
+frame count 
+
+\index{VideoReader@{VideoReader}!grayscale@{grayscale}}
+\index{grayscale@{grayscale}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool {\bf VideoReader::grayscale}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_aa47c27733a214e0c7de038d17788e1c}
+
+
+whether to do the inference on bw or color 
+
+\index{VideoReader@{VideoReader}!numLvls@{numLvls}}
+\index{numLvls@{numLvls}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoReader::numLvls}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_e94b623322f96beb6113c7d8bcfc4e54}
+
+
+the maximum value each pixel can take 0...maxgrayscale (default 255) 
+
+\index{VideoReader@{VideoReader}!rwidth@{rwidth}}
+\index{rwidth@{rwidth}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoReader::rwidth}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_7a4d7b70657ed12d623cacdf63ec5e18}
+
+
+biggest region width 
+
+\index{VideoReader@{VideoReader}!rheight@{rheight}}
+\index{rheight@{rheight}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoReader::rheight}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_ba0220e93ecb9d65d50b9418048c0b92}
+
+
+biggest region height 
+
+\index{VideoReader@{VideoReader}!xoverlap@{xoverlap}}
+\index{xoverlap@{xoverlap}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoReader::xoverlap}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_38f091bdf64e9a1ff945bcc8c1f27e66}
+
+
+horizontal overlap between adjoining biggest regions 
+
+\index{VideoReader@{VideoReader}!yoverlap@{yoverlap}}
+\index{yoverlap@{yoverlap}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoReader::yoverlap}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_67f9b2d416d5c952555500fe3a26787d}
+
+
+vertical overlap between adjoining biggest regions 
+
+\index{VideoReader@{VideoReader}!diff_frame@{diff\_\-frame}}
+\index{diff_frame@{diff\_\-frame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf VideoReader::diff\_\-frame}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_62cb9a99192ff45b5519e585314b6212}
+
+
+pointer to the difference frame 
+
+\index{VideoReader@{VideoReader}!last_frame_window_handle@{last\_\-frame\_\-window\_\-handle}}
+\index{last_frame_window_handle@{last\_\-frame\_\-window\_\-handle}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf VideoReader::last\_\-frame\_\-window\_\-handle}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_eb6402ab96673a345643aae7c5b3abc5}
+
+
+\index{VideoReader@{VideoReader}!input_window_handle@{input\_\-window\_\-handle}}
+\index{input_window_handle@{input\_\-window\_\-handle}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf VideoReader::input\_\-window\_\-handle}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_24769274f3320dabba3224c9607c6da1}
+
+
+pointer to the default window 
+
+\index{VideoReader@{VideoReader}!output_window_handle@{output\_\-window\_\-handle}}
+\index{output_window_handle@{output\_\-window\_\-handle}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf VideoReader::output\_\-window\_\-handle}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_a2cb69893a34b900bc40442a981ed61b}
+
+
+pointer to the output window 
+
+\index{VideoReader@{VideoReader}!mask_window_handle@{mask\_\-window\_\-handle}}
+\index{mask_window_handle@{mask\_\-window\_\-handle}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf VideoReader::mask\_\-window\_\-handle}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_4fa55f836e50a194c81649e279c1fbeb}
+
+
+pointer to the mask frame 
+
+\index{VideoReader@{VideoReader}!number_of_frames@{number\_\-of\_\-frames}}
+\index{number_of_frames@{number\_\-of\_\-frames}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}long {\bf VideoReader::number\_\-of\_\-frames}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_752cb843c271143b3d59aab43bd43450}
+
+
+number of frames in the video sequence 
+
+\index{VideoReader@{VideoReader}!frames_per_second@{frames\_\-per\_\-second}}
+\index{frames_per_second@{frames\_\-per\_\-second}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoReader::frames\_\-per\_\-second}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_e89897243c54102536a567325d4040cd}
+
+
+number of frames per second 
+
+\index{VideoReader@{VideoReader}!graph@{graph}}
+\index{graph@{graph}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf VideoGraph}$\ast$ {\bf VideoReader::graph}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_b7426aebaffee2ae3a8ce0d71f54c0c3}
+
+
+the graph used for inference 
+
+\index{VideoReader@{VideoReader}!output_video@{output\_\-video}}
+\index{output_video@{output\_\-video}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CvVideoWriter$\ast$ {\bf VideoReader::output\_\-video}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_9d47d64ecb8916b0f6ff0e1a5a739bdb}
+
+
+\index{VideoReader@{VideoReader}!difference_video@{difference\_\-video}}
+\index{difference_video@{difference\_\-video}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CvVideoWriter$\ast$ {\bf VideoReader::difference\_\-video}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_392113c791a3d66dac3300399a0ee019}
+
+
+\index{VideoReader@{VideoReader}!prev_frames@{prev\_\-frames}}
+\index{prev_frames@{prev\_\-frames}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$IplImage$\ast$ $>$ {\bf VideoReader::prev\_\-frames}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_a1414506afefa40ead09b23f1c8231f7}
+
+
+\index{VideoReader@{VideoReader}!count11@{count11}}
+\index{count11@{count11}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf VideoReader::count11}\hspace{0.3cm}{\tt  [private]}}\label{classVideoReader_f28603802a7080dcabf96fa987b0f060}
+
+
+\index{VideoReader@{VideoReader}!frame@{frame}}
+\index{frame@{frame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf VideoReader::frame}}\label{classVideoReader_25dc6b2a90f7d224a4b0da9dd20cdf59}
+
+
+temporary frames used for conversion 
+
+\index{VideoReader@{VideoReader}!frame1@{frame1}}
+\index{frame1@{frame1}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ {\bf VideoReader::frame1}}\label{classVideoReader_d5eacfb8ef1bde674e89051fc912bb5d}
+
+
+\index{VideoReader@{VideoReader}!frame1_1C@{frame1\_\-1C}}
+\index{frame1_1C@{frame1\_\-1C}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ {\bf VideoReader::frame1\_\-1C}}\label{classVideoReader_36c0029e5c68e5410ca9d8aac56fd2e6}
+
+
+\index{VideoReader@{VideoReader}!frame2_GS@{frame2\_\-GS}}
+\index{frame2_GS@{frame2\_\-GS}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ {\bf VideoReader::frame2\_\-GS}}\label{classVideoReader_09758705a51d09e46b1dca5da0857429}
+
+
+\index{VideoReader@{VideoReader}!frame_size@{frame\_\-size}}
+\index{frame_size@{frame\_\-size}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CvSize {\bf VideoReader::frame\_\-size}}\label{classVideoReader_9d640bec746cbcc3ca75b68ce715f094}
+
+
+frame size of the video 
+
+\index{VideoReader@{VideoReader}!last_frame@{last\_\-frame}}
+\index{last_frame@{last\_\-frame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf VideoReader::last\_\-frame}}\label{classVideoReader_f6c23af4235813a9fa1d506a68cec70c}
+
+
+the last frame 
+
+\index{VideoReader@{VideoReader}!input_frame@{input\_\-frame}}
+\index{input_frame@{input\_\-frame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf VideoReader::input\_\-frame}}\label{classVideoReader_f93a2ca8f23e7b8f95f55a49176305d1}
+
+
+the default pointer to the current frame 
+
+\index{VideoReader@{VideoReader}!output_frame@{output\_\-frame}}
+\index{output_frame@{output\_\-frame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf VideoReader::output\_\-frame}}\label{classVideoReader_b1d8d47cc477bab514a1b37781402df7}
+
+
+pointer to the output frame 
+
+\index{VideoReader@{VideoReader}!mask_frame@{mask\_\-frame}}
+\index{mask_frame@{mask\_\-frame}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf VideoReader::mask\_\-frame}}\label{classVideoReader_a9816e1cc6e0c29b68722ed942b15bb2}
+
+
+pointer to the mask frame 
+
+\index{VideoReader@{VideoReader}!input_video@{input\_\-video}}
+\index{input_video@{input\_\-video}!VideoReader@{VideoReader}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CvCapture$\ast$ {\bf VideoReader::input\_\-video}}\label{classVideoReader_9e3f3eaa1e28aa3693584284f7240a1d}
+
+
+the default pointer to the current video 
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf VideoReader.h}\item 
+src/{\bf VideoReader.cpp}\end{CompactItemize}

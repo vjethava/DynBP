@@ -1,0 +1,196 @@
+\section{GraphPPM Class Reference}
+\label{classGraphPPM}\index{GraphPPM@{GraphPPM}}
+{\tt \#include $<$GraphPPM.h$>$}
+
+Inheritance diagram for GraphPPM::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classGraphPPM}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf StatePtr} {\bf getJointState} ({\bf StatePtr} currSt, {\bf StatePtr} nextSt)
+\begin{CompactList}\small\item\em initialize all messages \item\end{CompactList}\item 
+void {\bf PPM\_\-inner\_\-loop} ()
+\item 
+void {\bf PPM\_\-step3} ()
+\item 
+void {\bf PPM\_\-step4a} ()
+\item 
+void {\bf PPM\_\-step4b} ()
+\item 
+void {\bf PPM\_\-step5a} ()
+\item 
+void {\bf PPM\_\-step5b} ()
+\item 
+void {\bf PPM\_\-step5c} ()
+\item 
+virtual {\bf StatePtr} {\bf getChildStatePtr} ({\bf NodePtr} vp, {\bf NodePtr} vc, {\bf StatePtr} parState)=0
+\item 
+void {\bf updateNodesInfo} ()
+\item 
+string {\bf get\_\-status} ()
+\item 
+void {\bf PPM\_\-LN} ({\bf LD} thetaLN=1.0)
+\begin{CompactList}\small\item\em does the log normalization on the messages \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+{\bf LD} {\bf SR}
+\item 
+{\bf LD} {\bf minMsg}
+\item 
+{\bf LD} {\bf maxMsg}
+\item 
+{\bf LD} {\bf avgDiffFromPars}
+\item 
+{\bf LD} {\bf avgChngInBlfs}
+\item 
+{\bf LD} {\bf maxChngInBlfs}
+\item 
+{\bf LD} {\bf maxDevFromPars}
+\item 
+{\bf LD} {\bf avgMaxCaseDevFromPars}
+\item 
+{\bf LD} {\bf avgMaxCaseChngInBlfs}
+\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf LD} {\bf getMargPr\_\-5c} ({\bf RegionPPM} $\ast$vp, {\bf RegionPPM} $\ast$vc, {\bf StatePtr} cStOld, {\bf StatePtr} cStNew)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Graph that implements PPM with partial state space 
+
+
+
+\subsection{Member Function Documentation}
+\index{GraphPPM@{GraphPPM}!getMargPr_5c@{getMargPr\_\-5c}}
+\index{getMargPr_5c@{getMargPr\_\-5c}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} GraphPPM::getMargPr\_\-5c ({\bf RegionPPM} $\ast$ {\em vp}, {\bf RegionPPM} $\ast$ {\em vc}, {\bf StatePtr} {\em cStOld}, {\bf StatePtr} {\em cStNew})\hspace{0.3cm}{\tt  [private]}}\label{classGraphPPM_b8a6e0a32d1c766f330a4b586dffda03}
+
+
+\index{GraphPPM@{GraphPPM}!getJointState@{getJointState}}
+\index{getJointState@{getJointState}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf StatePtr} GraphPPM::getJointState ({\bf StatePtr} {\em currSt}, {\bf StatePtr} {\em nextSt})\hspace{0.3cm}{\tt  [inline]}}\label{classGraphPPM_988f1c3b64f4edef454303e21c73897f}
+
+
+initialize all messages 
+
+\index{GraphPPM@{GraphPPM}!PPM_inner_loop@{PPM\_\-inner\_\-loop}}
+\index{PPM_inner_loop@{PPM\_\-inner\_\-loop}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphPPM::PPM\_\-inner\_\-loop ()}\label{classGraphPPM_af11be7c070e2bf7004b26c4f83a46c4}
+
+
+\index{GraphPPM@{GraphPPM}!PPM_step3@{PPM\_\-step3}}
+\index{PPM_step3@{PPM\_\-step3}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphPPM::PPM\_\-step3 ()}\label{classGraphPPM_948e40d894af5e3dbe6c74261ad7dce0}
+
+
+Initializes child-$>$parent messages (child-$>$BidirEdgeList.second) to 1.0 for all nodes. Note: PPM/GBP child-$>$parent algorithm does not use forward messages from parent-$>$child. \index{GraphPPM@{GraphPPM}!PPM_step4a@{PPM\_\-step4a}}
+\index{PPM_step4a@{PPM\_\-step4a}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphPPM::PPM\_\-step4a ()}\label{classGraphPPM_a18d082afd8695ff634e96c9df275252}
+
+
+\index{GraphPPM@{GraphPPM}!PPM_step4b@{PPM\_\-step4b}}
+\index{PPM_step4b@{PPM\_\-step4b}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphPPM::PPM\_\-step4b ()}\label{classGraphPPM_662bcc5d8e432d5275c1397c08393704}
+
+
+\index{GraphPPM@{GraphPPM}!PPM_step5a@{PPM\_\-step5a}}
+\index{PPM_step5a@{PPM\_\-step5a}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphPPM::PPM\_\-step5a ()}\label{classGraphPPM_beb37a3d5d63d04a0df4843a158207bc}
+
+
+\index{GraphPPM@{GraphPPM}!PPM_step5b@{PPM\_\-step5b}}
+\index{PPM_step5b@{PPM\_\-step5b}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphPPM::PPM\_\-step5b ()}\label{classGraphPPM_7f8b5da78e79027f06093f304f9adac7}
+
+
+\index{GraphPPM@{GraphPPM}!PPM_step5c@{PPM\_\-step5c}}
+\index{PPM_step5c@{PPM\_\-step5c}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphPPM::PPM\_\-step5c ()}\label{classGraphPPM_0a3e53cd03010beaee032d73ce4de071}
+
+
+\index{GraphPPM@{GraphPPM}!getChildStatePtr@{getChildStatePtr}}
+\index{getChildStatePtr@{getChildStatePtr}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf StatePtr} GraphPPM::getChildStatePtr ({\bf NodePtr} {\em vp}, {\bf NodePtr} {\em vc}, {\bf StatePtr} {\em parState})\hspace{0.3cm}{\tt  [pure virtual]}}\label{classGraphPPM_b245aae058d0b252df985651c8fcc2eb}
+
+
+
+
+Implemented in {\bf PottsGraphPPM} \doxyref{}{p.}{classPottsGraphPPM_7422e923b897b8799ab7de73e3f10088}, and {\bf VideoGraph} \doxyref{}{p.}{classVideoGraph_9e6275280e01ab9b37b52e7cf92ddd2d}.\index{GraphPPM@{GraphPPM}!updateNodesInfo@{updateNodesInfo}}
+\index{updateNodesInfo@{updateNodesInfo}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphPPM::updateNodesInfo ()}\label{classGraphPPM_63bd812c334b282a1dbba62519672ebe}
+
+
+\index{GraphPPM@{GraphPPM}!get_status@{get\_\-status}}
+\index{get_status@{get\_\-status}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}string GraphPPM::get\_\-status ()}\label{classGraphPPM_0dff6791d6fc383414dfe3dd52162c98}
+
+
+\index{GraphPPM@{GraphPPM}!PPM_LN@{PPM\_\-LN}}
+\index{PPM_LN@{PPM\_\-LN}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphPPM::PPM\_\-LN ({\bf LD} {\em thetaLN} = {\tt 1.0})}\label{classGraphPPM_0460a9fa53963d976f7c724ad95570e2}
+
+
+does the log normalization on the messages 
+
+
+
+\subsection{Member Data Documentation}
+\index{GraphPPM@{GraphPPM}!SR@{SR}}
+\index{SR@{SR}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphPPM::SR}}\label{classGraphPPM_40944c27ce4ffc3125be88dbc541285c}
+
+
+\index{GraphPPM@{GraphPPM}!minMsg@{minMsg}}
+\index{minMsg@{minMsg}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphPPM::minMsg}}\label{classGraphPPM_06945ee22fa9aa7d63a471749b5f4a79}
+
+
+\index{GraphPPM@{GraphPPM}!maxMsg@{maxMsg}}
+\index{maxMsg@{maxMsg}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphPPM::maxMsg}}\label{classGraphPPM_a0a25a7a902cce9602754fe8a4b1c79f}
+
+
+\index{GraphPPM@{GraphPPM}!avgDiffFromPars@{avgDiffFromPars}}
+\index{avgDiffFromPars@{avgDiffFromPars}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphPPM::avgDiffFromPars}}\label{classGraphPPM_c9f9872b503ee29b1f4558525d47d4d3}
+
+
+\index{GraphPPM@{GraphPPM}!avgChngInBlfs@{avgChngInBlfs}}
+\index{avgChngInBlfs@{avgChngInBlfs}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphPPM::avgChngInBlfs}}\label{classGraphPPM_f6cdf67c40cc18f2bdd90b6ec27ea325}
+
+
+\index{GraphPPM@{GraphPPM}!maxChngInBlfs@{maxChngInBlfs}}
+\index{maxChngInBlfs@{maxChngInBlfs}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphPPM::maxChngInBlfs}}\label{classGraphPPM_43819d4c1be286f4076b90dd107088f5}
+
+
+\index{GraphPPM@{GraphPPM}!maxDevFromPars@{maxDevFromPars}}
+\index{maxDevFromPars@{maxDevFromPars}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphPPM::maxDevFromPars}}\label{classGraphPPM_49b0a168ed985205a4eb9f3977a688b1}
+
+
+\index{GraphPPM@{GraphPPM}!avgMaxCaseDevFromPars@{avgMaxCaseDevFromPars}}
+\index{avgMaxCaseDevFromPars@{avgMaxCaseDevFromPars}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphPPM::avgMaxCaseDevFromPars}}\label{classGraphPPM_e0eaf165a890a107506715b5511c4d6e}
+
+
+\index{GraphPPM@{GraphPPM}!avgMaxCaseChngInBlfs@{avgMaxCaseChngInBlfs}}
+\index{avgMaxCaseChngInBlfs@{avgMaxCaseChngInBlfs}!GraphPPM@{GraphPPM}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} {\bf GraphPPM::avgMaxCaseChngInBlfs}}\label{classGraphPPM_4bdc1edbb20d079ac83cff42540989bb}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf GraphPPM.h}\item 
+src/{\bf GraphPPM.cpp}\end{CompactItemize}

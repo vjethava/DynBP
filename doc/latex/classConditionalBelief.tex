@@ -1,0 +1,115 @@
+\section{ConditionalBelief Class Reference}
+\label{classConditionalBelief}\index{ConditionalBelief@{ConditionalBelief}}
+class that stores the conditional beliefs  
+
+
+{\tt \#include $<$belief.h$>$}
+
+Inheritance diagram for ConditionalBelief::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classConditionalBelief}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+void {\bf clear} ()
+\item 
+std::map$<$ {\bf StatePtr}, {\bf Belief}, {\bf StatePtrCmp} $>$ $\ast$ {\bf getCbMpPtr} ()
+\item 
+{\bf BeliefPtr} {\bf getBeliefForState} ({\bf StatePtr} sptr)
+\item 
+void {\bf setPr} ({\bf StatePtr} sC, {\bf StatePtr} sN, {\bf LD} \_\-cbp, {\bf LD} \_\-origp=-1.0)
+\item 
+{\bf LD} {\bf getPr} ({\bf StatePtr} sC, {\bf StatePtr} sN)
+\begin{CompactList}\small\item\em returns the probability p(sN $|$ sC) or BELIEF\_\-NOT\_\-FOUND \item\end{CompactList}\item 
+{\bf LD} {\bf getAllocPr} ({\bf StatePtr} sC)
+\begin{CompactList}\small\item\em get the allocation corresponding to belief starting at sC or BELIEF\_\-NOT\_\-FOUND \item\end{CompactList}\item 
+{\bf LD} {\bf getTotalAlloc} ()
+\begin{CompactList}\small\item\em the total allocatio present \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+std::map$<$ {\bf StatePtr}, {\bf Belief}, {\bf StatePtrCmp} $>$ {\bf cbMp}
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&os, {\bf ConditionalBelief} \&b)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+class that stores the conditional beliefs 
+
+
+
+\subsection{Member Function Documentation}
+\index{ConditionalBelief@{ConditionalBelief}!clear@{clear}}
+\index{clear@{clear}!ConditionalBelief@{ConditionalBelief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ConditionalBelief::clear ()\hspace{0.3cm}{\tt  [inline]}}\label{classConditionalBelief_c1323d280c05b3b6a245c0871d419abf}
+
+
+
+
+Reimplemented from {\bf Belief} \doxyref{}{p.}{classBelief_5447bc76328b28b4c0683262fc70911e}.\index{ConditionalBelief@{ConditionalBelief}!getCbMpPtr@{getCbMpPtr}}
+\index{getCbMpPtr@{getCbMpPtr}!ConditionalBelief@{ConditionalBelief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::map$<${\bf StatePtr}, {\bf Belief}, {\bf StatePtrCmp}$>$$\ast$ ConditionalBelief::getCbMpPtr ()\hspace{0.3cm}{\tt  [inline]}}\label{classConditionalBelief_098347b1d8147ff8ce889eed434d8499}
+
+
+\index{ConditionalBelief@{ConditionalBelief}!getBeliefForState@{getBeliefForState}}
+\index{getBeliefForState@{getBeliefForState}!ConditionalBelief@{ConditionalBelief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf BeliefPtr} ConditionalBelief::getBeliefForState ({\bf StatePtr} {\em sptr})\hspace{0.3cm}{\tt  [inline]}}\label{classConditionalBelief_87dd91c7f764927069d4ba4328d3ae4d}
+
+
+\index{ConditionalBelief@{ConditionalBelief}!setPr@{setPr}}
+\index{setPr@{setPr}!ConditionalBelief@{ConditionalBelief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ConditionalBelief::setPr ({\bf StatePtr} {\em sC}, {\bf StatePtr} {\em sN}, {\bf LD} {\em \_\-cbp}, {\bf LD} {\em \_\-origp} = {\tt -1.0})}\label{classConditionalBelief_d4074569aedf433c0b829cbd6ff68835}
+
+
+sets the probability of finding P(next state $|$ current state) P(sN $|$ sC) = \_\-cbp P(sC) = \_\-origp \index{ConditionalBelief@{ConditionalBelief}!getPr@{getPr}}
+\index{getPr@{getPr}!ConditionalBelief@{ConditionalBelief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} ConditionalBelief::getPr ({\bf StatePtr} {\em sC}, {\bf StatePtr} {\em sN})}\label{classConditionalBelief_66ced9bc695d3503e06a02ca95207a21}
+
+
+returns the probability p(sN $|$ sC) or BELIEF\_\-NOT\_\-FOUND 
+
+
+
+Reimplemented in {\bf PottsCB} \doxyref{}{p.}{classPottsCB_cac254c4f74d94caa1ba23343e01b96b}.\index{ConditionalBelief@{ConditionalBelief}!getAllocPr@{getAllocPr}}
+\index{getAllocPr@{getAllocPr}!ConditionalBelief@{ConditionalBelief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} ConditionalBelief::getAllocPr ({\bf StatePtr} {\em sC})}\label{classConditionalBelief_c041ff20cbd4925228d6901b0d71cc99}
+
+
+get the allocation corresponding to belief starting at sC or BELIEF\_\-NOT\_\-FOUND 
+
+\index{ConditionalBelief@{ConditionalBelief}!getTotalAlloc@{getTotalAlloc}}
+\index{getTotalAlloc@{getTotalAlloc}!ConditionalBelief@{ConditionalBelief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LD} ConditionalBelief::getTotalAlloc ()}\label{classConditionalBelief_87033ffe78b6ac8f6a2ca498b30a1c54}
+
+
+the total allocatio present 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{ConditionalBelief@{ConditionalBelief}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!ConditionalBelief@{ConditionalBelief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, {\bf ConditionalBelief} \& {\em b})\hspace{0.3cm}{\tt  [friend]}}\label{classConditionalBelief_b1ba4b45412665954a8fc0df4bad8c1f}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{ConditionalBelief@{ConditionalBelief}!cbMp@{cbMp}}
+\index{cbMp@{cbMp}!ConditionalBelief@{ConditionalBelief}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::map$<${\bf StatePtr}, {\bf Belief}, {\bf StatePtrCmp}$>$ {\bf ConditionalBelief::cbMp}\hspace{0.3cm}{\tt  [private]}}\label{classConditionalBelief_f447de6620faf8c62a0bdb8224507b83}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+inc/{\bf belief.h}\item 
+src/{\bf belief.cpp}\end{CompactItemize}
